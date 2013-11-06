@@ -14,12 +14,20 @@ function makeRain() {
   div.className = "dollas";
   document.body.appendChild(div);
   
+  renderRacks();
+
   toons();
 }
 
 function toons() {
   var audio = document.querySelector('audio');
   audio.play();
+}
+
+function renderRacks() {
+  var racksSpent = document.querySelector('span');
+  var number = parseInt(racksSpent.innerHTML);
+  racksSpent.innerHTML = number += 1;
 }
 
 // function moveDollas() {
