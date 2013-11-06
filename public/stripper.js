@@ -11,7 +11,6 @@ window.onload = function() {
     else {
       alert("Really...a $" + bill.value + "bill?");
     }
-
   });
 
 }
@@ -47,15 +46,11 @@ function renderRacks() {
   racksSpent.color = "green";
 }
 
-function getBillDenomination() {
-
-}
-
 function highRoller() {
   var racksSpent = document.querySelector('span');
   var dollarAmount = parseInt(racksSpent.innerHTML);
 
-  if (dollarAmount > 10000) {
+  if (dollarAmount > 10000 && dollarAmount < 10100) {
     alert("HIGH ROLLER alert!");
   }
 }
