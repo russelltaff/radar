@@ -5,21 +5,27 @@ window.onload = function() {
   stripper.addEventListener('mouseover', function() {
     if (bill.value === '1' || bill.value === '5' || bill.value === '10' || bill.value === '20' || bill.value === '50' || bill.value === '100') {
       makeRain(this);
-    } else {
-      alert("Really...a $" + bill.value + "bill?")
+    } else if (bill.value === "") {
+      alert("Pick a denomination!");
+    }
+    else {
+      alert("Really...a $" + bill.value + "bill?");
     }
 
   });
 
-  // setInterval( moveDollas, 500);
 }
 
 function makeRain() {
   var div = document.createElement("div");
   var bill = document.querySelector('input#cash-selecta');
 
+  var sweetSpots = ["240", "260", "280", "300", "320"];
+  var index = Math.floor((Math.random() * sweetSpots.length));
+
   div.innerHTML = "$" + bill.value;
   div.className = "dollas";
+  div.style.left = sweetSpots[index] + "px";
   document.body.appendChild(div);
   
   renderRacks();
@@ -40,11 +46,15 @@ function renderRacks() {
   racksSpent.color = "green";
 }
 
-// function moveDollas() {
-//   var dollas = document.getElementsByClassName("dollas");
+function getBillDenomination() {
 
-//   for (var i=0; i < dollas.length; i++) {
-//     dollas[i].style.bottom = (parseInt(dollas[i].style.bottom) - 10).toString();
-//     console.log(dollas[i]);
-//   }
-// }
+}
+
+function highRoller() {
+  var racksSpent = document.querySelector('span');
+  var dollarAmount = parseInt(racksSpent.innerHTML);
+
+  if (dollarAmount > 1000) {
+    alert("HIGH ROLLER alert!");
+  }
+}
