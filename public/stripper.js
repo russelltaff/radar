@@ -5,7 +5,7 @@ window.onload = function() {
     makeRain(this);
   });
 
-  // setInterval( moveDollas, 5000);
+  setInterval( moveDollas, 500);
 }
 
 function makeRain(ho) {
