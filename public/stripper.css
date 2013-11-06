@@ -6,7 +6,7 @@ img#stripper {
 @-webkit-keyframes test
 {
 from {top: 75px;}
-to {top: 280px;}
+to {top: 380px;}
 }
 
 div.dollas {
@@ -22,4 +22,6 @@ div.dollas {
   -webkit-animation: test 3s;
 }
 
-
+h3 {
+  color: green;
+}
