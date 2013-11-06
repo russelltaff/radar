@@ -1,0 +1,25 @@
+img#stripper {
+  width: 500px;
+  z-index: 0; 
+}
+
+@-webkit-keyframes test
+{
+from {top: 75px;}
+to {top: 280px;}
+}
+
+div.dollas {
+  display: inline;
+  z-index: 2;
+  position: fixed;
+  left: 280px;
+  background-color: green;
+  color: #fff;
+  width: 40px;
+  height: 20px;
+  text-align: center; 
+  -webkit-animation: test 3s;
+}
+
+
