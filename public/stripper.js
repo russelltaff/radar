@@ -29,6 +29,7 @@ function makeRain() {
   document.body.appendChild(div);
   
   renderRacks();
+  highRoller();
 
   tunes();
 }
@@ -54,7 +55,7 @@ function highRoller() {
   var racksSpent = document.querySelector('span');
   var dollarAmount = parseInt(racksSpent.innerHTML);
 
-  if (dollarAmount > 1000) {
+  if (dollarAmount > 10000) {
     alert("HIGH ROLLER alert!");
   }
 }
