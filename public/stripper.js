@@ -16,10 +16,10 @@ function makeRain() {
   
   renderRacks();
 
-  toons();
+  tunes();
 }
 
-function toons() {
+function tunes() {
   var audio = document.querySelector('audio');
   audio.play();
 }
@@ -28,6 +28,7 @@ function renderRacks() {
   var racksSpent = document.querySelector('span');
   var number = parseInt(racksSpent.innerHTML);
   racksSpent.innerHTML = number += 1;
+  racksSpent.color = "green";
 }
 
 // function moveDollas() {
