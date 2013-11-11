@@ -1,17 +1,12 @@
-<h1>Create a username!</h1>
-
-<% unless @user.errors.none? %>
-  <% @user.errors.full_messages.each do |msg| %>
+<% unless current_user.errors.none? %>
+  <% current_user.errors.full_messages.each do |msg| %>
     <%= msg %>
   <% end %>
 <% end %>
 
-<%= form_for @user do |f| %>
+<%= form_for @student do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-
-  <%= f.label :type %>
-  <%= f.select :type, ["Student","Employer"] %>
 
   <%= f.label :email %>
   <%= f.email_field :email %>
@@ -22,9 +17,12 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
-  <% if logged_in? %> 
+  <% array = ["city", "state", "phone", "summary", "portfolio_url", "github_url"] %>
+  <% array.each do |attr| %>
+    <%= f.label attr.to_sym %>
+    <%= f.text_field attr.to_sym %>
+  <% end %>
 
-  <% end %> 
 
   <%= f.submit logged_in? ? 'Update' : 'Sign Up' %>
 <% end %>

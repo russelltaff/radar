@@ -21,6 +21,10 @@ before_action :authenticated!, :set_user, :authorized!, except: [:new, :create]
     render :show
   end 
 
+  def edit 
+    render :edit 
+  end 
+
   private
 
   # security ########
