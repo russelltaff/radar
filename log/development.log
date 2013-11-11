@@ -1,0 +1,32 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddTimestampsUsersAgain (20131111200355)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD COLUMN "created_at" timestamp[0m
+PG::DuplicateColumn: ERROR:  column "created_at" of relation "users" already exists
+: ALTER TABLE "users" ADD COLUMN "created_at" timestamp
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddTimestampsUsersAgain (20131111200355)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD COLUMN "created_at" timestamp[0m
+PG::DuplicateColumn: ERROR:  column "created_at" of relation "users" already exists
+: ALTER TABLE "users" ADD COLUMN "created_at" timestamp
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddTimestampsUsersAgain (20131111200355)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "users" ADD COLUMN "created_at" timestamp[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD COLUMN "updated_at" timestamp
+  [1m[36mSQL (16.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20131111200355"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+Migrating to RenameUsersPasswordColumn (20131111201004)
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" RENAME COLUMN "password" TO "password_digest"
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20131111201004"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Migrating to AddCompanySize (20131111204837)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (14.0ms)[0m  ALTER TABLE "users" ADD COLUMN "company_size" character varying(255)
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20131111204837"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
