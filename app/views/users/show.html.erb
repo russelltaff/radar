@@ -1,0 +1,12 @@
+<h1>Welcome <%= @user.name %>!</h1>
+
+<% if @user.type == "Student" %>
+
+<p>This should show up for our only user.</p> 
+
+<% else %>
+
+<p>This should show up for our only employer.</p> 
+
+<% end %>
+
