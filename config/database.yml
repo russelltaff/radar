@@ -1,22 +1,11 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
+
 development:
   adapter: postgresql
   database: radar_development
   pool: 5
   timeout: 5000
-<<<<<<< HEAD:config/database.yml
   username:
   password:
   host: localhost
 
 
-
-=======
-  username: rtaff2012
-  password: leonruss
-  host: localhost
->>>>>>> _russday1:radar/config/database.yml
