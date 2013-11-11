@@ -137,10 +137,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
-<<<<<<< HEAD:Gemfile.lock
   paperclip (~> 3.0)
-=======
->>>>>>> _russday1:radar/Gemfile.lock
   pg
   pry-rails
   rails (= 4.0.0)
