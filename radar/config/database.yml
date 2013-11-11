@@ -8,6 +8,6 @@ development:
   database: radar_development
   pool: 5
   timeout: 5000
-  username: 
-  password:
+  username: rtaff2012
+  password: leonruss
   host: localhost
