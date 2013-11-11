@@ -17,14 +17,6 @@ before_action :authenticated!, :set_user, :authorized!, except: [:new, :create]
     end
   end 
 
-  def show 
-    render :show
-  end 
-
-  def edit 
-    render :edit 
-  end 
-
   private
 
   # security ########
