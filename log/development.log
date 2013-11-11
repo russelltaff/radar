@@ -1,3 +1,20 @@
   [1m[36m (298.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
   [1m[35m (126.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36mActiveRecord::SchemaMigration Load (31.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (19.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20131111161753)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (7.0ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying(255) NOT NULL, "email" character varying(255) NOT NULL, "password" character varying(255) NOT NULL, "type" character varying(255) NOT NULL, "city" character varying(255), "state" character varying(255), "phone" character varying(255), "summary" text, "portfolio_url" character varying(255), "github_url" character varying(255), "company_url" character varying(255), "apprentice_partner" boolean) [0m
+  [1m[35m (1.8ms)[0m  ALTER TABLE "users" ADD COLUMN "resume_file_name" character varying(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD COLUMN "resume_content_type" character varying(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD COLUMN "resume_file_size" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD COLUMN "resume_updated_at" timestamp[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD COLUMN "photo_file_name" character varying(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD COLUMN "photo_content_type" character varying(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD COLUMN "photo_file_size" integer
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "users" ADD COLUMN "photo_updated_at" timestamp[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131111161753"]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
