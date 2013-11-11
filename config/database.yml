@@ -1,8 +1,0 @@
-development:
-  adapter: postgresql
-  database: radar_development
-  pool: 5
-  timeout: 5000
-  username: rtaff2012
-  password: leonruss
-  host: localhost
