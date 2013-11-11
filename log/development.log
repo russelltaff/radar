@@ -47,3 +47,47 @@ Migrating to AddCompanySize (20131111204837)
   [1m[35m (0.4ms)[0m  COMMIT
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 >>>>>>> dc438b1e1dc6dc79ca373823c592075bbfe0157c
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-11-11 18:25:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (143.9ms)
+  Rendered users/new.html.erb within layouts/application (158.3ms)
+Completed 200 OK in 936ms (Views: 849.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-11 18:25:56 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-11 18:25:56 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-11 18:25:56 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-11 18:25:56 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-11 18:25:56 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-11 18:26:02 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-11 18:26:02 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-11 18:26:02 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-11 18:26:02 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-11 18:26:02 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-11 18:26:02 -0500
