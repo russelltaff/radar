@@ -11,7 +11,7 @@ before_action :authenticated!, :set_user, :authorized!, except: [:new, :create]
     if @user.save
 
       redirect_to user_path(@user)
-    # return to signup page
+      # return to signup page
     else
       render :new
     end
