@@ -8,9 +8,15 @@ development:
   database: radar_development
   pool: 5
   timeout: 5000
+<<<<<<< HEAD:config/database.yml
   username:
   password:
   host: localhost
 
 
 
+=======
+  username: rtaff2012
+  password: leonruss
+  host: localhost
+>>>>>>> _russday1:radar/config/database.yml
