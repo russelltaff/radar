@@ -1,0 +1,57 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+
+
+
+
+SCRUM Day 1: 
+
+As an employer, I would like to create a login / authentication so that I can securely store my information
+
+
+
+1) Initialize 
+2) Set up schema
+3) Set up employer / user table (as a boolean) 
+5) Migrate / Seed
+
+US1: As an employer, I would like to be able to login and create a profile
+
+1) EDIT controller
+2) Add to view
+As an employer I would like to be able to post job listings
+
+US2: As a student, I would like to create a login / authentication so that I can securely store my information
+
+US3: As a student, I would like to be able to login and create a profile
+
+US4: As a student I would like to create a job wanted post
+
+US5: As an employer, I want to be able to view all student posts
