@@ -4193,3 +4193,57 @@ ActionController::RoutingError (No route matches [GET] "/resumes/original/missin
   Rendered /Users/rtaff2012/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (26.5ms)
 >>>>>>> 78d9132fba8bb582208b8be0199caa410c1a5304
 >>>>>>> master
+
+
+Started GET "/session/new" for 127.0.0.1 at 2013-11-12 13:49:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 369ms (Views: 339.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-12 13:49:08 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-12 13:49:08 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-12 13:49:08 -0500
+
+
+Started GET "/assets/radarstyle.css?body=1" for 127.0.0.1 at 2013-11-12 13:49:08 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-12 13:49:08 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-12 13:49:08 -0500
+
+
+Started GET "/assets/radar_logo.png" for 127.0.0.1 at 2013-11-12 13:49:08 -0500
+
+
+Started GET "/session/new" for 127.0.0.1 at 2013-11-12 13:49:10 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-11-12 13:49:11 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (186.5ms)
+  Rendered users/new.html.erb within layouts/application (196.9ms)
+Completed 200 OK in 336ms (Views: 202.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2013-11-12 13:49:13 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-11-12 13:49:13 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.4ms)
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms)
