@@ -10,7 +10,7 @@ before_action :authenticated!, :set_user, :authorized!, except: [:new, :create]
     @user = User.new(user_params)
     if @user.save
 
-      redirect_to user_path(@user)
+      redirect_to @user.type == "Student" ? student_path(@user) : employer_path(@user)
       # return to signup page
     else
       render :new
