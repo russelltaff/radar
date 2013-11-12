@@ -1,4 +1,20 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RenameUsersPasswordColumn (20131111201004)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" RENAME COLUMN "password" TO "password_digest"[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131111201004"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddCompanySize (20131111204837)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD COLUMN "company_size" character varying(255)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20131111204837"]]
+  [1m[36m (32.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+=======
   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
 
@@ -90,6 +106,7 @@ Processing by UsersController#new as HTML
   Rendered users/_form.html.erb (50.8ms)
   Rendered users/new.html.erb within layouts/application (70.7ms)
 Completed 200 OK in 76ms (Views: 74.9ms | ActiveRecord: 0.0ms)
+>>>>>>> 78d9132fba8bb582208b8be0199caa410c1a5304
 =======
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Migrating to AddTimestampsUsersAgain (20131111200355)
@@ -124,7 +141,111 @@ Migrating to AddCompanySize (20131111204837)
   [1m[35m (0.4ms)[0m  COMMIT
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> dc438b1e1dc6dc79ca373823c592075bbfe0157c
+<<<<<<< HEAD
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-11-11 18:25:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (143.9ms)
+  Rendered users/new.html.erb within layouts/application (158.3ms)
+Completed 200 OK in 936ms (Views: 849.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-11 18:25:56 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-11 18:25:56 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-11 18:25:56 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-11 18:25:56 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-11 18:25:56 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-11 18:26:02 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-11 18:26:02 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-11 18:26:02 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-11 18:26:02 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-11 18:26:02 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-11 18:26:02 -0500
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-11-11 21:41:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (179.4ms)
+  Rendered users/new.html.erb within layouts/application (185.4ms)
+Completed 200 OK in 380ms (Views: 323.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-11 21:41:30 -0500
+
+
+Started GET "/assets/radarstyle.css?body=1" for 127.0.0.1 at 2013-11-11 21:41:30 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-11 21:41:30 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-11 21:41:30 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-11 21:41:30 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-11 21:41:30 -0500
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-11-11 21:43:36 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.7ms)
+  Rendered users/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 64ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
+
+
+Started GET "/assets/radarstyle.css?body=1" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
+
+
+Started GET "/assets/radar_logo.png" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
+=======
+=======
 >>>>>>> master
+>>>>>>> 78d9132fba8bb582208b8be0199caa410c1a5304
 =======
   [1m[36mUser Load (12.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
 
@@ -558,6 +679,8 @@ Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-11 20:06:0
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-11 20:06:01 -0500
 >>>>>>> 3761046848eb562b9f38d67783bbe1739f2c434c
+<<<<<<< HEAD
+=======
 
 
 Started GET "/" for 127.0.0.1 at 2013-11-12 10:14:17 -0500
@@ -4068,3 +4191,5 @@ ActionController::RoutingError (No route matches [GET] "/resumes/original/missin
   Rendered /Users/rtaff2012/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
   Rendered /Users/rtaff2012/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
   Rendered /Users/rtaff2012/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (26.5ms)
+>>>>>>> 78d9132fba8bb582208b8be0199caa410c1a5304
+>>>>>>> master
