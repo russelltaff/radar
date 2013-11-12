@@ -17,6 +17,10 @@ before_action :authenticated!, :set_student, :authorized!, except: [:new, :creat
     end
   end 
 
+  def create
+  @student = Student.create( params[:student] )
+end
+
   private
 
   # security ########
@@ -30,7 +34,7 @@ before_action :authenticated!, :set_student, :authorized!, except: [:new, :creat
 
   def authorized!
     unless @student.id == session[:user_id]
-      redirect_to user_path(session[:user_id])
+      redirect_to user_path(session[:user_id]) 
     end
   end
 
