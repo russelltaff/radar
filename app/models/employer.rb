@@ -7,4 +7,5 @@ class Employer < User
   #   square: '200x200',
   #   medium: '300x300'
   # }  
+  has_attached_file :photo
 end 

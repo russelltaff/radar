@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController  
 before_action :authenticated!, :set_student, :authorized!, except: [:new, :create]
+#TODO students should be able to look at other students' profiles
 
   def show 
     render :show

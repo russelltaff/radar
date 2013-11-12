@@ -9,11 +9,10 @@
     <div class="column-50">
     <p><%= current_user.email %></p>
     <p><%= current_user.phone %></p>
-    <p><%= current_user.name %></p>
-    <p><%= current_user.github_url %></p>
-    <p><%= current_user.portfolio_url %></p>
+    <p><%= "github URL: " %><%=current_user.github_url %></p>
+    <p><%= "Portfolio: " %><%=current_user.portfolio_url %></p>
 
-    <p>RESUME: <%= link_to "Doc", current_user.resume.url %>
+    <p>Resum&eacute: <%= link_to "Doc", current_user.resume.url %>
     <p><img src="<%= current_user.photo.url %>" /></p>
 
     <p><%= @current_user.summary %></p>
