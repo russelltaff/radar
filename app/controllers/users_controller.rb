@@ -8,8 +8,8 @@ before_action :authenticated!, :set_user, :authorized!, except: [:new, :create]
 
   def create
     @user = User.new(user_params)
+    # binding.pry
     if @user.save
-
       redirect_to @user.type == "Student" ? student_path(@user) : employer_path(@user)
       # return to signup page
     else
@@ -21,7 +21,7 @@ before_action :authenticated!, :set_user, :authorized!, except: [:new, :create]
 
   # security ########
   def user_params
-    params.require(:user).permit(:email, :name, :type, :password, :password_confirmation)
+    params.require(:user).permit(:name, :type, :email, :password, :password_confirmation)
   end
 
   def set_user
