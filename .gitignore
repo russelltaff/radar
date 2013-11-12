@@ -13,8 +13,13 @@
 
 
 # Ignore all logfiles and tempfiles.
+<<<<<<< HEAD
 /log/*.log
 log/development.log
+=======
+/log/development.log
+/db/schema.rb
+>>>>>>> 3761046848eb562b9f38d67783bbe1739f2c434c
 /tmp
 /db/schema.rb
 /config/database.yml
