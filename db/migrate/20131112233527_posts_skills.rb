@@ -1,6 +1,6 @@
 class PostsSkills < ActiveRecord::Migration
   def change
-    create table :posts_skills do |t|
+    create_table :posts_skills do |t|
       t.belongs_to :post, null: false
       t.belongs_to :skill, null: false
     end
