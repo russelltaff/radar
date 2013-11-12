@@ -22,7 +22,7 @@ before_action :authenticated!, :set_student, :authorized!, except: [:new, :creat
 
   # security ########
   def student_params
-    params.require(:student).permit(:email, :name, :type, :password, :password_confirmation, :city, :state, :phone, :summary, :portfolio_url, :github_url, :resume)
+    params.require(:student).permit(:email, :name, :type, :password, :password_confirmation, :city, :state, :phone, :summary, :portfolio_url, :github_url, :resume, :photo)
   end
 
   def set_student 
