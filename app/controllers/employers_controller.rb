@@ -1,5 +1,5 @@
 class EmployersController < ApplicationController  
-before_action :authenticated!, :set_employer, :authorized!, except: [:new, :create]
+  before_action :authenticated!, :set_employer, :authorized!, except: [:new, :create]
 
   def show 
     render :show
