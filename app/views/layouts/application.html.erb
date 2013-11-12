@@ -14,12 +14,8 @@
         <li><a href="">Search</a></li>
         <li><a href="">POST</a></li>
         <% if logged_in? %> 
-          <% @user=User.find(params[:id]) %> 
-            <% if @user.type == "Student" %> 
-              <li><%= link_to @user.name, student_path(@user) %></li>
-            <% else %> 
-              <li><%= link_to @user.name, employer_path(@user) %></li>
-            <% end %> 
+          <% user=User.find(params[:id]) %> 
+            <li><%= link_to user.name, user.type == "Student" ? student_path(user) : employer_path(user) %></li>
             <li><%= link_to 'Logout', session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to 'Sign up', new_user_path %></li>
