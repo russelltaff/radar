@@ -1,4 +1,15 @@
-<h1>Welcome <%= current_user.name %>!</h1>
-
-<p>This is a student</p> 
-
+  <h1><%= current_user.name %></h1>
+<div class="student">
+  <div class="column-50">
+    <p><%= #image_url %></p>
+    <p><%= current_user.city + ", " + current_user.state %></p>
+  </div>
+    <div class="column-50">
+    <p><%= current_user.email %></p>
+    <p><%= current_user.phone %></p>
+    <p><%= current_user.name %></p>
+    <p><%= current_user.github_url %></p>
+    <p><%= current_user.portfolio_url %></p>
+    <p><%= #resume# %></p>
+  </div>
+</div>
