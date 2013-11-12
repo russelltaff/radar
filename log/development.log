@@ -309,3 +309,155 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-11 19:38:02
 
 
 Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-11 19:38:02 -0500
+
+
+Started GET "/employers/1/edit" for 127.0.0.1 at 2013-11-11 19:38:50 -0500
+Processing by EmployersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Employer') AND "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered employers/_form.html.erb (10.6ms)
+  Rendered employers/edit.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 19ms (Views: 14.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-11 19:38:50 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-11 19:38:50 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-11 19:38:50 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-11 19:38:50 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-11 19:38:50 -0500
+
+
+Started GET "/employers/1/edit" for 127.0.0.1 at 2013-11-11 19:51:26 -0500
+Processing by EmployersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 8ms
+
+RuntimeError (`attr_accessible` is extracted out of Rails into a gem. Please use new recommended protection model for params(strong_parameters) or add `protected_attributes` to your Gemfile to use old one.):
+  app/models/employer.rb:2:in `<class:Employer>'
+  app/models/employer.rb:1:in `<top (required)>'
+  app/controllers/employers_controller.rb:28:in `set_employer'
+
+
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/employers/1/edit" for 127.0.0.1 at 2013-11-11 19:52:30 -0500
+Processing by EmployersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 8ms
+
+RuntimeError (`attr_accessible` is extracted out of Rails into a gem. Please use new recommended protection model for params(strong_parameters) or add `protected_attributes` to your Gemfile to use old one.):
+  app/models/employer.rb:2:in `<class:Employer>'
+  app/models/employer.rb:1:in `<top (required)>'
+  app/controllers/employers_controller.rb:28:in `set_employer'
+
+
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.3ms)
+
+
+Started GET "/employers/1/edit" for 127.0.0.1 at 2013-11-11 19:52:30 -0500
+Processing by EmployersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+RuntimeError (`attr_accessible` is extracted out of Rails into a gem. Please use new recommended protection model for params(strong_parameters) or add `protected_attributes` to your Gemfile to use old one.):
+  app/models/employer.rb:2:in `<class:Employer>'
+  app/models/employer.rb:1:in `<top (required)>'
+  app/controllers/employers_controller.rb:28:in `set_employer'
+
+
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.3ms)
+
+
+Started GET "/employers/1/edit" for 127.0.0.1 at 2013-11-11 19:52:31 -0500
+Processing by EmployersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+RuntimeError (`attr_accessible` is extracted out of Rails into a gem. Please use new recommended protection model for params(strong_parameters) or add `protected_attributes` to your Gemfile to use old one.):
+  app/models/employer.rb:2:in `<class:Employer>'
+  app/models/employer.rb:1:in `<top (required)>'
+  app/controllers/employers_controller.rb:28:in `set_employer'
+
+
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.7ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.8ms)
+
+
+Started GET "/employers/1/edit" for 127.0.0.1 at 2013-11-11 19:52:31 -0500
+Processing by EmployersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+RuntimeError (`attr_accessible` is extracted out of Rails into a gem. Please use new recommended protection model for params(strong_parameters) or add `protected_attributes` to your Gemfile to use old one.):
+  app/models/employer.rb:2:in `<class:Employer>'
+  app/models/employer.rb:1:in `<top (required)>'
+  app/controllers/employers_controller.rb:28:in `set_employer'
+
+
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.6ms)
+
+
+Started GET "/employers/1/edit" for 127.0.0.1 at 2013-11-11 19:53:12 -0500
+Processing by EmployersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms
+
+RuntimeError (`attr_accessible` is extracted out of Rails into a gem. Please use new recommended protection model for params(strong_parameters) or add `protected_attributes` to your Gemfile to use old one.):
+  app/models/employer.rb:2:in `<class:Employer>'
+  app/models/employer.rb:1:in `<top (required)>'
+  app/controllers/employers_controller.rb:28:in `set_employer'
+
+
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/daviskoh/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.4ms)
+
+
+Started GET "/employers/1/edit" for 127.0.0.1 at 2013-11-11 20:06:00 -0500
+Processing by EmployersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEmployer Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."type" IN ('Employer') AND "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered employers/_form.html.erb (53.7ms)
+  Rendered employers/edit.html.erb within layouts/application (76.3ms)
+Completed 200 OK in 354ms (Views: 103.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-11 20:06:01 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-11 20:06:01 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-11 20:06:01 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-11 20:06:01 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-11 20:06:01 -0500

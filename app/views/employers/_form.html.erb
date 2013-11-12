@@ -23,6 +23,9 @@
     <%= f.text_field attr.to_sym %>
   <% end %>
 
+  <%= f.label :photo %>
+  <%= f.file_field :photo %>
+
   <%= f.label :company_size %>
   <%= f.select :company_size, ["myself only","2-10","11-50","51-200","201-500","501-1000","1000+"] %>
 
