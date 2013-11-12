@@ -1,5 +1,6 @@
 <h1>Welcome <%= current_user.name %>!</h1>
-
+<% #TODO make it so that only the user can see the edit link while in their own profile so that no one else can see the edit link while looking at other users profile. Call me Ishmael. %>
+<%= link_to "Edit Your Profile", edit_employer_path %>
 <div class="employer">
   <div class="column-50">
     <p></p>
@@ -15,7 +16,7 @@
     <p><%= current_user.email %></p>
     <p><%= current_user.company_url %></p>
   </div>
-
+  <p><img src="<%= current_user.photo.url %>" /></p>
   <p>
     <%= current_user.summary %>
   </p>
