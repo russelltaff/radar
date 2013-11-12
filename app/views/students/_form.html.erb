@@ -8,6 +8,10 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
 
+  <%= form_for @student, :url => students_path, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :photo %>
+<% end %>
+
   <%= f.label :email %>
   <%= f.email_field :email %>
 
