@@ -16,9 +16,6 @@ before_action :authenticated!, :set_student, :authorized!, except: [:new, :creat
       render :edit
     end
   end 
-
-  def create
-  @student = Student.create( params[:student] )
 end
 
   private
