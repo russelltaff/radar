@@ -1,4 +1,20 @@
-<h1>Welcome <%= current_user.name %>!</h1>
+  <h1><%= current_user.name %></h1>
+<div class="student">
+  <div class="column-50">
+    
+    <p><%= image_tag @student.photo.url %></p>
 
-<p>This is a student</p> 
+    <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? %></p>
+  </div>
+    <div class="column-50">
+    <p><%= current_user.email %></p>
+    <p><%= current_user.phone %></p>
+    <p><%= current_user.name %></p>
+    <p><%= current_user.github_url %></p>
+    <p><%= current_user.portfolio_url %></p>
 
+    <p><%= image_tag @student.resume.url %></p>
+    
+    <p><%= @current_user.summary %></p>
+  </div>
+</div>

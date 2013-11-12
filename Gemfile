@@ -5,6 +5,7 @@ gem 'rails', '4.0.0'
 
 # for attachments (images for profile)
 gem 'paperclip', '~> 3.0'
+gem 'aws-sdk'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
@@ -39,6 +40,8 @@ end
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+gem 'protected_attributes'
 
 # Use unicorn as the app server
 # gem 'unicorn'

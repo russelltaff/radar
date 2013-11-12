@@ -17,11 +17,18 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
-  <% array = ["city", "state", "phone", "summary", "company_url"] %>
-  <% array.each do |attr| %>
+  <% attributes = ["city", "state", "phone", "summary", "company_url"] %>
+  <% attributes.each do |attr| %>
     <%= f.label attr.to_sym %>
     <%= f.text_field attr.to_sym %>
   <% end %>
+
+ <%= form_for @employer, :url => employers_path, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :photo %>
+<% end %>
+
+  <%= f.label :company_size %>
+  <%= f.select :company_size, ["myself only","2-10","11-50","51-200","201-500","501-1000","1000+"] %>
 
   <%= f.label :apprentice_partner %> 
   <%= f.check_box :apprentice_partner %> 
