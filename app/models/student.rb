@@ -5,4 +5,5 @@ class Student < User
   #   :thumb => "100x100",
   #   :square => "200x200"}
   has_attached_file :resume
+  has_attached_file :photo 
 end 
