@@ -1,5 +1,6 @@
 class EmployersController < ApplicationController  
   before_action :authenticated!, :set_employer, :authorized!, except: [:new, :create]
+#TODO employers should be able to look at other employers' profiles
 
   def show 
     render :show

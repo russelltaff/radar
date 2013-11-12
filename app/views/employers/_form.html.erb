@@ -4,7 +4,7 @@
   <% end %>
 <% end %>
 
-<%= form_for @employer do |f| %>
+<%= form_for @employer, html: {multipart: true} do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
@@ -22,10 +22,9 @@
     <%= f.label attr.to_sym %>
     <%= f.text_field attr.to_sym %>
   <% end %>
-
- <%= form_for @employer, :url => employers_path, :html => { :multipart => true } do |form| %>
-  <%= form.file_field :photo %>
-<% end %>
+  
+  <%= f.label :photo %>
+  <%= f.file_field :photo %>
 
   <%= f.label :company_size %>
   <%= f.select :company_size, ["myself only","2-10","11-50","51-200","201-500","501-1000","1000+"] %>
