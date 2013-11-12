@@ -16,13 +16,13 @@ before_action :authenticated!, :set_student, :authorized!, except: [:new, :creat
       render :edit
     end
   end 
-end
+
 
   private
 
   # security ########
   def student_params
-    params.require(:student).permit(:email, :name, :type, :password, :password_confirmation, :city, :state, :phone, :summary, :portfolio_url, :github_url)
+    params.require(:student).permit(:email, :name, :type, :password, :password_confirmation, :city, :state, :phone, :summary, :portfolio_url, :github_url, :resume)
   end
 
   def set_student 

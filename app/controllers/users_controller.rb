@@ -7,10 +7,9 @@ before_action :authenticated!, :set_user, :authorized!, except: [:new, :create]
   end 
 
   def create
-    binding.pry
     @user = User.new(user_params)
+    # binding.pry
     if @user.save
-
       redirect_to @user.type == "Student" ? student_path(@user) : employer_path(@user)
       # return to signup page
     else

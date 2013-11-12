@@ -4,8 +4,5 @@ class Student < User
   #   :medium => "300x300", 
   #   :thumb => "100x100",
   #   :square => "200x200"}
-  # has_attached_file :resume, :styles => { 
-  #   :medium => "300x300", 
-  #   :thumb => "100x100",
-    # :square => "200x200"}
+  has_attached_file :resume
 end 
