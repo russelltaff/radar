@@ -10,8 +10,8 @@
 
   <%= f.label :photo %>
   <%= form_for @student, :url => student_path, :html => { :multipart => true } do |form| %>
-  <%= form.file_field :photo %>
-<% end %>
+    <%= form.file_field :photo %>
+  <% end %>
 
   <% array = ["city", "state", "phone", "summary", "portfolio_url", "github_url"] %>
   <% array.each do |attr| %>
@@ -21,7 +21,8 @@
 
   <%= f.label :resume %>
   <%= form_for @student, :url => student_path, :html => { :multipart => true } do |form| %>
-  <%= form.file_field :resume %>
-<% end %>
+    <%= form.file_field :resume %>
+  <% end %>
+  
   <%= f.submit logged_in? ? 'Update' : 'Sign Up' %>
 <% end %>
