@@ -91,3 +91,57 @@ Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-11 18:26:02 
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-11 18:26:02 -0500
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-11-11 21:41:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (179.4ms)
+  Rendered users/new.html.erb within layouts/application (185.4ms)
+Completed 200 OK in 380ms (Views: 323.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-11 21:41:30 -0500
+
+
+Started GET "/assets/radarstyle.css?body=1" for 127.0.0.1 at 2013-11-11 21:41:30 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-11 21:41:30 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-11 21:41:30 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-11 21:41:30 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-11 21:41:30 -0500
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-11-11 21:43:36 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.7ms)
+  Rendered users/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 64ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
+
+
+Started GET "/assets/radarstyle.css?body=1" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
+
+
+Started GET "/assets/radar_logo.png" for 127.0.0.1 at 2013-11-11 21:43:37 -0500
