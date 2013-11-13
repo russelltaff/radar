@@ -1,0 +1,36 @@
+<h1>Create a post!</h1>
+<% if current_user.type == "Student" %>
+
+    <h3> This is a student post </h3>
+    <%= form_for @post, url: student_posts_path, html: {method: "post"} do |f| %>
+      <%=f.hidden_field :user_id, value: current_user.id %>
+      <%=f.hidden_field :for_hire, value: true %>  
+
+      <%= f.label :description %>
+      <%= f.text_area(:description, size: '50x10') %>
+
+      <%= f.label :position_type %>
+      <%= f.select :position_type, ["Product Manager","Entrepreneur","Digital Marketer", "Founder/Co-Founder", "UX Designer", "Product Designer", "Full-Stack Developer", "Back-end Developer", "Front-end Developer"] %>
+
+      <%= f.submit 'Submit post!' %>
+    <% end %> 
+
+  <% else %> 
+    <h3> This is an employer post </h3>
+
+    <%= form_for @post, url: employer_posts_path, html: {method: "post"} do |f| %>
+      <%=f.hidden_field :user_id, value: current_user.id %>
+      <%=f.hidden_field :for_hire, value: false %>  
+      
+      <%= f.label :description %>
+      <%= f.text_area(:description, size: '50x10') %>
+
+      <%= f.label :position_type %>
+      <%= f.select :position_type, ["Product Manager","Entrepreneur","Digital Marketer", "Founder/Co-Founder", "UX Designer", "Product Designer", "Full-Stack Developer", "Back-end Developer", "Front-end Developer"] %>
+
+      <%= f.submit 'Submit post!' %>
+    <% end %> 
+
+<% end %> 
+
+    

@@ -2,6 +2,8 @@
   <h2><%= current_user.name %></h2>
 
   <p class="edit_button"><%= link_to "Edit Your Profile", edit_student_path %></p>
+  <h3><%= link_to "Create a Post", new_student_post_path(current_user.id) %></h3>
+
 
   <div class="column-50">
     <img src="<%= current_user.photo.url %>" />
@@ -14,10 +16,12 @@
     <p><%= current_user.phone %></p>
     <p><%= "github URL: " %><%=current_user.github_url %></p>
     <p><%= "Portfolio: " %><%=current_user.portfolio_url %></p>
-
+   
     <p>Resum&#233;: <%= link_to current_user.resume_file_name, current_user.resume.url %>
+     
   </div>
 
   <p class="summary-text"><%= @current_user.summary %></p>
+
 </div>
 
