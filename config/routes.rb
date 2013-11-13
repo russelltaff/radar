@@ -5,19 +5,19 @@ Radar::Application.routes.draw do
   resources :users, only: [:new, :create]
 
   resources :students, only: [:show, :edit, :update] do 
-    collection do
+    member do
       get "search"
     end
     
-    resources :posts, only: [:new, :create, :show]
+    resources :posts
   end 
 
   resources :employers, only: [:show, :edit, :update] do 
-    collection do
+    member do
       get "search"
     end
 
-    resources :posts, only: [:new, :create, :show]
+    resources :posts 
   end 
   
   resource :session, only: [:new, :create, :destroy] 
