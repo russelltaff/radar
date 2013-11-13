@@ -7,6 +7,7 @@ before_action :authenticated!, :set_user, :authorized!, except: [:new, :create]
   end 
 
   def create
+    #TODO we need to render the profile edit page before we the profile page because of the error being thrown on login
     @user = User.new(user_params)
     # binding.pry
     if @user.save
