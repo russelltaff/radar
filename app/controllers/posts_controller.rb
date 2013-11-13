@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   def create
     #TODO validation for nil posts 
+    #TODO make sure student can create only one hire-me post
     @post = Post.new(post_params)
     if @post.save 
       redirect_to current_user.type == "Student" ? student_post_path(current_user.id, @post.id) : employer_post_path(current_user.id, @post.id)
