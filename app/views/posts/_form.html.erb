@@ -1,36 +1,16 @@
-<h1>Create a post!</h1>
-<% if current_user.type == "Student" %>
+<h1>Create a <%= current_user.type == "Student" ? "Hire Me" : "We're Hiring" %> post!</h1>
 
-    <h3> This is a student post </h3>
-    <%= form_for @post, url: student_posts_path, html: {method: "post"} do |f| %>
-      <%=f.hidden_field :user_id, value: current_user.id %>
-      <%=f.hidden_field :for_hire, value: true %>  
+<% path = current_user.type == "Student" ? student_posts_path : employer_posts_path %>
 
-      <%= f.label :description %>
-      <%= f.text_area(:description, size: '50x10') %>
+<%= form_for @post, url: path, html: {method: "post"} do |f| %>
+  <%=f.hidden_field :user_id, value: current_user.id %>
+  <%=f.hidden_field :for_hire, value: true %>  
 
-      <%= f.label :position_type %>
-      <%= f.select :position_type, ["Product Manager","Entrepreneur","Digital Marketer", "Founder/Co-Founder", "UX Designer", "Product Designer", "Full-Stack Developer", "Back-end Developer", "Front-end Developer"] %>
+  <%= f.label :description %>
+  <%= f.text_area(:description, size: '50x10') %>
 
-      <%= f.submit 'Submit post!' %>
-    <% end %> 
+  <%= f.label :position_type %>
+  <%= f.select :position_type, ["Product Manager","Entrepreneur","Digital Marketer", "Founder/Co-Founder", "UX Designer", "Product Designer", "Full-Stack Developer", "Back-end Developer", "Front-end Developer"] %>
 
-  <% else %> 
-    <h3> This is an employer post </h3>
-
-    <%= form_for @post, url: employer_posts_path, html: {method: "post"} do |f| %>
-      <%=f.hidden_field :user_id, value: current_user.id %>
-      <%=f.hidden_field :for_hire, value: false %>  
-      
-      <%= f.label :description %>
-      <%= f.text_area(:description, size: '50x10') %>
-
-      <%= f.label :position_type %>
-      <%= f.select :position_type, ["Product Manager","Entrepreneur","Digital Marketer", "Founder/Co-Founder", "UX Designer", "Product Designer", "Full-Stack Developer", "Back-end Developer", "Front-end Developer"] %>
-
-      <%= f.submit 'Submit post!' %>
-    <% end %> 
-
+  <%= f.submit 'Submit post!' %>
 <% end %> 
-
-    

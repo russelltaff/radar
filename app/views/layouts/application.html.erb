@@ -11,13 +11,24 @@
     <h1>GA Radar</h1>
     <nav>
       <ul> 
-        <li><a href="">Search</a></li>
         <% if logged_in? %> 
-        <li><%= link_to "POST", current_user.type == "Student" ? new_student_post_path(current_user) : new_employer_post_path(current_user) %> </li>
+        <% #TODO add search functional pages; placeholders being used below %>
+          <li><%= link_to "Search", current_user.type == "Student" ? new_student_post_path(current_user) : new_employer_post_path(current_user) %>
+              <ul class="dropdown_post">
+                 <li><%= link_to "Create New POST", current_user.type == "Student" ? new_student_post_path(current_user) : new_employer_post_path(current_user) %></li>
+                 <li><%= link_to "See Your POSTs", current_user.type == "Student" ? student_path(current_user) : employer_path(current_user) %></li>
+              </ul>
+            </li>
             <li><%= link_to current_user.name, current_user.type == "Student" ? student_path(current_user) : employer_path(current_user) %>
-              <ul class="dropdown">
+              <ul class="dropdown_profile">
                 <li><%= link_to "Edit Profile", current_user.type == "Student" ? edit_student_path(current_user) : edit_employer_path(current_user) %></li>
                 <li><a href="">Account Settings</a></li>
+              </ul>
+            </li>
+            <li><%= link_to "POST", current_user.type == "Student" ? new_student_post_path(current_user) : new_employer_post_path(current_user) %>
+              <ul class="dropdown_post">
+                 <li><%= link_to "Create New POST", current_user.type == "Student" ? new_student_post_path(current_user) : new_employer_post_path(current_user) %></li>
+                 <li><%= link_to "See Your POSTs", current_user.type == "Student" ? student_path(current_user) : employer_path(current_user) %></li>
               </ul>
             </li>
             <li><%= link_to 'Logout', session_path, :method => :delete %></li>

@@ -10,14 +10,14 @@
   </div>
 
   <div class="column-50">
-    <p><%= "Company Type: " + current_user.company_type %></p>
-    <p><%= "Contact Us: " + current_user.phone %></p>
+    <p><%= "Company Type: " + current_user.company_type unless current_user.company_type.nil? %></p>
+    <p><%= "Contact Us: " + current_user.phone unless current_user.phone.nil? %></p>
     <p><%= current_user.email %></p>
-    <p><%= "Visit Us Online @: " +  current_user.company_url %></p>
+    <p><%= "Visit Us Online @: " +  current_user.company_url unless current_user.company_url.nil? %></p>
   </div>
   <p><img src="<%= current_user.photo.url %>" /></p>
   <p>
-    <%="About " + current_user.name + ": " +current_user.summary %>
+    <%="About " + current_user.name + ": " +current_user.summary unless current_user.summary.nil? %>
   </p>
 
   <h3><%= link_to "Create a Post", new_employer_post_path(current_user.id) %></h3>

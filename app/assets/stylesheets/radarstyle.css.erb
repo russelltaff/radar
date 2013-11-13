@@ -34,7 +34,7 @@ nav ul {
 nav ul li {
    display: inline;
 }
-nav ul.dropdown {
+nav ul.dropdown_profile, nav ul.dropdown_post, nav ul.dropdown_search {
    display: none;
    position: relative;
    float: left;
@@ -45,7 +45,7 @@ nav ul.dropdown {
    border-left: 1px solid #ccc;
    border-bottom: 1px solid #ccc;
 }
-nav ul.dropdown li {
+nav ul.dropdown_profile li, nav ul.dropdown_post li, nav ul.dropdown_search li {
    display: block;
 }
 /* Main Nav Links */
@@ -66,21 +66,21 @@ nav ul li a:active {
    color: #f03;
 }
 /* Nav Dropdown Links */
-nav ul.dropdown li a:link {
+nav ul.dropdown_profile li a:link, nav ul.dropdown_post li a:link, nav ul.dropdown_search li a:link {
    display: block;
    color: #000;
    padding: 15px;
    text-decoration: none;
 }
-nav ul.dropdown li a:visited {
+nav ul.dropdown_profile li a:visited, nav ul.dropdown_post li a:visited, nav ul.dropdown_search li a:visited  {
    color: #000;
 }
-nav ul.dropdown li a:hover {
+nav ul.dropdown_profile li a:hover, nav ul.dropdown_post li a:hover, nav ul.dropdown_search li a:hover {
    color: #fff;
    padding: 15px;
    background-color: #f03;
 }
-nav ul.dropdown li a:active {
+nav ul.dropdown_profile li a:active, nav ul.dropdown_post li a:active, nav ul.dropdown_search li a:active {
    color: #fff;
    background-color: #f03;
 }
