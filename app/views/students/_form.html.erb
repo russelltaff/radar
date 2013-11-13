@@ -5,29 +5,39 @@
 <% end %>
 
 <%= form_for @student, html: {multipart: true} do |f| %>
+ <% #TODO take this info out of profile update, only show in 'edit account' %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %><br />
 
   <%= f.label :email %>
-  <%= f.email_field :email %>
+  <%= f.email_field :email %><br />
 
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password %><br />
 
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation %><br />
 
-  <% array = ["city", "state", "phone", "summary", "portfolio_url", "github_url"] %>
-  <% array.each do |attr| %>
+  <hr />
+
+  <% user_inputs = ["city", "state", "phone", "portfolio_url", "github_url"] %>
+  <% user_inputs.each do |attr| %>
     <%= f.label attr.to_sym %>
-    <%= f.text_field attr.to_sym %>
+    <%= f.text_field attr.to_sym %><br />
   <% end %>
 
-  <%= f.label :resume %>
-  <%= f.file_field :resume %>
+  <%= f.label :summary %>
+  <%= f.text_area :summary %><br />
 
-  <%= f.label :photo %>
-  <%= f.file_field :photo %>
+  <div class="column-50">
+    <%= f.label :resume %>
+    <%= f.file_field :resume %><br />
+  </div>
+
+  <div class="column-50">
+    <%= f.label :photo %>
+    <%= f.file_field :photo %><br />
+  </div>
   
   <%= f.submit logged_in? ? 'Update' : 'Sign Up' %>
 <% end %>
