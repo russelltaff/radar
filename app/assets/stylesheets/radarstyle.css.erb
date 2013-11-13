@@ -34,16 +34,44 @@ nav ul {
 nav ul li {
    display: inline;
 }
-nav ul.dropdown_profile, nav ul.dropdown_post, nav ul.dropdown_search {
+nav ul.dropdown_search {
+   display: none;
+   position: relative;
+   float: left;
+   top: 37px;
+   left: 154px;
+   padding: 0;
+   border: 1px solid #ccc;
+   border-top: 0;
+   -moz-box-shadow: 0 4px 2px -2px #888;
+   -webkit-box-shadow: 0 4px 2px -2px #888;
+   box-shadow: 0 4px 2px -2px #888;
+}
+nav ul.dropdown_post {
+   display: none;
+   position: relative;
+   float: left;
+   top: 37px;
+   left: 270px;
+   padding: 0;
+   border: 1px solid #ccc;
+   border-top: 0;
+   -moz-box-shadow: 0 4px 2px -2px #888;
+   -webkit-box-shadow: 0 4px 2px -2px #888;
+   box-shadow: 0 4px 2px -2px #888;
+}
+nav ul.dropdown_profile {
    display: none;
    position: relative;
    float: left;
    top: 37px;
    left: 358px;
    padding: 0;
-   border-right: 1px solid #ccc;
-   border-left: 1px solid #ccc;
-   border-bottom: 1px solid #ccc;
+   border: 1px solid #ccc;
+   border-top: 0;
+   -moz-box-shadow: 0 4px 2px -2px #888;
+   -webkit-box-shadow: 0 4px 2px -2px #888;
+   box-shadow: 0 4px 2px -2px #888;
 }
 nav ul.dropdown_profile li, nav ul.dropdown_post li, nav ul.dropdown_search li {
    display: block;
@@ -57,12 +85,12 @@ nav ul li a:link {
 nav ul li a:visited {
    color: #fff;
 }
-nav ul li a:hover {
+nav ul li:hover > a {
    color: #f03;
    padding: 25px;
    background-color: #fff;
 }
-nav ul li a:active {
+nav ul li:active > a  {
    color: #f03;
 }
 /* Nav Dropdown Links */
