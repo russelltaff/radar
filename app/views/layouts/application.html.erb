@@ -14,7 +14,11 @@
         <li><a href="">Search</a></li>
         <li><a href="">POST</a></li>
         <% if logged_in? %> 
-            <li><%= link_to current_user.name, current_user.type == "Student" ? student_path(current_user) : employer_path(current_user) %></li>
+            <li><%= link_to current_user.name, current_user.type == "Student" ? student_path(current_user) : employer_path(current_user) %>
+              <ul class="dropdown">
+                <li><%= link_to "Edit Profile", current_user.type == "Student" ? edit_student_path(current_user) : edit_employer_path(current_user) %></li>
+              </ul>
+            </li>
             <li><%= link_to 'Logout', session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to 'Sign up', new_user_path %></li>
