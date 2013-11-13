@@ -14,8 +14,8 @@
 
     <p>Resum&eacute: <%= link_to "Doc", current_user.resume.url %>
     <p><img src="<%= current_user.photo.url %>" /></p>
-
     <p><%= @current_user.summary %></p>
   </div>
+    <h3><%= link_to "Create a Post", new_student_post_path(current_user.id) %></h3>
 </div>
 
