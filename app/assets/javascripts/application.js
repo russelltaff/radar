@@ -15,26 +15,3 @@
 //= require turbolinks
 //= require_tree .
 
-
-var addHoverListener = function(){
-   $($("ul.dropdown_profile").parent()).hover(function(){
-      $(this.children[1]).css("display", "block");
-   }, function() {
-      $(this.children[1]).css("display", "none");    
-   });
-   $($("ul.dropdown_post").parent()).hover(function(){
-      $(this.children[1]).css("display", "block");
-   }, function() {
-      $(this.children[1]).css("display", "none");    
-   });
-    $($("ul.dropdown_search").parent()).hover(function(){
-      $(this.children[1]).css("display", "block");
-   }, function() {
-      $(this.children[1]).css("display", "none");    
-   });
-}
-
-
-
-$(document).ready(addHoverListener); //adds when *user* loads or refreshes
-$(document).on("page:change", addHoverListener); //adds when rails loads
