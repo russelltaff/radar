@@ -26,93 +26,89 @@ nav {
    color: #fff;
    font-size: 1.1em;
 }
-nav ul {
-   list-style: none;
+nav ul.dropdown, nav ul.dropdown li, nav ul.dropdown ul {
+   margin: 0;
+   padding: 0;
+}
+nav ul.dropdown {
    float: right;
-   padding-right: 20px;
-}
-nav ul li {
-   display: inline;
-}
-nav ul.dropdown_search {
-   display: none;
    position: relative;
+   list-style: none;
+   padding: 20px;
+}
+nav ul.dropdown li {
+   /*display: inline;*/
    float: left;
-   top: 37px;
-   left: 154px;
-   padding: 0;
+   vertical-align: middle;
+   zoom: 1;
+}
+nav ul.dropdown ul {
+   display: none;
+   position: absolute;
+   float: left;
+   width: 220px;
+   margin: 14px 0 0 0;
+   top: 100%;
+   left: 0;
    border: 1px solid #ccc;
    border-top: 0;
    -moz-box-shadow: 0 4px 2px -2px #888;
    -webkit-box-shadow: 0 4px 2px -2px #888;
    box-shadow: 0 4px 2px -2px #888;
 }
-nav ul.dropdown_post {
-   display: none;
-   position: relative;
-   float: left;
-   top: 37px;
-   left: 270px;
-   padding: 0;
-   border: 1px solid #ccc;
-   border-top: 0;
-   -moz-box-shadow: 0 4px 2px -2px #888;
-   -webkit-box-shadow: 0 4px 2px -2px #888;
-   box-shadow: 0 4px 2px -2px #888;
-}
-nav ul.dropdown_profile {
-   display: none;
-   position: relative;
-   float: left;
-   top: 37px;
-   left: 358px;
-   padding: 0;
-   border: 1px solid #ccc;
-   border-top: 0;
-   -moz-box-shadow: 0 4px 2px -2px #888;
-   -webkit-box-shadow: 0 4px 2px -2px #888;
-   box-shadow: 0 4px 2px -2px #888;
-}
-nav ul.dropdown_profile li, nav ul.dropdown_post li, nav ul.dropdown_search li {
+nav ul.dropdown li {
    display: block;
 }
+nav ul.dropdown li:hover {
+   position: relative;
+}
+nav ul.dropdown li:hover > ul {
+   display: block;
+}
+nav ul.dropdown ul li {
+   float: none;
+   position: relative;
+}
+nav ul.dropdown ul ul {
+   top: 0;
+   left: 100%;
+}
 /* Main Nav Links */
-nav ul li a:link {
+nav ul.dropdown li a:link {
    color: #fff;
    padding: 25px;
    text-decoration: none;
 }
-nav ul li a:visited {
+nav ul.dropdown li a:visited {
    color: #fff;
 }
-nav ul li:hover > a {
+nav ul.dropdown li:hover > a {
    color: #f03;
    padding: 25px;
    background-color: #fff;
 }
-nav ul li:active > a  {
+nav ul.dropdown li:active > a  {
    color: #f03;
 }
 /* Nav Dropdown Links */
-nav ul.dropdown_profile li a:link, nav ul.dropdown_post li a:link, nav ul.dropdown_search li a:link {
+nav ul.dropdown ul li a:link {
    display: block;
    color: #000;
    padding: 15px;
    text-decoration: none;
 }
-nav ul.dropdown_profile li a:visited, nav ul.dropdown_post li a:visited, nav ul.dropdown_search li a:visited  {
+nav ul.dropdown ul li a:visited {
    color: #000;
 }
-nav ul.dropdown_profile li a:hover, nav ul.dropdown_post li a:hover, nav ul.dropdown_search li a:hover {
+nav ul.dropdown ul li a:hover{
    color: #fff;
    padding: 15px;
    background-color: #f03;
 }
-nav ul.dropdown_profile li a:active, nav ul.dropdown_post li a:active, nav ul.dropdown_search li a:active {
+nav ul.dropdown ul li a:active {
    color: #fff;
    background-color: #f03;
 }
-
 /* Main content <div> in layout */
 div#content {
    position: relative;
