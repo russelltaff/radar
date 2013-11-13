@@ -3,7 +3,7 @@
 
     <h3> This is a student post </h3>
     <%= form_for @post, url: student_posts_path, html: {method: "post"} do |f| %>
-      <%=f.hidden_field :user_id, value: current_user.id %>  
+      <%=f.hidden_field :user_id, value: current_user.id %>
       <%=f.hidden_field :for_hire, value: true %>  
 
       <%= f.label :description %>
@@ -19,8 +19,8 @@
     <h3> This is an employer post </h3>
 
     <%= form_for @post, url: employer_posts_path, html: {method: "post"} do |f| %>
+      <%=f.hidden_field :user_id, value: current_user.id %>
       <%=f.hidden_field :for_hire, value: false %>  
-      <%=f.hidden_field :user_id, value: current_user.id %> 
       
       <%= f.label :description %>
       <%= f.text_area(:description, size: '50x10') %>

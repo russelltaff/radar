@@ -5,7 +5,7 @@ Radar::Application.routes.draw do
   resources :users, only: [:new, :create]
 
   resources :students, only: [:show, :edit, :update] do 
-      resources :posts, only: [:new, :create]
+      resources :posts, only: [:new, :create, :show]
   end 
 
   resources :employers, only: [:show, :edit, :update] do 

@@ -6,8 +6,18 @@ class PostsController < ApplicationController
   end 
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.new(post_params)
+    if @post.save 
+      redirect_to current_user.type == "Student" ? student_post_path(current_user.id, @post.id) : employer_post_path(current_user.id, @post.id)
+    else 
+      render :new 
+    end 
   end  
+
+  def show 
+    @post = Post.find(params[:id]) 
+    render :show 
+  end 
 
 private
 
