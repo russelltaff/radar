@@ -19,4 +19,8 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to(new_session_path)
   end
+
+  def student?
+    current_user.type == "Student"
+  end
 end
