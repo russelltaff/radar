@@ -18,6 +18,11 @@ before_action :authenticated!, :set_student, :authorized!, except: [:new, :creat
     end
   end 
 
+  def search
+  render :search 
+  end
+
+
 
   private
 

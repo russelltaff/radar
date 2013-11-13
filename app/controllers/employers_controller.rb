@@ -18,6 +18,11 @@ class EmployersController < ApplicationController
     end
   end 
 
+  def search
+    render :search
+  end
+
+
   private
 
   # security ########
