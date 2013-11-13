@@ -15,13 +15,13 @@
     <% end %> 
 
   <% else %> 
-    <h3> Welcome to your employer post! </h3>
+    <h3> This is an employer post </h3>
 
     <%= form_for @post, url: new_employer_post_path do |f| %>
       <%=f.hidden_field :for_hire, value: false %>  
 
       <%= f.label :description %>
-      <%= f.text_field :description %>
+      <%= f.text_area(:description, size: '50x10') %>
 
       <%= f.label :position_type %>
       <%= f.select :position_type, ["Product Manager","Entrepreneur","Digital Marketer", "Founder/Co-Founder", "UX Designer", "Product Designer", "Full-Stack Developer", "Back-end Developer", "Front-end Developer"] %>
