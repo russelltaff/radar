@@ -1,6 +1,6 @@
 class UsersController < ApplicationController  
-before_action :authenticated!, :set_user, :authorized!, except: [:new, :create]
-#TODO users should be able to look at other users' profiles
+  before_action :authenticated!, :set_user, :authorized!, except: [:new, :create]
+  #TODO users should be able to look at other users' profiles
   def new 
     @user = User.new
     render :new

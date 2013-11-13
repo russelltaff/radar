@@ -1,4 +1,7 @@
 class PostsController < ApplicationController  
+  before_action :authenticated!, :set_user
+  before_action :authorized!, except: [:show]
+  #TODO create post routes should not be accessible to unauthorized users
 
   def new 
     @post = Post.new
@@ -26,4 +29,15 @@ private
     params.require(:post).permit(:user_id, :for_hire, :description, :position_type)
   end
 
+  def set_user
+    params_id = current_user.type == "Student" ? params[:student_id] : params[:employer_id]
+    @user = User.find(params_id)
+  end
+
+  def authorized!
+    unless current_user.id == session[:user_id]
+      redirect_to current_user.type == "Student" ? student_path(session[:user_id]) : employer_path(session[:user_id])
+      # user_path(session[:user_id])
+    end
+  end
 end
