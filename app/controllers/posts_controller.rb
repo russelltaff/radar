@@ -1,4 +1,5 @@
 class PostsController < ApplicationController  
+  
 
   def new 
     @post = Post.new
@@ -26,4 +27,9 @@ private
     params.require(:post).permit(:user_id, :for_hire, :description, :position_type)
   end
 
+  def authorized!
+    unless current_user.id == session[:user_id]
+      redirect_to user_path(session[:user_id])
+    end
+  end
 end
