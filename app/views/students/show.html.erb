@@ -14,18 +14,14 @@
     <p><%= current_user.phone %></p>
     <p><%= "github URL: " %><%=current_user.github_url %></p>
     <p><%= "Portfolio: " %><%=current_user.portfolio_url %></p>
-
-<<<<<<< HEAD
-    <p>Resum&eacute: <%= link_to "Doc", current_user.resume.url %>
-    <p><img src="<%= current_user.photo.url %>" /></p>
     <p><%= @current_user.summary %></p>
   </div>
     <h3><%= link_to "Create a Post", new_student_post_path(current_user.id) %></h3>
-=======
+
     <p>Resum&eacute: <%= link_to "Resume", current_user.resume.url %>
   </div>
 
   <p class="summary-text"><%= @current_user.summary %></p>
->>>>>>> master
+
 </div>
 

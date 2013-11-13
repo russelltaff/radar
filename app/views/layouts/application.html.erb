@@ -12,18 +12,14 @@
     <nav>
       <ul> 
         <li><a href="">Search</a></li>
-        <li><a href="">POST</a></li>
+        <li><%= link_to "POST", current_user.type == "Student" ? new_student_post_path(current_user) : new_employer_post_path(current_user) %> </li>
         <% if logged_in? %> 
-<<<<<<< HEAD
-            <li><%= link_to current_user.name, current_user.type == "Student" ? student_path(current_user) : employer_path(current_user) %></li>
-=======
             <li><%= link_to current_user.name, current_user.type == "Student" ? student_path(current_user) : employer_path(current_user) %>
               <ul class="dropdown">
                 <li><%= link_to "Edit Profile", current_user.type == "Student" ? edit_student_path(current_user) : edit_employer_path(current_user) %></li>
                 <li><a href="">Account Settings</a></li>
               </ul>
             </li>
->>>>>>> master
             <li><%= link_to 'Logout', session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to 'Sign up', new_user_path %></li>
