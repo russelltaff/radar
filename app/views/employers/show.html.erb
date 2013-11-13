@@ -20,9 +20,12 @@
     <%="About " + current_user.name + ": " +current_user.summary unless current_user.summary.nil? %>
   </p>
 
-  <h3><%= link_to "Create a Post", new_employer_post_path(current_user.id) %></h3>
+  <div class="employer-post">
+    <% current_user.posts.each do |post| %>
+      <p>Hiring</p>
+      <p>Position: <%= post.position_type %></p>
+      <p>Description: <%= post.description %></p>
+      <p>Date: <%= post.created_at %></p>
+    <% end %>
+  </div>
 </div>
-</div>
-
-<%= link_to "Edit Your Profile", edit_employer_path %>
-
