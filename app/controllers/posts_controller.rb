@@ -1,5 +1,6 @@
 class PostsController < ApplicationController  
-  
+  before_action :authenticated!, :set_user
+  before_action :authorized!#, except: [:show]
 
   def new 
     @post = Post.new
@@ -25,6 +26,11 @@ private
   # security ########
   def post_params
     params.require(:post).permit(:user_id, :for_hire, :description, :position_type)
+  end
+
+  def set_user
+    params_id = current_user.type == "Student" ? params[:student_id] : params[:employer_id]
+    @user = User.find(params_id)
   end
 
   def authorized!
