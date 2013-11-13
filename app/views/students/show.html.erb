@@ -6,7 +6,7 @@
   <div class="column-50">
     <img src="<%= current_user.photo.url %>" />
     <p><%= current_user.type %></p>
-    <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? || current_user.city == "" %></p>
+    <p><%= current_user.city + ", " + current_user.state unless current_user.city == "" %></p>
   </div>
 
   <div class="column-50">
@@ -15,7 +15,7 @@
     <p><%= "github URL: " %><%=current_user.github_url %></p>
     <p><%= "Portfolio: " %><%=current_user.portfolio_url %></p>
 
-    <p>Resum&eacute: <%= link_to "Download Here", current_user.resume.url %>
+    <p>Resum&eacute: <%= link_to "Resume", current_user.resume.url %>
   </div>
 
   <p class="summary-text"><%= @current_user.summary %></p>

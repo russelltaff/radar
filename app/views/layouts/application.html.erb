@@ -17,6 +17,7 @@
             <li><%= link_to current_user.name, current_user.type == "Student" ? student_path(current_user) : employer_path(current_user) %>
               <ul class="dropdown">
                 <li><%= link_to "Edit Profile", current_user.type == "Student" ? edit_student_path(current_user) : edit_employer_path(current_user) %></li>
+                <li><a href="">Account Settings</a></li>
               </ul>
             </li>
             <li><%= link_to 'Logout', session_path, :method => :delete %></li>
