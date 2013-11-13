@@ -1,6 +1,8 @@
 <h1>Create a <%= current_user.type == "Student" ? "Hire Me" : "We're Hiring" %> post!</h1>
 
-<%= form_for @post, url: student_posts_path, html: {method: "post"} do |f| %>
+<% path = current_user.type == "Student" ? student_posts_path : employer_posts_path %>
+
+<%= form_for @post, url: path, html: {method: "post"} do |f| %>
   <%=f.hidden_field :user_id, value: current_user.id %>
   <%=f.hidden_field :for_hire, value: true %>  
 
