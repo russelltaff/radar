@@ -17,11 +17,14 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
-  <% attributes = ["city", "state", "phone", "summary", "company_url"] %>
+  <% attributes = ["city", "state", "phone", "summary", "company_url", ] %>
   <% attributes.each do |attr| %>
     <%= f.label attr.to_sym %>
     <%= f.text_field attr.to_sym %>
   <% end %>
+
+  <%= f.label :company_type %>
+  <%= f.text_field :company_type %>
   
   <%= f.label :photo %>
   <%= f.file_field :photo %>

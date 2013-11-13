@@ -22,7 +22,7 @@ class EmployersController < ApplicationController
 
   # security ########
   def employer_params
-    params.require(:employer).permit(:email, :name, :type, :password, :password_confirmation, :city, :state, :phone, :summary, :company_url, :apprentice_partner, :photo)
+    params.require(:employer).permit(:email, :name, :type, :password, :password_confirmation, :city, :state, :phone, :summary, :company_url, :apprentice_partner, :photo, :company_type, :company_size)
   end
 
   def set_employer 
@@ -34,6 +34,6 @@ class EmployersController < ApplicationController
       redirect_to user_path(session[:user_id])
     end
   end
-
+ 
 
 end 
