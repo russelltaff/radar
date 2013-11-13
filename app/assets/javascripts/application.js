@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+var addHoverListener = function(){
+   $($("ul.dropdown").parent()).hover(function(){
+      $(this.children[1]).css("display", "block");
+   });
+}
+
+$(document).ready(addHoverListener); //adds when *user* loads or refreshes
+$(document).on("page:change", addHoverListener); //adds when rails loads
