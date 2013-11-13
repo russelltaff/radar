@@ -35,15 +35,20 @@ nav ul li {
    display: inline;
 }
 nav ul.dropdown {
+   display: none;
    position: relative;
-   float: none;
-   padding-right: 0;
-   /*display: none;*/
+   float: left;
+   top: 37px;
+   left: 358px;
+   padding: 0;
+   border-right: 1px solid #ccc;
+   border-left: 1px solid #ccc;
+   border-bottom: 1px solid #ccc;
 }
 nav ul.dropdown li {
-  /* display: none;*/
+   display: block;
 }
-/* Nav Links */
+/* Main Nav Links */
 nav ul li a:link {
    color: #fff;
    padding: 25px;
@@ -53,13 +58,33 @@ nav ul li a:visited {
    color: #fff;
 }
 nav ul li a:hover {
-   color: #f06;
+   color: #f03;
    padding: 25px;
    background-color: #fff;
 }
 nav ul li a:active {
-   color: #f06;
+   color: #f03;
 }
+/* Nav Dropdown Links */
+nav ul.dropdown li a:link {
+   display: block;
+   color: #000;
+   padding: 15px;
+   text-decoration: none;
+}
+nav ul.dropdown li a:visited {
+   color: #000;
+}
+nav ul.dropdown li a:hover {
+   color: #fff;
+   padding: 15px;
+   background-color: #f03;
+}
+nav ul.dropdown li a:active {
+   color: #fff;
+   background-color: #f03;
+}
+
 /* Main content <div> in layout */
 div#content {
    position: relative;
