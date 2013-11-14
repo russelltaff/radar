@@ -239,7 +239,7 @@ div.create_form {
    box-shadow: 4px 4px 10px 4px #888;
    text-align: center;
    width: 450px;
-   min-height: 500px;
+   min-height: 570px;
    margin: 0 auto;
    padding-top: 30px;
    background: url(<%= asset_path 'wood.png' %>);
@@ -299,15 +299,57 @@ section.isotope {
 }
 
 
-div.tag {
-   width: 150px;
+ul.skills_list {
+   list-style-type: none;
+}
+
+h4#tag-header {
+   color: darkgoldenrod;
+}
+
+.tag {
+   width: 100px;
    height: 30px;
-   margin-bottom: 50px;
+   margin-bottom: 0px;
+   display: inline-block;
+   margin: 0px;
+   padding: 0px;
+   border: 2px solid goldenrod;
+   border-radius: 100px;
+   text-align: center;
 }
 
 p.skill-word {
-   margin-left: 0px;
-   font-size: 1em;
+   width: 30px;
+   height: 10px;
+   font-size: .8em;
+   margin: 0px;
+   position: inline;
+   padding: 0px;
+   float: left;
 }
 
+.delete-tag-button {
+   float: left;
+   position: inline;
+   padding: 0px;
+   margin-left: 8px;
+   margin-top: 8px;
+   margin-right: 10px;
+   width: 15px;
+   height: 15px;
+   text-align: center; 
+   font-size: .5em;
+}
 
+.tag-search {
+   width: 200px;
+   position: relative;
+   top: -220px;
+   margin: 0 auto;
+}
+
+#submit-post {
+   position: relative;
+   bottom: -100px;
+}

@@ -15,6 +15,5 @@
 //= require turbolinks
 //= require radar_posts
 //= require jquery.isotope.min
-//= require jquery.isotope.min
-//= require underscore
+//= require underscore.js
 
