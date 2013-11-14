@@ -1,0 +1,298 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+/* CSS Styling for Radar */
+
+header {
+   position: absolute;
+   width: 100%;
+   height: 55px;
+   top: 0;
+   left: 0;
+   right: 0;
+   background-color: #000;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 100%;
+   z-index: 9999;
+}
+header h1 {
+   position: absolute;
+   width: 200px;
+   height: 50px;
+   top: -15px;
+   left: 10px;
+   text-indent: -9999px;
+   background: url(/assets/radar_logo.png) no-repeat;
+}
+/* Navigation */
+nav {
+   font-family: "Times New Roman", Times, serif;
+   color: #fff;
+   font-size: 1.1em;
+}
+nav ul.dropdown, nav ul.dropdown li, nav ul.dropdown ul {
+   margin: 0;
+   padding: 0;
+}
+nav ul.dropdown {
+   float: right;
+   position: relative;
+   list-style: none;
+   padding: 20px;
+}
+nav ul.dropdown li {
+   float: left;
+   vertical-align: middle;
+   zoom: 1;
+}
+nav ul.dropdown ul {
+   display: none;
+   position: absolute;
+   float: left;
+   width: 220px;
+   margin: 14px 0 0 0;
+   top: 100%;
+   left: 0;
+   border: 1px solid #ccc;
+   border-top: 0;
+   -moz-box-shadow: 0 4px 2px -2px #888;
+   -webkit-box-shadow: 0 4px 2px -2px #888;
+   box-shadow: 0 4px 2px -2px #888;
+}
+nav ul.dropdown li {
+   display: block;
+}
+nav ul.dropdown li:hover {
+   position: relative;
+}
+nav ul.dropdown li:hover > ul {
+   display: block;
+}
+nav ul.dropdown ul li {
+   float: none;
+   position: relative;
+}
+nav ul.dropdown ul ul {
+   top: 0;
+   left: 100%;
+}
+/* Main Nav Links */
+nav ul.dropdown li a:link {
+   color: #fff;
+   padding: 25px;
+   text-decoration: none;
+}
+nav ul.dropdown li a:visited {
+   color: #fff;
+}
+nav ul.dropdown li:hover > a {
+   color: #f03;
+   padding: 25px;
+   background-color: #fff;
+}
+nav ul.dropdown li:active > a  {
+   color: #f03;
+}
+/* Nav Dropdown Links */
+nav ul.dropdown ul li a:link {
+   display: block;
+   color: #000;
+   padding: 15px;
+   text-decoration: none;
+}
+nav ul.dropdown ul li a:visited {
+   color: #000;
+}
+nav ul.dropdown ul li a:hover{
+   color: #fff;
+   padding: 15px;
+   background-color: #f03;
+}
+nav ul.dropdown ul li a:active {
+   color: #fff;
+   background-color: #f03;
+}
+/* Navigation CSS Sprites */
+nav li a.prof:before {
+   background-image: url(/assets/profile.png);
+}
+nav li a.prof:before {
+   background-position: 0px 0px;
+}
+nav li a.prof:hover {
+   background-position: 0px -32px;
+}
+/*nav li a.item2 {
+   background-position: 0px -143px;
+}
+nav li a:hover.item2 {
+   background-position: 0px -215px;
+}*/
+/* Main content <div> in layout */
+div#content {
+   position: relative;
+   top: 55px;
+   padding: 10px;
+   font-size: 100%;
+}
+/* Form Styles */
+div.form {
+   margin: 0 auto;
+   width: 400px;
+   text-align: center;
+   display: inline;
+
+}
+label:after {
+   content:"\a";
+   white-space: pre;
+}
+input[type="submit"]{
+   float: right;
+   margin: 20px;
+   padding: 20px;
+}
+/* User Profile Pages */
+div.column-50 {
+   width: 50%;
+   float: left;
+}
+div.student {
+   margin: 0 auto;
+   width: 100%;
+   padding: 20px;
+}
+div.student h2 { 
+}
+div.student img {
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+}
+div.student img + p {
+   margin-left: 73px; 
+}
+div.employer img + p {
+   margin-left: 73px;
+
+}
+p.summary-text {
+   margin-right: 20px; 
+   clear: both;
+}
+p.edit_button {
+   float: right;
+   margin-right: 40px;  
+   padding: 5px 10px;
+   background-color: #ff6684;
+   border-radius: 10px;
+}
+p.edit_button a:link {
+   text-decoration: none;
+   color: #fff;
+}
+p.edit_button a:visited {
+   color: #fff;
+}
+p.edit_button a:hover {
+   color: #000;
+}
+p.edit_button a:active {
+   color: #000;
+}
+
+div.post{
+   width: 400px;
+   min-height: 300px; 
+   margin: 1em auto;
+   padding: 25px;
+   background-color: #fff;
+   border-radius: .1em;
+   font-size: 1.5em;
+   -moz-box-shadow: 4px 4px 10px 4px #888;
+   -webkit-box-shadow: 4px 10px 4px 4px #888;
+   box-shadow: 4px 4px 10px 4px #888;
+}
+
+div.yellow{
+   padding: .4em;
+   background-color: yellow;
+}
+
+div.login {
+   
+   -moz-box-shadow: 4px 4px 10px 4px #888;
+   -webkit-box-shadow: 4px 10px 4px 4px #888;
+   box-shadow: 4px 4px 10px 4px #888;
+   text-align: center;
+   width: 450px;
+   height: 300px;
+   margin: 0 auto;
+   padding-top: 50px;
+   background: url(/assets/wood.png) no-repeat;
+
+
+}
+
+div.create_form {
+   -moz-box-shadow: 4px 4px 10px 4px #888;
+   -webkit-box-shadow: 4px 10px 4px 4px #888;
+   box-shadow: 4px 4px 10px 4px #888;
+   text-align: center;
+   width: 450px;
+   min-height: 500px;
+   margin: 0 auto;
+   padding-top: 30px;
+   background: url(/assets/wood.png);
+   line-height: 2em;
+}
+
+h1.create {
+   text-align: center;
+  
+}
+
+h1.edit {
+   text-align: center;
+}
+
+h2.hire{
+   color: red;
+}
+h3.my_posts{
+   margin: 0 auto;
+   text-align: center;
+   font-size: 4em;
+}
+span{
+
+   min-width: 200px; 
+   padding: .4em;
+   background-color: yellow;
+   line-height: 2em;
+   /*font-size: 2.5em; */
+}
+
+div.tag {
+   width: 150px;
+   height: 30px;
+   margin-bottom: 50px;
+}
+
+p.skill-word {
+   margin-left: 0px;
+   font-size: 1em;
+}
+
+
