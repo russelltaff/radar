@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     
   end
 
-private
+  private
 
   # security ########
   def post_params
