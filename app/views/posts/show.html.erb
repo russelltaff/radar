@@ -1,5 +1,13 @@
-<h1>Congratulations <%= current_user.name %>! You currently have a post. </h1> 
+<div class="post">
+  <p><span> <%= current_user.name %> </span> IS </p>
 
-<h3> Description:  <%= @post.description %> </h3>
+  <p>A <div class="yellow"><span><%= @post.position_type %> </span></div></p>
 
-<h3> Position Type: <%= @post.position_type %> </h3> 
+  <p> <%= student? ? "WITH EXPERIENCE IN" : "FOR HELP W/" %>: <div class="yellow"><span><%= @post.description %></span></div></p>
+
+  <p> SAY HI! <div class="yellow"><span><%= current_user.city + ", " + current_user.state unless current_user.city.nil? || current_user.city == "" %></span></div></p>
+
+  <p><span><div class="yellow"><%= @post.created_at %></span></div></p>
+
+</div> 
+
