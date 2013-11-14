@@ -1,8 +1,6 @@
 <div class="student">
   <h2><%= current_user.name %></h2>
 
-  <p class="edit_button"><%= link_to "Edit Your Profile", edit_student_path %></p>
-
   <div class="column-50">
     <img src="<%= current_user.photo.url %>" />
     <p><%= current_user.type %></p>
@@ -22,17 +20,18 @@
   <p class="summary-text"><%= @current_user.summary %></p>
 
   <a name="my-posts"></a>
-  <h3>My POSTs:</h3>
-  <div class="post" >
+  <h3 class = "my_posts">My POSTs:</h3>
+ 
     <% current_user.posts.each do |post| %>
-    <div class="post" >
+     <div class="post" >
       <p><em>FOR HIRE</em></p>
-      <p class ="position">Position: <span> <%= post.position_type %></span></p>
-      <p class ="position">Description: <span><%= post.description %></span></p>
+      <p>Position: <span> <%= post.position_type %></span></p>
+      <p>Description: <span><%= post.description %></span></p>
       <p>Date: <span><%= post.created_at.strftime("%b. %d %Y") %></span></p>
       <p><%= link_to "Make Big", post_path(post.id) %></p>
    </div>
   <% end %>
+
  
 
 </div>
