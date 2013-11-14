@@ -1,5 +1,5 @@
 class PostsController < ApplicationController  
-  before_action :authenticated!, :set_user, except: [:show, :index]
+  before_action :authenticated!, :set_user, except: [:index]
   before_action :authorized!, except: [:show, :index]
   #TODO create post routes should not be accessible to unauthorized users
 
