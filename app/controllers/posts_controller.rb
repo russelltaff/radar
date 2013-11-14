@@ -24,6 +24,10 @@ class PostsController < ApplicationController
     render :show 
   end 
 
+  def destroy
+    
+  end
+
 private
 
   # security ########
