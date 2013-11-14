@@ -28,6 +28,7 @@
       <p>Position: <%= post.position_type %></p>
       <p>Description: <%= post.description %></p>
       <p>Date: <%= post.created_at %></p>
+      <p><%= link_to "Make Big", post_path(post.id) %></p>
     <% end %>
   </div>
 

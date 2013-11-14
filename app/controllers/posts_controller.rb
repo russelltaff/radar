@@ -1,5 +1,5 @@
 class PostsController < ApplicationController  
-  before_action :authenticated!, :set_user
+  before_action :authenticated!, :set_user, except: [:show]
   before_action :authorized!, except: [:show]
   #TODO create post routes should not be accessible to unauthorized users
 
@@ -19,13 +19,19 @@ class PostsController < ApplicationController
     end 
   end  
 
-  def show 
-    @post = Post.find(params[:id]) 
+  def show
+    set_post
     render :show 
   end 
 
   def destroy
+    set_post
     
+    if @post.destroy
+      redirect_to student? ? student_path(current_user.id) : employer_path(current_user.id)
+    else
+      render post_path(@post.id)
+    end
   end
 
   private
@@ -38,6 +44,10 @@ class PostsController < ApplicationController
   def set_user
     params_id = current_user.type == "Student" ? params[:student_id] : params[:employer_id]
     @user = User.find(params_id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id]) 
   end
 
   def authorized!
