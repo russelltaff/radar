@@ -4,7 +4,7 @@
 
 <%= form_for @post, url: path, html: {method: "post"} do |f| %>
   <%=f.hidden_field :user_id, value: current_user.id %>
-  <%=f.hidden_field :for_hire, value: true %>  
+  <%=f.hidden_field :for_hire, value: student? ? true : false %>  
 
   <%= f.label :description %>
   <%= f.text_area(:description, size: '50x10') %>
@@ -17,3 +17,5 @@
 
   <%= f.submit 'Submit post!' %>
 <% end %> 
+
+User.tagged_with("awesome")

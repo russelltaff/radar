@@ -44,19 +44,20 @@ class EmployersController < ApplicationController
   end
  
   def searched_positions(user_input)
-    results = []
-    user_input.each {|type, checked| results << type if checked == "1"}
-    results
+    input = []
+    user_input.each {|type, checked| input << type if checked == "1"}
+    input
   end
 
-  def find_by_many(*user_input)
-    result = []
-    user_input.each do |type|
+  def find_by_many(*user_inputs)
+    results = []
+    user_inputs.each do |type|
       Post.where(position_type: type).each do |post|
-        result << post
+        results << post
       end
+    binding.pry
     end
-    result
+    results
   end
 
 end 

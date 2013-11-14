@@ -17,4 +17,9 @@ module SessionsHelper
     current_user.type == "Student"
   end 
   
+  def capitalize(string)
+    result_array = string.split(" ")
+    result_array.map! { |word| word.capitalize }
+    result_array.join(" ")
+  end
 end
