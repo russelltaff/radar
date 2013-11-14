@@ -7,7 +7,7 @@ module PostsHelper
       when "Entrepreneur"
          @job_class = "entrep"
       when "Digital Marketer"
-       
+       pegoreognorengoinorengoinoergnoiern
       when "Product Designer"
          @job_class = "product_des"
       when "Full-Stack Developer"
@@ -15,17 +15,12 @@ module PostsHelper
       when "Back-end Developer"
          @job_class = "back_dev"
       when "Front-end Developer"
-         @job_class = "front_dev"
-      else
-         @job_class = "" 
-      end
+  
    end
 
    def type_of_post(post_obj)
       if post_obj.for_hire == true
-         @type_class = "for_hire"
-      else
-         @type_class = "hiring"
+    ype_class = "hiring"
       end
    end
 end
