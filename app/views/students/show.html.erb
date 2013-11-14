@@ -24,13 +24,15 @@
   <a name="my-posts"></a>
   <div class="post" >
     <% current_user.posts.each do |post| %>
+    <div class="post" >
       <p><em>FOR HIRE</em></p>
       <p class ="position">Position: <span> <%= post.position_type %></span></p>
       <p class ="position">Description: <span><%= post.description %></span></p>
       <p>Date: <span><%= post.created_at.strftime("%b. %d %Y") %></span></p>
       <p><%= link_to "Make Big", post_path(post.id) %></p>
+   </div>
   <% end %>
-  </div>
+ 
 
 </div>
 
