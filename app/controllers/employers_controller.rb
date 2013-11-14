@@ -1,5 +1,5 @@
 class EmployersController < ApplicationController  
-  before_action :authenticated!, :set_employer, :authorized!, except: [:new, :create]
+  before_action :authenticated!, :set_employer, :authorized!, except: [:new, :create, :search]
   #TODO employers should be able to look at other employers' profiles
 
   def show 
@@ -19,9 +19,12 @@ class EmployersController < ApplicationController
   end 
 
   def search
+    params_array = searched_positions(params)
+    
+    @selected_posts = find_by_many(params_array)
+
     render :search
   end
-
 
   private
 
@@ -40,5 +43,20 @@ class EmployersController < ApplicationController
     end
   end
  
+  def searched_positions(user_input)
+    results = []
+    user_input.each {|type, checked| results << type if checked == "1"}
+    results
+  end
+
+  def find_by_many(*user_input)
+    result = []
+    user_input.each do |type|
+      Post.where(position_type: type).each do |post|
+        result << post
+      end
+    end
+    result
+  end
 
 end 

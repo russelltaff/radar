@@ -46,4 +46,5 @@ private
       # user_path(session[:user_id])
     end
   end
+
 end

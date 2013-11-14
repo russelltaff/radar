@@ -5,7 +5,7 @@ Radar::Application.routes.draw do
   resources :users, only: [:new, :create]
 
   resources :students, only: [:show, :edit, :update] do 
-    member do
+    collection do
       get "search"
     end
     
@@ -13,7 +13,7 @@ Radar::Application.routes.draw do
   end 
 
   resources :employers, only: [:show, :edit, :update] do 
-    member do
+    collection do
       get "search"
     end
 
