@@ -9,6 +9,8 @@
 
   <p>Posted on: <span><%= @post.created_at.strftime("%b. %d %Y") %></span> from <span><%= current_user.city + ", " + current_user.state unless current_user.city.nil? || current_user.city == "" %></span></p>
 
+  <p>Tags: <%= @post.skill_tag_list %></p> 
+
   <%= link_to "Delete Post", student? ? student_post_path(current_user.id, @post.id) : employer_post_path(current_user.id, @post.id), method: :delete %>
 </div> 
 

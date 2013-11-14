@@ -1,32 +1,13 @@
 <%= form_tag search_employers_path, method: "GET" do %>
 
-   <%= check_box_tag "Product Manager" %>
-   <%= label_tag "Product Manager" %>
+<% types = ["Product Manager","Entrepreneur","Digital Marketer", "Founder/Co-Founder", "UX Designer", "Product Designer", "Full-Stack Developer", "Back-end Developer", "Front-end Developer"] %>
 
-   <%= check_box_tag "Entrepreneur" %>
-   <%= label_tag "Entrepreneur" %>
+  <% types.each do |input| %>
+      <%= check_box_tag input %>
+      <%= label_tag(input, input) %>
+  <% end %> 
 
-   <%= check_box_tag "Digital Marketer" %>
-   <%= label_tag "Digital Marketer" %>
+   
+<button>Submit</button>
 
-   <%= check_box_tag "Founder/Co-Founder" %>
-   <%= label_tag "Founder/Co-Founder" %>
-
-   <%= check_box_tag "UX Designer" %>
-   <%= label_tag "UX Designer" %>
-
-   <%= check_box_tag "Product Designer" %>
-   <%= label_tag "Product Designer" %>
-
-   <%= check_box_tag "Full-Stack Developer" %>
-   <%= label_tag "Full-Stack Developer" %>
-
-   <%= check_box_tag "Back-end Developer" %>
-   <%= label_tag "Back-end Developer" %>
-
-   <%= check_box_tag "Front-end Developer" %>
-   <%= label_tag "Front-end Developer" %>
-    
-  <%= submit_tag "Search" %>
-
- <% end %> 
+<% end %>

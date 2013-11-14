@@ -22,7 +22,7 @@ class EmployersController < ApplicationController
     params_array = searched_positions(params)
     
     @selected_posts = find_by_many(params_array)
-
+  
     render :search
   end
 

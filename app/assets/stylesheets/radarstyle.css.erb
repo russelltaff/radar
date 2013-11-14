@@ -37,7 +37,6 @@ nav ul.dropdown {
    padding: 20px;
 }
 nav ul.dropdown li {
-   /*display: inline;*/
    float: left;
    vertical-align: middle;
    zoom: 1;
@@ -109,6 +108,22 @@ nav ul.dropdown ul li a:active {
    color: #fff;
    background-color: #f03;
 }
+/* Navigation CSS Sprites */
+nav li a.prof:before {
+   background-image: url(<%= asset_path 'profile.png' %>);
+}
+nav li a.prof:before {
+   background-position: 0px 0px;
+}
+nav li a.prof:hover {
+   background-position: 0px -32px;
+}
+/*nav li a.item2 {
+   background-position: 0px -143px;
+}
+nav li a:hover.item2 {
+   background-position: 0px -215px;
+}*/
 /* Main content <div> in layout */
 div#content {
    position: relative;

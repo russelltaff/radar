@@ -15,5 +15,5 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery.isotope.min.js
-
+//= require underscore.js 
 
