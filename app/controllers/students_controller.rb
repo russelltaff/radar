@@ -22,7 +22,6 @@ before_action :authenticated!, :set_student, :authorized!, except: [:new, :creat
     params_array = searched_positions(params)
     
     @selected_posts = find_by_many(params_array)
-    
     render :search
   end
 

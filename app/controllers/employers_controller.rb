@@ -55,7 +55,6 @@ class EmployersController < ApplicationController
       Post.where(position_type: type).each do |post|
         results << post
       end
-    binding.pry
     end
     results
   end
