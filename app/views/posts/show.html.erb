@@ -1,17 +1,17 @@
 <div class="post">
-  <p><span> <%= current_user.name %> </span><%= student? ? "IS LOOKING FOR WORK AS" : "IS LOOKING FOR" %> </p>
+  <p><span> <%= @post.user.name %> </span><%= @post.user.type == "Student" ? "IS LOOKING FOR WORK AS" : "IS LOOKING FOR" %> </p>
 
   <p>A <span><%= @post.position_type %> </span></p>
 
-  <p> <%= student? ? "WITH EXPERIENCE IN" : "FOR HELP W/" %>:<br><span><%= @post.description %></span></p>
+  <p> <%= @post.user.type == "Student" ? "WITH EXPERIENCE IN" : "FOR HELP W/" %>:<br><span><%= @post.description %></span></p>
 
-  <p> SAY HI!<br><span><%= current_user.email%></span></p>
+  <p> SAY HI!<br><span><%= @post.user.email%></span></p>
 
-  <p>Posted on: <span><%= @post.created_at.strftime("%b. %d %Y") %></span> from <span><%= current_user.city + ", " + current_user.state unless current_user.city.nil? || current_user.city == "" %></span></p>
+  <p>Posted on: <span><%= @post.created_at.strftime("%b. %d %Y") %></span> from <span><%= @post.user.city + ", " + @post.user.state unless @post.user.city.nil? || @post.user.city == "" %></span></p>
 
   <p>Tags: <%= @post.skill_tag_list %></p> 
 
-  <%= link_to "Delete Post", student? ? student_post_path(current_user.id, @post.id) : employer_post_path(current_user.id, @post.id), method: :delete %>
+  <%= link_to "Delete Post", @post.user.type == "Student" ? student_post_path(@post.user.id, @post.id) : employer_post_path(@post.user.id, @post.id), method: :delete %>
 </div> 
 
 
