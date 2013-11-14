@@ -19,13 +19,12 @@ class EmployersController < ApplicationController
   end 
 
   def search
-    stuff = find_by_many(searched_positions(params))
-    binding.pry
+    params_array = searched_positions(params)
+    
+    @selected_posts = find_by_many(params_array)
 
-    # params
     render :search
   end
-
 
   private
 
@@ -50,16 +49,12 @@ class EmployersController < ApplicationController
     results
   end
 
-  def find_by_one(position_type)
-    Post.all.select do |post|
-      post == position_type
-    end
-  end
-
   def find_by_many(*user_input)
     result = []
-    user_input.each do |input|
-      find_by_one(input).each {|post| result << post}
+    user_input.each do |type|
+      Post.where(position_type: type).each do |post|
+        result << post
+      end
     end
     result
   end
