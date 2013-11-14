@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController  
-before_action :authenticated!, :set_student, :authorized!, except: [:new, :create]
+before_action :authenticated!, :set_student, :authorized!, except: [:new, :create, :search]
 #TODO students should be able to look at other students' profiles
 
   def show 
@@ -18,6 +18,12 @@ before_action :authenticated!, :set_student, :authorized!, except: [:new, :creat
     end
   end 
 
+  def search
+    render :search 
+  end
+
+
+
 
   private
 
@@ -35,6 +41,20 @@ before_action :authenticated!, :set_student, :authorized!, except: [:new, :creat
       redirect_to user_path(session[:user_id]) 
     end
   end
+    def find_posts_by(position_type)
+    Post.all.select do |post|
+      post == position_type
+    end
+  end
+
+  def find_posts_by(*user_input)
+    result = []
+    user_input.each do |input|
+      find_posts_by(input).each {|post| result << post}
+    end
+    result
+  end
+                           
 
 
 end 

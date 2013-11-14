@@ -9,6 +9,8 @@ class PostsController < ApplicationController
   end 
 
   def create
+    #TODO validation for nil posts 
+    #TODO make sure student can create only one hire-me post
     @post = Post.new(post_params)
     if @post.save 
       redirect_to current_user.type == "Student" ? student_post_path(current_user.id, @post.id) : employer_post_path(current_user.id, @post.id)
@@ -26,7 +28,7 @@ private
 
   # security ########
   def post_params
-    params.require(:post).permit(:user_id, :for_hire, :description, :position_type)
+    params.require(:post).permit(:user_id, :for_hire, :description, :position_type, :skill_tag_list)
   end
 
   def set_user
@@ -40,4 +42,5 @@ private
       # user_path(session[:user_id])
     end
   end
+
 end
