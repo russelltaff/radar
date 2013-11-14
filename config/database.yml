@@ -2,5 +2,5 @@ development:
   adapter: postgresql
   database: radar_development
   pool: 5
-  timeout: 5000
   password: 
+  host: localhost
