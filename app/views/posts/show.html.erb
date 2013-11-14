@@ -1,13 +1,13 @@
 <div class="post">
-  <p><span> <%= current_user.name %> </span> IS </p>
+  <p><span> <%= current_user.name %> </span> IS LOOKING FOR WORK AS </p>
 
-  <p>A <div class="yellow"><span><%= @post.position_type %> </span></div></p>
+  <p>A <span><%= @post.position_type %> </span></p>
 
-  <p> <%= student? ? "WITH EXPERIENCE IN" : "FOR HELP W/" %>: <div class="yellow"><span><%= @post.description %></span></div></p>
+  <p> <%= student? ? "WITH EXPERIENCE IN" : "FOR HELP W/" %>:<br><span><%= @post.description %></span></p>
 
-  <p> SAY HI! <div class="yellow"><span><%= current_user.city + ", " + current_user.state unless current_user.city.nil? || current_user.city == "" %></span></div></p>
+  <p> SAY HI!<br><span><%= current_user.email%></span></p>
 
-  <p><span><div class="yellow"><%= @post.created_at %></span></div></p>
+  <p>Posted on: <span><%= @post.created_at.strftime("%b. %d %Y") %></span> from <span><%= current_user.city + ", " + current_user.state unless current_user.city.nil? || current_user.city == "" %></span></p>
 
   <%= link_to "Delete Post", student? ? student_post_path(current_user.id, @post.id) : employer_post_path(current_user.id, @post.id), method: :delete %>
 </div> 
