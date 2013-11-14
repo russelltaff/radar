@@ -1,9 +1,9 @@
-<h2>Search for an Employer Post:</h2> 
+<h2>Search for a Post:</h2> 
 
 <%= render 'form_search' %> 
 
 <% if !@selected_posts.nil? %>
-   <h3>POST Results:</h3>
+   <h3>Student POST Results:</h3>
    <% @selected_posts.each do |post| %>
       <% if post.for_hire == false %> 
          <div class="post">

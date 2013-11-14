@@ -12,9 +12,12 @@
   <%= f.label :position_type %>
   <%= f.select :position_type, ["Product Manager","Entrepreneur","Digital Marketer", "Founder/Co-Founder", "UX Designer", "Product Designer", "Full-Stack Developer", "Back-end Developer", "Front-end Developer"] %>
 
-  <%= f.label :skill_tags %> 
+ <br> <%= f.label :skill_tags %> 
   <%= f.text_field :skill_tag_list, { :placeholder => "Tags separated by commas" } %> 
 
   <%= f.submit 'Submit post!' %>
 <% end %> 
 
+
+<!-- User.tagged_with("awesome")
+ -->

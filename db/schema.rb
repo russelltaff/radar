@@ -27,17 +27,6 @@ ActiveRecord::Schema.define(version: 20131113165256) do
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
-  create_table "posts_skills", force: true do |t|
-    t.integer  "post_id",    null: false
-    t.integer  "skill_id",   null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "skills", force: true do |t|
-    t.string "name", null: false
-  end
-
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"

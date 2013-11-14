@@ -37,7 +37,6 @@ nav ul.dropdown {
    padding: 20px;
 }
 nav ul.dropdown li {
-   /*display: inline;*/
    float: left;
    vertical-align: middle;
    zoom: 1;
@@ -109,6 +108,22 @@ nav ul.dropdown ul li a:active {
    color: #fff;
    background-color: #f03;
 }
+/* Navigation CSS Sprites */
+nav li a.prof:before {
+   background-image: url(<%= asset_path 'profile.png' %>);
+}
+nav li a.prof:before {
+   background-position: 0px 0px;
+}
+nav li a.prof:hover {
+   background-position: 0px -32px;
+}
+/*nav li a.item2 {
+   background-position: 0px -143px;
+}
+nav li a:hover.item2 {
+   background-position: 0px -215px;
+}*/
 /* Main content <div> in layout */
 div#content {
    position: relative;
@@ -196,9 +211,32 @@ div.yellow{
    background-color: yellow;
 }
 
+div.login{
+   
+   -moz-box-shadow: 4px 4px 10px 4px #888;
+   -webkit-box-shadow: 4px 10px 4px 4px #888;
+   box-shadow: 4px 4px 10px 4px #888;
+   text-align: center;
+   width: 450px;
+   height: 300px;
+   margin: 0 auto;
+   padding-top: 30px;
+   background: url(<%= asset_path 'wood.png' %>) no-repeat;
+
+
+}
+
+h2.hire{
+   color: red;
+}
 span{
-   font-family: ;
+
    min-width: 200px; 
+   padding: .4em;
+   background-color: yellow;
+   line-height: 2em;
    /*font-size: 2.5em; */
 }
+
+
 
