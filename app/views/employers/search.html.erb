@@ -1,3 +1,18 @@
-<h1>Search for an Employer Post:</h1> 
+<h2>Search for an Employer Post:</h2> 
 
-<%= render 'form_search' %> 
+<% if @selected_posts.nil? %>
+   <%= render 'form_search' %> 
+<% else %>
+   <h3>POST Results:</h3>
+   <% @selected_posts.each do |post| %>
+      <div class="post">
+         <h3><%= post.user.name %></h3>
+         <p>Hiring: <%= post.position_type %></p>
+         <p><%= post.created_at.strftime("%b. %d %Y") %></p>
+         <p>Description:<br />
+         <%= post.description %></p>
+      </div>
+   <% end %> 
+   <h3>Search Again:</h3>
+   <%= render 'form_search' %> 
+<% end %>
