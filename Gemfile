@@ -44,6 +44,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 #for tags 
 gem 'acts-as-taggable-on'
 
+gem 'rails_12factor', group: :production
+
 
 # gem 'protected_attributes'
 
