@@ -16,19 +16,22 @@
   <%= f.hidden_field :skill_tag_list, value: "" %>
 
   
-  <ul class="skills_list">Tags:</ul>
+  <h4 id="tag-header">Skill Tags:</h4>
+  <div class="skills_list"></div>
 
-  <button>Submit Post</button>
+  <button id="submit-post">Submit Post</button>
 
 <% end %> 
 </div>
 
-<!-- this form essentially only for add tag div -->
-<!-- actual skill_tag_list input value is in above form -->
-<%= form_tag post_path(@post.id), class: "tag-form" do %>
-  <%= text_field_tag :skill_input %>
-  <%= button_tag 'Add Tag' %>
-<% end %>
+  <div class="tag-search">
+    <!-- this form essentially only for add tag div -->
+    <!-- actual skill_tag_list input value is in above form -->
+    <%= form_tag post_path(@post.id), class: "tag-form" do %>
+      <%= text_field_tag :skill_input %>
+      <%= button_tag 'Add Tag' %>
+    <% end %>
+  </div>
 
 
 <!-- User.tagged_with("awesome")

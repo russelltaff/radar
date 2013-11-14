@@ -27,25 +27,39 @@ function renderTag(skill_tag) {
   // tag.attr("id", skill_tag);
 
   var deleteButton = $("<button>X</button>");
+  deleteButton.addClass("delete-tag-button")
   addDeleteEvent(deleteButton);
   deleteButton.prependTo(tag);
 
   tag.appendTo(tagList);
 }
 
+function addTag(input) {
+  if ( !_.contains(skills, input.val().toLowerCase()) && input.val() != "" ) {
+    skills.push(input.val().toLowerCase());
+    renderTag(input.val());
+  }
+
+  if ( skills.length > 0 && skills.length < 5 ) {
+    $("#submit-post").css("bottom", "-55px");
+  } else if ( skills.length > 4 ) {
+    $("#submit-post").css("bottom", "-10px");
+  }
+}
+
 var skills = [];
 
 $(function() {
-  // console.log("<%= true ? 'WE GOT ERB' : false %>");
+  console.log("<%= true ? 'TAGS' : false %>");
 
   $(".tag-form").submit(function(e) {
     e.preventDefault();
 
     var input = $("#skill_input");
 
-    skills.push(input.val());
-
-    renderTag(input.val());
+    if ( skills.length != 8 ) {
+      addTag(input);
+    }
 
     setSkillTagList();
 
