@@ -7,11 +7,7 @@ module PostsHelper
       when "Entrepreneur"
          @job_class = "entrep"
       when "Digital Marketer"
-         @job_class = "digital"
-      when "Founder/Co-Founder"
-         @job_class = "founder"
-      when "UX Designer"
-         @job_class = "ux"
+       
       when "Product Designer"
          @job_class = "product_des"
       when "Full-Stack Developer"
