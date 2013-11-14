@@ -15,4 +15,4 @@
 # Ignore all logfiles and tempfiles.
 /log/development.log
 /tmp
-config/database.yml
+/config/database.yml
