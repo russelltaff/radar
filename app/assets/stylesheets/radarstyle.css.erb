@@ -9,16 +9,17 @@ header {
    background-color: #000;
    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
    font-size: 100%;
-   z-index: 9999;
+   z-index: 9997;
 }
 header h1 {
    position: absolute;
    width: 200px;
    height: 50px;
-   top: -15px;
-   left: 10px;
+   top: -10px;
+   left: 15px;
    text-indent: -9999px;
-   background: url(<%= asset_path 'radar_logo.png' %>) no-repeat;
+   background: url(<%= asset_path 'radar-logo.png' %>) no-repeat;
+   z-index: 9999;
 }
 /* Navigation */
 nav {
@@ -151,6 +152,10 @@ div.column-50 {
    width: 50%;
    float: left;
 }
+div.column-30 {
+   width: 33.33333%;
+   float: left;
+}
 div.student {
    margin: 0 auto;
    width: 100%;
@@ -193,26 +198,23 @@ p.edit_button a:hover {
 p.edit_button a:active {
    color: #000;
 }
-
 div.post{
-   width: 400px;
+   width: 350px;
    min-height: 500px; 
-   margin: 1em auto;
+   margin: 10px;
    padding: 25px;
    background-color: #fff;
-   border-radius: .1em;
-   border: 2px black solid;
-   font-size: 2em;
-   box-shadow: 0 0 .5em #888888;
+   border-radius: 5px;
+   border: 1px solid #000;
+   font-size: 1.2em;
+   box-shadow: 0 0 .5em #888;
 }
-
 div.yellow{
    padding: .4em;
+   border-radius: 2px;
    background-color: yellow;
 }
-
 div.login{
-   
    -moz-box-shadow: 4px 4px 10px 4px #888;
    -webkit-box-shadow: 4px 10px 4px 4px #888;
    box-shadow: 4px 4px 10px 4px #888;
@@ -222,10 +224,7 @@ div.login{
    margin: 0 auto;
    padding-top: 30px;
    background: url(<%= asset_path 'wood.png' %>) no-repeat;
-
-
 }
-
 h2.hire{
    color: red;
 }
@@ -237,6 +236,33 @@ span{
    line-height: 2em;
    /*font-size: 2.5em; */
 }
+/* Isotope Filtering */
+section.isotope {
+   width: 100%;
+   clear: both;
+}
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
 
 
 

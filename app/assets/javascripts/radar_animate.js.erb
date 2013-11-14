@@ -1,0 +1,16 @@
+// header h1 {
+//    position: absolute;
+//    top: 10px;
+//    left: 15px;  
+// }
+
+window.onload = function() {
+   console.log(<%= 'Loaded' if true %>);
+   var l1 = $("<img>").attr({src: "<%= asset_path('loop-1.png') %>"}).css({"position": "absolute", "z-index": "9998", "top": "10px", "left": "15px"});
+
+   var l2 = $("<img>").attr("src", "<%= asset_path 'loop-2.png' %>");
+   var l3 = $("<img>").attr("src", "<%= asset_path 'loop-3.png' %>");
+   var l4 = $("<img>").attr("src", "<%= asset_path 'loop-4.png' %>");
+   // z-index: 9998;
+   var radar = $("header").append(l1);
+}
