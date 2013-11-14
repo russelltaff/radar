@@ -21,7 +21,7 @@
             <li><%= link_to "Job Board", current_user.type == "Student" ? new_student_post_path(current_user) : new_employer_post_path(current_user) %>
               <ul>
                  <li><%= link_to "Create New POST", current_user.type == "Student" ? new_student_post_path(current_user) : new_employer_post_path(current_user) %></li>
-                 <li><%= link_to "See Your POSTs", current_user.type == "Student" ? student_path(current_user) : employer_path(current_user) %></li>
+                 <li><%= link_to "See Your POSTs", current_user.type == "Student" ? student_path(current_user) + "#my-posts" : employer_path(current_user) + "#my-posts"  %></li>
               </ul>
             </li>
             <!-- User Profile Dropdown Menu -->
