@@ -19,7 +19,8 @@ Radar::Application.routes.draw do
 
     resources :posts 
   end 
+
+  resources :posts, only: [:show]
   
   resource :session, only: [:new, :create, :destroy] 
-
 end

@@ -22,9 +22,6 @@ before_action :authenticated!, :set_student, :authorized!, except: [:new, :creat
     render :search 
   end
 
-
-
-
   private
 
   # security ########
