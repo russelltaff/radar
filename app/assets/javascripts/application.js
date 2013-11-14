@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
-//= require jquery.isotope.min.js
-
+//= require radar_posts
+//= require jquery.isotope.min
+//= require jquery.isotope.min
+//= require underscore
 

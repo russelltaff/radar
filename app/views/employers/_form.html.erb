@@ -1,4 +1,4 @@
-<% unless current_user.errors.none? %>
+<div class = "form"><% unless current_user.errors.none? %>
   <% current_user.errors.full_messages.each do |msg| %>
     <%= msg %>
   <% end %>
@@ -37,3 +37,4 @@
 
   <%= f.submit logged_in? ? 'Update' : 'Sign Up' %>
 <% end %>
+</div>

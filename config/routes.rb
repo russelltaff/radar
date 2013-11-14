@@ -2,6 +2,7 @@ Radar::Application.routes.draw do
 
   root to: 'users#welcome'
 
+
   resources :users, only: [:new, :create] do
     collection do
       get 'welcome'

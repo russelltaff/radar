@@ -29,12 +29,12 @@ $(function(){
 
 
   // Isotope Script for Sorting Scripts
-   $(function(){
+  $(function(){
         
         var $container = $('#all_posts');
-   
+  
         $container.isotope({
-         itemSelector : '.post'
+        itemSelector : '.post'
         });
 
         $('#filter_post_type a').click(function(){
@@ -56,11 +56,11 @@ $(function(){
         //  var $optionSet = $(this).parents('.filtered');
         //  $optionSet.find('.selected').removeClass('selected');
         //  $(this).addClass('selected');
-     
+    
         //  // make option object dynamically, i.e. { filter: '.my-filter-class' }
         //  var options = {},
-        //     key = $optionSet.attr('data-option-key'),
-        //     value = $(this).attr('data-option-value');
+        //    key = $optionSet.attr('data-option-key'),
+        //    value = $(this).attr('data-option-value');
         //  // parse 'false' as false boolean
         //  value = value === 'false' ? false : value;
         //  options[ key ] = value;
@@ -71,7 +71,7 @@ $(function(){
         //    // otherwise, apply new options
         //    $container.isotope( options );
         //  }
-         
+        
         //  return false;
         // });
     

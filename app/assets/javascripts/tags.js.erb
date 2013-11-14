@@ -1,0 +1,55 @@
+function setSkillTagList() {
+  $("#post_skill_tag_list").attr("value", skills.join(", "));
+
+  console.log( $("#post_skill_tag_list").attr("value") );
+}
+
+function addDeleteEvent(button) {
+  button.click(function() {
+    var tag = $(this).parent();
+
+    var tagString = $(this).next().html();
+    var index = skills.indexOf( tagString );
+    skills.splice( index, 1 );
+    console.log("REMOVING: " + tagString);
+
+    tag.remove();
+    setSkillTagList();
+  });
+}
+
+function renderTag(skill_tag) {
+  var tagList = $(".skills_list");
+  var tag = $("<div>");
+  var p = $("<p class='skill-word'>" + skill_tag + "</p>");
+  p.appendTo(tag);
+  tag.addClass("tag");
+  // tag.attr("id", skill_tag);
+
+  var deleteButton = $("<button>X</button>");
+  addDeleteEvent(deleteButton);
+  deleteButton.prependTo(tag);
+
+  tag.appendTo(tagList);
+}
+
+var skills = [];
+
+$(function() {
+  // console.log("<%= true ? 'WE GOT ERB' : false %>");
+
+  $(".tag-form").submit(function(e) {
+    e.preventDefault();
+
+    var input = $("#skill_input");
+
+    skills.push(input.val());
+
+    renderTag(input.val());
+
+    setSkillTagList();
+
+    input.val("");
+  });
+
+})

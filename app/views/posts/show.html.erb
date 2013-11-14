@@ -1,5 +1,5 @@
 <div class="post">
-  <p><span> <%= current_user.name %> </span> IS LOOKING FOR WORK AS </p>
+  <p><span> <%= current_user.name %> </span><%= student? ? "IS LOOKING FOR WORK AS" : "IS LOOKING FOR" %> </p>
 
   <p>A <span><%= @post.position_type %> </span></p>
 
@@ -8,6 +8,8 @@
   <p> SAY HI!<br><span><%= current_user.email%></span></p>
 
   <p>Posted on: <span><%= @post.created_at.strftime("%b. %d %Y") %></span> from <span><%= current_user.city + ", " + current_user.state unless current_user.city.nil? || current_user.city == "" %></span></p>
+
+  <p>Tags: <%= @post.skill_tag_list %></p> 
 
   <%= link_to "Delete Post", student? ? student_post_path(current_user.id, @post.id) : employer_post_path(current_user.id, @post.id), method: :delete %>
 </div> 

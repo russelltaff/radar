@@ -1,4 +1,19 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
 /* CSS Styling for Radar */
+
 header {
    position: absolute;
    width: 100%;
@@ -9,17 +24,16 @@ header {
    background-color: #000;
    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
    font-size: 100%;
-   z-index: 9997;
+   z-index: 9999;
 }
 header h1 {
    position: absolute;
    width: 200px;
    height: 50px;
-   top: -10px;
-   left: 15px;
+   top: -15px;
+   left: 10px;
    text-indent: -9999px;
-   background: url(<%= asset_path 'radar-logo.png' %>) no-repeat;
-   z-index: 9999;
+   background: url(/assets/radar_logo.png) no-repeat;
 }
 /* Navigation */
 nav {
@@ -111,7 +125,7 @@ nav ul.dropdown ul li a:active {
 }
 /* Navigation CSS Sprites */
 nav li a.prof:before {
-   background-image: url(<%= asset_path 'profile.png' %>);
+   background-image: url(/assets/profile.png);
 }
 nav li a.prof:before {
    background-position: 0px 0px;
@@ -152,10 +166,6 @@ input[type="submit"]{
 /* User Profile Pages */
 div.column-50 {
    width: 50%;
-   float: left;
-}
-div.column-30 {
-   width: 33.33333%;
    float: left;
 }
 div.student {
@@ -201,6 +211,7 @@ p.edit_button a:hover {
 p.edit_button a:active {
    color: #000;
 }
+
 div.post{
    width: 400px;
    min-height: 300px; 
@@ -213,9 +224,9 @@ div.post{
    -webkit-box-shadow: 4px 10px 4px 4px #888;
    box-shadow: 4px 4px 10px 4px #888;
 }
+
 div.yellow{
    padding: .4em;
-   border-radius: 2px;
    background-color: yellow;
 }
 
@@ -226,12 +237,13 @@ div.login {
    box-shadow: 4px 4px 10px 4px #888;
    text-align: center;
    width: 450px;
-   height: 350px;
+   height: 300px;
    margin: 0 auto;
    padding-top: 50px;
-   background: url(<%= asset_path 'wood.png' %>) no-repeat;
-}
+   background: url(/assets/wood.png) no-repeat;
 
+
+}
 
 div.create_form {
    -moz-box-shadow: 4px 4px 10px 4px #888;
@@ -242,7 +254,7 @@ div.create_form {
    min-height: 500px;
    margin: 0 auto;
    padding-top: 30px;
-   background: url(<%= asset_path 'wood.png' %>);
+   background: url(/assets/wood.png);
    line-height: 2em;
 }
 
@@ -255,7 +267,7 @@ h1.edit {
    text-align: center;
 }
 
- h2.hire{
+h2.hire{
    color: red;
 }
 h3.my_posts{
@@ -271,33 +283,6 @@ span{
    line-height: 2em;
    /*font-size: 2.5em; */
 }
-/* Isotope Filtering */
-section.isotope {
-   width: 100%;
-   clear: both;
-}
-.isotope .isotope-item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-      -ms-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-}
-.isotope {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-      -ms-transition-property: height, width;
-       -o-transition-property: height, width;
-          transition-property: height, width;
-}
-.isotope .isotope-item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-      -ms-transition-property:     -ms-transform, opacity;
-       -o-transition-property:      -o-transform, opacity;
-          transition-property:         transform, opacity;
-}
-
 
 div.tag {
    width: 150px;
