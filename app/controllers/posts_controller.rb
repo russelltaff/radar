@@ -24,12 +24,22 @@ class PostsController < ApplicationController
     end 
   end  
 
-  def show 
-    @post = Post.find(params[:id]) 
+  def show
+    set_post
     render :show 
   end 
 
-private
+  def destroy
+    set_post
+    
+    if @post.destroy
+      redirect_to student? ? student_path(current_user.id) : employer_path(current_user.id)
+    else
+      render post_path(@post.id)
+    end
+  end
+
+  private
 
   # security ########
   def post_params
@@ -41,10 +51,15 @@ private
     @user = User.find(params_id)
   end
 
+  def set_post
+    @post = Post.find(params[:id]) 
+  end
+
   def authorized!
     unless current_user.id == session[:user_id]
       redirect_to current_user.type == "Student" ? student_path(session[:user_id]) : employer_path(session[:user_id])
       # user_path(session[:user_id])
     end
   end
+
 end
