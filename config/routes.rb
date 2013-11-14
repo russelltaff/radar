@@ -9,7 +9,7 @@ Radar::Application.routes.draw do
       get "search"
     end
     
-    resources :posts
+    resources :posts, except: [:index, :edit, :update]
   end 
 
   resources :employers, only: [:show, :edit, :update] do 
@@ -17,9 +17,12 @@ Radar::Application.routes.draw do
       get "search"
     end
 
-    resources :posts 
+    resources :posts, except: [:index, :edit, :update]
   end 
+
+  resources :posts, only: [:show, :index]
   
   resource :session, only: [:new, :create, :destroy] 
+
 
 end
