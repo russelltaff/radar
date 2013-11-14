@@ -1,6 +1,7 @@
 development:
   adapter: postgresql
+  encoding: unicode
   database: radar_development
   pool: 5
   password: 
-  host: localhost
+  
