@@ -45,9 +45,6 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'acts-as-taggable-on'
 
 
-gem 'rails_12factor', group: production
-end
-
 # gem 'protected_attributes'
 
 # Use unicorn as the app server
