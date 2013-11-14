@@ -14,7 +14,7 @@
         <% if logged_in? %> 
         <% #TODO add search functional pages; placeholders being used below %>
           <!-- Search Dropdown Menu -->
-          <li><%= link_to "Search", current_user.type == "Student" ? search_students_path : search_employers_path %>
+          <li><%= link_to "Search", posts_path %>
             
             </li>
             <!-- POST Dropdown Menu -->
