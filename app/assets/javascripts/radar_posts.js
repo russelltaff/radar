@@ -1,5 +1,5 @@
 window.onload = function(){
-  console.log("LOADED!!!"); 
+  // console.log("LOADED!!!"); 
   
   var searchField = $("input#q"); 
 
