@@ -15,10 +15,10 @@
 
   <%= f.hidden_field :skill_tag_list, value: "" %>
 
-  <button>Submit Post</button>
+  
+  <ul class="skills_list">Tags:</ul>
 
- <br /> <%= f.label :skill_tags %> 
-  <%= f.text_field :skill_tag_list, { :placeholder => "Tags (separated by commas)", size: '50x10'} %> 
+  <button>Submit Post</button>
 
 <% end %> 
 </div>
@@ -29,8 +29,6 @@
   <%= text_field_tag :skill_input %>
   <%= button_tag 'Add Tag' %>
 <% end %>
-
-<ul class="skills_list"></ul>
 
 
 <!-- User.tagged_with("awesome")

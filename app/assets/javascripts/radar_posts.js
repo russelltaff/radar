@@ -1,7 +1,3 @@
-
-window.onload = function(){
-  // console.log("LOADED!!!"); 
-
 $(function(){
   console.log("LOADED!!!"); 
   
