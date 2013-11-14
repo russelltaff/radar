@@ -1,11 +1,13 @@
 <%= form_tag search_employers_path, method: "GET" do %>
 
-  <% inputs = ["Product Manager","Entrepreneur","Digital Marketer", "Founder/Co-Founder", "UX Designer", "Product Designer", "Full-Stack Developer", "Back-end Developer", "Front-end Developer"] %>
-    <% inputs.each do |input| %>
-      <%= check_box_tag input.to_sym %>
-      <%= label_tag input.to_sym %>
-    <% end %> 
-    
-  <%= submit_tag "Search" %>
+<% types = ["Product Manager","Entrepreneur","Digital Marketer", "Founder/Co-Founder", "UX Designer", "Product Designer", "Full-Stack Developer", "Back-end Developer", "Front-end Developer"] %>
 
- <% end %> 
+  <% types.each do |input| %>
+      <%= check_box_tag input %>
+      <%= label_tag(input, input) %>
+  <% end %> 
+
+   
+<button>Submit</button>
+
+<% end %>

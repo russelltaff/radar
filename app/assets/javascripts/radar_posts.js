@@ -1,29 +1,28 @@
+
 window.onload = function(){
   // console.log("LOADED!!!"); 
+
+$(function(){
+  console.log("LOADED!!!"); 
   
+  var form = $("form.search-posts");
+
+  if (!form) return;
+
   var searchField = $("input#q"); 
 
-  $("input[type='submit']").on('click', function(e){
+  form.on('submit', function(e) {
     e.preventDefault(); 
-    var matchedPosts = []; 
     // get inputs from search field and fitler for those tags 
-    var searchTag = searchField.val(); 
-    $.each($(".tags"), function(index, tagdiv){
-      console.log(index);
-      console.log(tagdiv);
+    var searchQ = searchField.val().toLowerCase(); 
+    $.each($(".tags"), function(index, tagdiv) {
       var tagArray = $(tagdiv).data("tags").split(" ");
-      $.each($(tagArray), function(index, tag){
-        if (tag == searchTag){
-          matchedPosts.push(tagdiv.parentNode); 
-        }; 
-      }); 
-    }); 
 
-    $(".post").remove(); 
-
-    $.each($(matchedPosts), function(index, post){
-      $(post).appendTo($("#content")); 
-    }); 
-
-  }); 
-}
+      if (_.contains(tagArray, searchQ)) {
+        $(tagdiv).parent().show();
+      } else {
+        $(tagdiv).parent().hide();        
+      }
+    })
+  });
+});

@@ -19,7 +19,10 @@ before_action :authenticated!, :set_student, :authorized!, except: [:new, :creat
   end 
 
   def search
-    render :search 
+    params_array = searched_positions(params)
+    
+    @selected_posts = find_by_many(params_array)
+    render :search
   end
 
   private
@@ -38,20 +41,21 @@ before_action :authenticated!, :set_student, :authorized!, except: [:new, :creat
       redirect_to user_path(session[:user_id]) 
     end
   end
-    def find_posts_by(position_type)
-    Post.all.select do |post|
-      post == position_type
-    end
+
+  def searched_positions(user_input)
+    input = []
+    user_input.each {|type, checked| input << type if checked == "1"}
+    input
   end
 
-  def find_posts_by(*user_input)
-    result = []
-    user_input.each do |input|
-      find_posts_by(input).each {|post| result << post}
+  def find_by_many(*user_inputs)
+    results = []
+    user_inputs.each do |type|
+      Post.where(position_type: type).each do |post|
+        results << post
+      end
     end
-    result
+    results
   end
-                           
-
 
 end 

@@ -31,7 +31,7 @@ Please feel free to use a different markup language if you do not plan to run
 
 
 
-SCRUM Day 1: 
+SCRUM Day 1 Project Update: 
 
 As an employer, I would like to create a login / authentication so that I can securely store my information
 
@@ -55,3 +55,27 @@ US3: As a student, I would like to be able to login and create a profile
 US4: As a student I would like to create a job wanted post
 
 US5: As an employer, I want to be able to view all student posts
+
+SCRUM Day 2 Project Update:
+
+Shore up our schemas and start getting the routes to work. 
+
+US Priorities: 
+1) Get profile page for employer/student to render
+2) Get nav bar to work, shore up UX/UI
+
+
+SCRUM Day 4 Project Update:
+
+Our initial conflicts came with our gemfile, routes and development log, all of which were throwing errors and we pushed/pulled from origin master. After clarifying the process of branch checkout/pull requests, we've been merge-conflict-issue-free for 2 days. At this point, we've completed 3/4 of the user stories, including all of the above. The crux of our focus has been on completing a search function by which the user can search for posts that have a) certain tags and b) user/employer/student-defined property. The search-by-taggable gem has been useful but is proving difficult to master, though it did permit us to drop some of our tables and simplify the schema quite a bit.
+
+Today will be focused on getting the search function to work as well as building out the majority of our css/JS/AJAX, as well as deploying the app to Heroku. 
+
+
+
+
+
+
+
+
+

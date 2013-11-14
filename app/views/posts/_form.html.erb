@@ -1,23 +1,27 @@
-<h1>Create a <%= current_user.type == "Student" ? "Hire Me" : "We're Hiring" %> post!</h1>
+<div class = "create_form"><h1 class = "create">Create a <%= current_user.type == "Student" ? "'Hire Me'" : "'We're Hiring'" %> Post:</h1>
 
 <% path = current_user.type == "Student" ? student_posts_path : employer_posts_path %>
 
 <%= form_for @post, url: path, html: {method: "post"}, class: "submit" do |f| %>
 
   <%=f.hidden_field :user_id, value: current_user.id %>
-  <%=f.hidden_field :for_hire, value: true %>  
+  <%=f.hidden_field :for_hire, value: student? ? true : false %>  
+
+  <%= f.label :position_type %>
+  <%= f.select :position_type, ["Product Manager","Entrepreneur","Digital Marketer", "Founder/Co-Founder", "UX Designer", "Product Designer", "Full-Stack Developer", "Back-end Developer", "Front-end Developer"] %> <br /><br />
 
   <%= f.label :description %>
   <%= f.text_area(:description, size: '50x10') %>
-
-  <%= f.label :position_type %>
-  <%= f.select :position_type, ["Product Manager","Entrepreneur","Digital Marketer", "Founder/Co-Founder", "UX Designer", "Product Designer", "Full-Stack Developer", "Back-end Developer", "Front-end Developer"] %>
 
   <%= f.hidden_field :skill_tag_list, value: "" %>
 
   <button>Submit Post</button>
 
+ <br /> <%= f.label :skill_tags %> 
+  <%= f.text_field :skill_tag_list, { :placeholder => "Tags (separated by commas)", size: '50x10'} %> 
+
 <% end %> 
+</div>
 
 <!-- this form essentially only for add tag div -->
 <!-- actual skill_tag_list input value is in above form -->
@@ -28,3 +32,6 @@
 
 <ul class="skills_list"></ul>
 
+
+<!-- User.tagged_with("awesome")
+ -->
