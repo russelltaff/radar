@@ -1,5 +1,5 @@
 <div class="post">
-  <p><span> <%= current_user.name %> </span> IS LOOKING FOR WORK AS </p>
+  <p><span> <%= current_user.name %> </span><%= student? ? "IS LOOKING FOR WORK AS" : "IS LOOKING FOR" %> </p>
 
   <p>A <span><%= @post.position_type %> </span></p>
 
