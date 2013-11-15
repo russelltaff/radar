@@ -40,7 +40,7 @@
     <p><%= current_user.email %></p>
     <p><%= current_user.phone %></p>
 
-    <p>Github: <%= link_to "@" + current_user.github_url, "http://github.com/" + current_user.github_url %></p>
+    <p>Github: <%= link_to "@" + current_user.github_url, "http://github.com/" + current_user.github_url unless current_user.github_url.nil? %></p>
     <p>Portfolio: <%= link_to current_user.portfolio_url, "http://" + current_user.portfolio_url %></p>
   </div>
 
