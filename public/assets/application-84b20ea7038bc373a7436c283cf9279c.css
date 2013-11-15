@@ -10,6 +10,7 @@
  *
 
 
+ *= require_radarstyle.css.erb
  */
 
 @font-face {
@@ -36,7 +37,7 @@ header {
    left: 0;
    right: 0;
    background-color: #000;
-   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-family: "PF_Din_Text", Helvetica, Arial, sans-serif;
    font-size: 100%;
    z-index: 9997;
 }
@@ -52,7 +53,7 @@ header h1 {
 }
 /* Navigation */
 nav {
-   font-family: "Times New Roman", Times, serif;
+   font-family: "News_706", "Times New Roman", Times, serif;
    color: #fff;
    font-size: 1.1em;
 }
@@ -105,7 +106,7 @@ nav ul.dropdown ul ul {
 /* Main Nav Links */
 nav ul.dropdown li a:link {
    color: #fff;
-   padding: 25px;
+   padding: 25px 25px 14px 25px;
    text-decoration: none;
 }
 nav ul.dropdown li a:visited {
@@ -113,7 +114,7 @@ nav ul.dropdown li a:visited {
 }
 nav ul.dropdown li:hover > a {
    color: #f03;
-   padding: 25px;
+   padding: 25px 25px 14px 25px;
    background-color: #fff;
 }
 nav ul.dropdown li:active > a  {
@@ -156,6 +157,13 @@ nav li a:hover.item2 {
    background-position: 0px -215px;
 }*/
 /* Main content <div> in layout */
+
+body.welcome-page{
+   background-image: url('/assets/backgroundgafinal.jpg');
+   background-size: 100% auto;
+   background-repeat:repeat-y;
+}
+
 div#content {
    position: relative;
    margin: 0 auto;
@@ -168,6 +176,10 @@ h1, h2, h3, h4 {
    font-family: 'PF_Din_Text', Helvetica, Arial, sans-serif;
    text-transform: uppercase;
 }
+h1 {
+   
+}
+
 /* Form Styles */
 div.form {
    margin: 0 auto;
@@ -285,18 +297,7 @@ div.login {
    padding-top: 50px;
    background: url(/assets/wood.png) no-repeat;
 }
-div.create_form {
-   -moz-box-shadow: 4px 4px 10px 4px #888;
-   -webkit-box-shadow: 4px 10px 4px 4px #888;
-   box-shadow: 4px 4px 10px 4px #888;
-   text-align: center;
-   width: 450px;
-   min-height: 570px;
-   margin: 0 auto;
-   padding-top: 30px;
-   background: url(/assets/wood.png);
-   line-height: 2em;
-}
+
 h1.create {
    text-align: center;
 }
@@ -400,4 +401,47 @@ p.skill-word {
 #submit-post {
    position: relative;
    bottom: -100px;
+}
+
+#tag_cloud{
+   width: 200px;
+   border: 3px solid black;
+   border-radius: 180px; 
+   padding: 30px;
+   text-align:center;
+   background-color: #DCDCDC; 
+}
+
+.css1 { 
+   font-size: 1.2em; 
+   color: black;
+   text-decoration: none; 
+}
+
+.css2 { 
+   font-size: 1.4em; 
+   text-decoration: none; 
+   color: purple;
+}
+
+.css3 { 
+   font-size: 1.6em; 
+   color: green;
+   text-decoration: none; 
+
+}
+
+.css4 { 
+   font-size: 1.8em; 
+   color: blue;
+   text-decoration: none; 
+}
+
+#welcome-background{
+   width: 600px;
+   margin: 5em auto;
+   padding: 50px;
+   background-color: #fff;
+   border-radius: 1em;
+   min-height: 300px;
 }

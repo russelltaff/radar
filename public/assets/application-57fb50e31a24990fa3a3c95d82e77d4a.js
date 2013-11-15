@@ -10634,22 +10634,41 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 window.onload = function() {
   console.log("Radar animate");
 
-  var l1 = $("<img>").attr({src: "/assets/loop-1.png"}).css({"position": "absolute", "z-index": "9998", "top": "10px", "left": "15px"});
-  var l2 = $("<img>").attr("src", "/assets/loop-2.png").css({"position": "absolute", "z-index": "9998", "top": "10px", "left": "15px"});
-  var l3 = $("<img>").attr("src", "/assets/loop-3.png").css({"position": "absolute", "z-index": "9998", "top": "10px", "left": "15px"});
-  var l4 = $("<img>").attr("src", "/assets/loop-4.png").css({"position": "absolute", "z-index": "9998", "top": "10px", "left": "15px"});
+  var l1 = $("<img>").attr({src: "/assets/loop-1.png"}).css({"position": "absolute", "z-index": "9998", "top": "5px", "left": "10px"});
+  var l2 = $("<img>").attr("src", "/assets/loop-2.png").css({"position": "absolute", "z-index": "9998", "top": "4px", "left": "8px"});
+  var l3 = $("<img>").attr("src", "/assets/loop-3.png").css({"position": "absolute", "z-index": "9998", "top": "2px", "left": "4px"});
+  var l4 = $("<img>").attr("src", "/assets/loop-4.png").css({"position": "absolute", "z-index": "9998", "top": "0px", "left": "2px"});
   // z-index: 9998;
   var radar = $("header");
+  _.each([l1,l2,l3,l4], function(loop) {
+    radar.append(loop);
+    loop.hide();
+  });
 
   $("nav").mouseover(function() {
     console.log("MOUSEVER");
 
-    radar.append(l1);
-    console.log(radar.append(l1).children());
-    l1.toggle(1000);
-    
-    radar.append(l2);
-    l2.toggle(1000);
+    function showLoop(loop) {
+      loop.show(400, function() {
+        $(this).hide(800);
+      });
+    }
+
+    var loops = [l1,l2,l3,l4];
+    var loopTimeout = function(i, max, interval) {
+      if (i >= max) { return; }
+
+      showLoop(loops[i]);
+
+      i++;
+
+      // "loop"
+      setTimeout(function() {
+        loopTimeout(i, max, interval);
+      }, interval);
+    }
+
+    loopTimeout(0, loops.length, 350);
   });
 }
 ;

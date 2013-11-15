@@ -10,6 +10,7 @@
  *
 
 
+ *= require_radarstyle.css.erb
  */
 
 @font-face {
@@ -47,8 +48,8 @@ header h1 {
    top: -10px;
    left: 15px;
    text-indent: -9999px;
-   background: url(/assets/radar-logo.png) no-repeat;
-   z-index: 9999;
+/*   background: url(<%= asset_path 'radar-logo.png' %>) no-repeat;
+*/   z-index: 9999;
 }
 /* Navigation */
 nav {
@@ -141,7 +142,7 @@ nav ul.dropdown ul li a:active {
 }
 /* Navigation CSS Sprites */
 /*nav li a.prof:before {
-   background-image: url(/assets/profile.png);
+   background-image: url(<%= asset_path 'profile.png' %>);
 }
 nav li a.prof:before {
    background-position: 0px 0px;
@@ -287,21 +288,8 @@ div.login {
    height: 350px;
    margin: 0 auto;
    padding-top: 50px;
-   background: url(/assets/wood.png) no-repeat;
-}
-div.create_form {
-   -moz-box-shadow: 4px 4px 10px 4px #888;
-   -webkit-box-shadow: 4px 10px 4px 4px #888;
-   box-shadow: 4px 4px 10px 4px #888;
-   text-align: center;
-   width: 450px;
-   min-height: 570px;
-   margin: 0 auto;
-   padding-top: 30px;
-   background: url(/assets/wood.png);
-   line-height: 2em;
-}
-
+/*   background: url(<%= asset_path 'wood.png' %>) no-repeat;
+*/}
 
 h1.create {
    text-align: center;
