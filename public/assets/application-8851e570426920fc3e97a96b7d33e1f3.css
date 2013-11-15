@@ -1,0 +1,442 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+@font-face {
+    font-family: 'News_706';
+    src: url('/assets/News_706_Roman.eot');
+    src: url('/assets/News_706_Roman.eot?iefix') format('eot'),
+         url('/assets/News_706_Roman.woff') format('woff'),
+         url('/assets/News_706_Roman.ttf') format('truetype')
+}
+@font-face {
+    font-family: 'PF_Din_Text';
+    src: url('/assets/PF_Din_Text_Com_Pro.eot');
+    src: url('/assets/PF_Din_Text_Com_Pro.eot?iefix') format('eot'),
+         url('/assets/PF_Din_Text_Com_Pro.woff') format('woff'),
+         url('/assets/PF_Din_Text_Com_Pro.ttf') format('truetype')
+}
+
+/* CSS Styling for Radar */
+header {
+   position: absolute;
+   width: 100%;
+   height: 55px;
+   top: 0;
+   left: 0;
+   right: 0;
+   background-color: #000;
+   font-family: "PF_Din_Text", Helvetica, Arial, sans-serif;
+   font-size: 100%;
+   z-index: 9997;
+}
+header h1 {
+   position: absolute;
+   width: 200px;
+   height: 50px;
+   top: -10px;
+   left: 15px;
+   text-indent: -9999px;
+   background: url(/assets/radar-logo.png) no-repeat;
+   z-index: 9999;
+}
+/* Navigation */
+nav {
+   font-family: "News_706", "Times New Roman", Times, serif;
+   color: #fff;
+   font-size: 1.1em;
+}
+nav ul.dropdown, nav ul.dropdown li, nav ul.dropdown ul {
+   margin: 0;
+   padding: 0;
+}
+nav ul.dropdown {
+   float: right;
+   position: relative;
+   list-style: none;
+   padding: 20px;
+}
+nav ul.dropdown li {
+   float: left;
+   vertical-align: middle;
+   zoom: 1;
+}
+nav ul.dropdown ul {
+   display: none;
+   position: absolute;
+   float: left;
+   width: 220px;
+   margin: 14px 0 0 0;
+   top: 100%;
+   left: 0;
+   border: 1px solid #ccc;
+   border-top: 0;
+   -moz-box-shadow: 0 4px 2px -2px #888;
+   -webkit-box-shadow: 0 4px 2px -2px #888;
+   box-shadow: 0 4px 2px -2px #888;
+}
+nav ul.dropdown li {
+   display: block;
+}
+nav ul.dropdown li:hover {
+   position: relative;
+}
+nav ul.dropdown li:hover > ul {
+   display: block;
+}
+nav ul.dropdown ul li {
+   float: none;
+   position: relative;
+}
+nav ul.dropdown ul ul {
+   top: 0;
+   left: 100%;
+}
+/* Main Nav Links */
+nav ul.dropdown li a:link {
+   color: #fff;
+   padding: 25px;
+   text-decoration: none;
+}
+nav ul.dropdown li a:visited {
+   color: #fff;
+}
+nav ul.dropdown li:hover > a {
+   color: #f03;
+   padding: 25px;
+   background-color: #fff;
+}
+nav ul.dropdown li:active > a  {
+   color: #f03;
+}
+/* Nav Dropdown Links */
+nav ul.dropdown ul li a:link {
+   display: block;
+   background-color: #fff;
+   color: #000;
+   padding: 15px;
+   text-decoration: none;
+}
+nav ul.dropdown ul li a:visited {
+   color: #000;
+}
+nav ul.dropdown ul li a:hover{
+   color: #fff;
+   padding: 15px;
+   background-color: #f03;
+}
+nav ul.dropdown ul li a:active {
+   color: #fff;
+   background-color: #f03;
+}
+/* Navigation CSS Sprites */
+/*nav li a.prof:before {
+   background-image: url(/assets/profile.png);
+}
+nav li a.prof:before {
+   background-position: 0px 0px;
+}
+nav li a.prof:hover {
+   background-position: 0px -32px;
+}*/
+/*nav li a.item2 {
+   background-position: 0px -143px;
+}
+nav li a:hover.item2 {
+   background-position: 0px -215px;
+}*/
+/* Main content <div> in layout */
+div#content {
+   position: relative;
+   margin: 0 auto;
+   width: 90%;
+   top: 55px;
+   padding: 10px;
+   font-size: 100%;
+}
+h1, h2, h3, h4 {
+   font-family: 'PF_Din_Text', Helvetica, Arial, sans-serif;
+   text-transform: uppercase;
+}
+h1 {
+   
+}
+h2, h3, h4 {
+/* Form Styles */
+div.form {
+   margin: 0 auto;
+   width: 400px;
+   text-align: center;
+   display: inline;
+}
+div.user-form form {
+   margin: 0 auto;
+   width: 60%;
+   text-align: left;
+}
+label:after {
+   content:"\a";
+   white-space: pre;
+}
+input[type="submit"]{
+   float: right;
+   margin: 20px;
+   padding: 20px;
+}
+/* User Profile Pages */
+/* Navigation for User Profile Menu */
+div#menu {
+   position: relative;
+   margin: 0 0 0 -50px; 
+   width: 500px;
+   height: 30px;
+   clear: both;
+}
+div#menu ul {
+   list-style: none;
+   float: left;
+}
+div#menu ul li {
+   display: inline;
+   padding: 0 10px;
+}
+div#about, div#contact, div#myposts {
+   display: none;
+   position: relative;
+   clear: both;
+}
+span#aboutButton, span#contactButton, span#mypostsButton {
+   cursor: pointer;
+   border-radius: 10px;
+}
+div.column-75 {
+   width: 75%;
+   float: left;
+}
+div.column-50 {
+   width: 50%;
+   float: left;
+}
+div.column-30 {
+   width: 33.33333%;
+   float: left;
+}
+div.column-20 {
+   width: 20%;
+   float: left;
+}
+div.student {
+   margin: 0 auto;
+   width: 100%;
+   padding: 20px;
+}
+div.student h2 { 
+}
+div.student img {
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+}
+div.student img + p {
+   margin-left: 73px; 
+}
+div.employer img + p {
+   margin-left: 73px;
+}
+p.summary-text {
+   margin-right: 20px; 
+   clear: both;
+}
+div.employer img {
+   width: 300px;
+   height: 200px;
+}
+div.post{
+   width: 400px;
+   min-height: 300px; 
+   margin: 1em auto;
+   padding: 25px;
+   background-color: #fff;
+   border-radius: .1em;
+   font-size: 1.5em;
+   -moz-box-shadow: 4px 4px 10px 4px #888;
+   -webkit-box-shadow: 4px 10px 4px 4px #888;
+   box-shadow: 4px 4px 10px 4px #888;
+}
+div.yellow{
+   padding: .4em;
+   border-radius: 2px;
+   background-color: yellow;
+}
+div.login {
+   -moz-box-shadow: 4px 4px 10px 4px #888;
+   -webkit-box-shadow: 4px 10px 4px 4px #888;
+   box-shadow: 4px 4px 10px 4px #888;
+   text-align: center;
+   width: 450px;
+   height: 350px;
+   margin: 0 auto;
+   padding-top: 50px;
+   background: url(/assets/wood.png) no-repeat;
+}
+div.create_form {
+   -moz-box-shadow: 4px 4px 10px 4px #888;
+   -webkit-box-shadow: 4px 10px 4px 4px #888;
+   box-shadow: 4px 4px 10px 4px #888;
+   text-align: center;
+   width: 450px;
+   min-height: 570px;
+   margin: 0 auto;
+   padding-top: 30px;
+   background: url(/assets/wood.png);
+   line-height: 2em;
+}
+
+
+h1.create {
+   text-align: center;
+}
+h1.edit {
+   text-align: center;
+}
+h2.hire{
+   color: red;
+}
+h3.my_posts{
+   margin: 0 auto;
+   text-align: center;
+   font-size: 4em;
+}
+span{
+
+   min-width: 200px; 
+   padding: .4em;
+   background-color: yellow;
+   line-height: 2em;
+   /*font-size: 2.5em; */
+}
+/* Isotope Filtering */
+section.isotope {
+   width: 100%;
+   clear: both;
+}
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+
+ul.skills_list {
+   list-style-type: none;
+}
+
+h4#tag-header {
+   color: darkgoldenrod;
+}
+
+.tag {
+   width: 100px;
+   height: 30px;
+   margin-bottom: 0px;
+   display: inline-block;
+   margin: 0px;
+   padding: 0px;
+   border: 2px solid goldenrod;
+   border-radius: 100px;
+   text-align: center;
+}
+
+p.skill-word {
+   width: 30px;
+   height: 10px;
+   font-size: .8em;
+   margin: 0px;
+   position: inline;
+   padding: 0px;
+   float: left;
+}
+
+.delete-tag-button {
+   float: left;
+   position: inline;
+   padding: 0px;
+   margin-left: 8px;
+   margin-top: 8px;
+   margin-right: 10px;
+   width: 15px;
+   height: 15px;
+   text-align: center; 
+   font-size: .5em;
+}
+
+.tag-search {
+   width: 200px;
+   position: relative;
+   top: -220px;
+   margin: 0 auto;
+}
+
+#submit-post {
+   position: relative;
+   bottom: -100px;
+}
+
+#tag_cloud{
+   width: 200px;
+   border: 3px solid black;
+   border-radius: 40px; 
+   padding: 20px;
+   text-align:center;
+}
+
+.css1 { 
+   font-size: 1.2em; 
+   color: black;
+   text-decoration: none; 
+}
+
+.css2 { 
+   font-size: 1.4em; 
+   text-decoration: none; 
+   color: purple;
+}
+
+.css3 { 
+   font-size: 1.6em; 
+   color: green;
+   text-decoration: none; 
+
+}
+
+.css4 { 
+   font-size: 1.8em; 
+   color: blue;
+   text-decoration: none; 
+}
