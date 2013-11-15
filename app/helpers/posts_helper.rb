@@ -7,7 +7,7 @@ module PostsHelper
       when "Entrepreneur"
          @job_class = "entrep"
       when "Digital Marketer"
-       
+         @job_class = "digital"
       when "Product Designer"
          @job_class = "product_des"
       when "Full-Stack Developer"
