@@ -40,7 +40,9 @@
 
         <p><span><div class="yellow"><%= post.created_at %></span></div></p>
         
-        <p>Tags:<%= post.skill_tag_list %></p> 
+        <div class="tags" data-tags="<%= post.skill_tag_list.join(" ") %>">
+          <p>Tags:<%= post.skill_tag_list %></p> 
+        </div>
       
     </div> 
   <% end %> 
