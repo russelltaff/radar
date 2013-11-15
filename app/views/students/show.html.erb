@@ -1,37 +1,57 @@
+<%= javascript_include_tag "user_profile" %>
+
 <div class="student">
-  <h2><%= current_user.name %></h2>
 
   <div class="column-50">
     <img src="<%= current_user.photo.url %>" />
     <p><%= current_user.type %></p>
-    <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? || current_user.city == "" %></p>
   </div>
 
   <div class="column-50">
-    <p><%= current_user.email %></p>
-    <p><%= current_user.phone %></p>
-    <p><%= "github URL: " %><%=current_user.github_url %></p>
-    <p><%= "Portfolio: " %><%=current_user.portfolio_url %></p>
+    <h2><%= current_user.name %></h2>
+
+    <p>Email: <%= current_user.email %></p>
    
-    <p>Resum&#233;: <%= link_to current_user.resume_file_name, current_user.resume.url %>
-     
+    <p>Resum&#233;: <%= link_to current_user.resume_file_name, current_user.resume.url %>   
   </div>
 
-  <p class="summary-text"><%= @current_user.summary %></p>
+  <div id="menu">
+    <ul>
+      <li><span id="aboutButton">About Me</span></li>
+      <li><span id="contactButton">Find Me</span></li>
+      <li><span id="mypostsButton">My POSTs</span></li>
+    </ul>
+  </div>
 
-  <a name="my-posts"></a>
-  <h3 class = "my_posts">My POSTs:</h3>
- 
-    <% current_user.posts.each do |post| %>
-     <div class="post" >
-      <p><em>FOR HIRE</em></p>
-      <p>Position: <span> <%= post.position_type %></span></p>
-      <p>Description: <span><%= post.description %></span></p>
-      <p>Date: <span><%= post.created_at.strftime("%b. %d %Y") %></span></p>
-      <p><%= link_to "Make Big", post_path(post.id) %></p>
-   </div>
-  <% end %>
+  <div id="about">
+    <p class="summary-text"><%= @current_user.summary %></p>
+  </div>
 
+  <div id="contact">
+    <p><%= current_user.name %></p>
+    <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? || current_user.city == "" %></p>
+
+    <p><%= current_user.email %></p>
+    <p><%= current_user.phone %></p>
+
+    <p><%= link_to "Github:", current_user.github_url %></p>
+    <p><%= link_to "Portfolio:", current_user.portfolio_url %></p>
+  </div>
+
+  <div id="myposts">
+    <a name="my-posts"></a>
+    <h3 class="my_posts">My POSTs:</h3>
+   
+      <% current_user.posts.each do |post| %>
+       <div class="post" >
+        <p><em>FOR HIRE</em></p>
+        <p>Position: <span> <%= post.position_type %></span></p>
+        <p>Description: <span><%= post.description %></span></p>
+        <p>Date: <span><%= post.created_at.strftime("%b. %d %Y") %></span></p>
+        <p><%= link_to "Make Big", post_path(post.id) %></p>
+     </div>
+    <% end %>
+  </div>
  
 
 </div>

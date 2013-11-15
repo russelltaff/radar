@@ -2,29 +2,31 @@
 
 <%= javascript_include_tag "radar_posts" %>
 
-<p>Search by POST Type:</p>
-<ul id="filter_post_type" class="filtered" data-option-key="filter">                  
-  <li><a href="#" data-type-value=".hiring" class="selected">Employee POSTs</a></li> 
-  <li><a href="#" data-type-value=".for_hire">Student POSTs</a></li>              
-</ul>
+<div class="column-20">
+  <p>Search by POST Type:</p>
+  <ul id="filter_post_type" class="filtered" data-option-key="filter">                  
+    <li><a href="#" data-type-value=".hiring" class="selected">Employee POSTs</a></li> 
+    <li><a href="#" data-type-value=".for_hire">Student POSTs</a></li>              
+  </ul>
 
-<p>Search by Position Type:</p>
-<ul id="filter_all_posts" class="filtered" data-option-key="filter">                  
-  <li><a href="#" data-option-value="*" class="selected">All Projects</a></li> 
-  <li><a href="#" data-option-value=".product_man">Product Manager</a></li> 
-  <li><a href="#" data-option-value=".entrep">Entrepreneur</a></li> 
-  <li><a href="#" data-option-value=".digital">Digital Marketer</a></li> 
-  <li><a href="#" data-option-value=".founder">Founder/Co-Founder</a></li> 
-  <li><a href="#" data-option-value=".ux">UX Designer</a></li> 
-  <li><a href="#" data-option-value=".product_des">Product Designer</a></li> 
-  <li><a href="#" data-option-value=".full_dev">Full-Stack Developer</a></li> 
-  <li><a href="#" data-option-value=".back_dev">Back-end Developer</a></li> 
-  <li><a href="#" data-option-value=".front_dev">Front-end Developer</a></li>                  
-</ul>
+  <p>Search by Position Type:</p>
+  <ul id="filter_all_posts" class="filtered" data-option-key="filter">                  
+    <li><a href="#" data-option-value="*" class="selected">All Projects</a></li> 
+    <li><a href="#" data-option-value=".product_man">Product Manager</a></li> 
+    <li><a href="#" data-option-value=".entrep">Entrepreneur</a></li> 
+    <li><a href="#" data-option-value=".digital">Digital Marketer</a></li> 
+    <li><a href="#" data-option-value=".founder">Founder/Co-Founder</a></li> 
+    <li><a href="#" data-option-value=".ux">UX Designer</a></li> 
+    <li><a href="#" data-option-value=".product_des">Product Designer</a></li> 
+    <li><a href="#" data-option-value=".full_dev">Full-Stack Developer</a></li> 
+    <li><a href="#" data-option-value=".back_dev">Back-end Developer</a></li> 
+    <li><a href="#" data-option-value=".front_dev">Front-end Developer</a></li>                  
+  </ul>
 
-<%= render 'search_form' %> 
+  <%= render 'search_form' %>
+</div> 
 
-<section id="all_posts" class="isotope">
+<section id="all_posts" class="isotope column-75">
   <% @posts.each do |post| %> 
   <% type_of_position(post) %>
   <% type_of_post(post) %>
