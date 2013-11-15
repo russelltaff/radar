@@ -12,7 +12,13 @@
 
     <p>Email: <%= current_user.email %></p>
    
-    <p>Resum&#233;: <%= link_to current_user.resume_file_name, current_user.resume.url %>   
+    <p>Resum&#233;: 
+      <% if current_user.resume_file_name %>
+        <%= link_to current_user.resume_file_name, current_user.resume.url %>
+      <% else %>
+        <%= link_to "Add Resume", edit_student_path(current_user) %>
+      <% end %>
+    </p>   
   </div>
 
   <div id="menu">
