@@ -15,4 +15,4 @@
 //= require turbolinks
 //= require jquery.isotope.min
 //= require underscore.js
-
+//= require radar_animate
