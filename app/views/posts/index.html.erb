@@ -50,3 +50,9 @@
   <% end %> 
 </section>
 
+<div id="tag_cloud">
+  <h2>Tag Cloud</h2>
+  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+    <%= link_to tag.name, posts_path, class: css_class %>
+  <% end %>
+</div> 
