@@ -1,4 +1,4 @@
-<div class = "create_form"><h1 class = "create">Create a <%= current_user.type == "Student" ? "'Hire Me'" : "'We're Hiring'" %> Post:</h1>
+<div class="create_form"><h1 class = "create">Create a <%= current_user.type == "Student" ? "'Hire Me'" : "'We're Hiring'" %> Post:</h1>
 
 <% path = current_user.type == "Student" ? student_posts_path : employer_posts_path %>
 
