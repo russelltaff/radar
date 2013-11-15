@@ -13,15 +13,38 @@ window.onload = function() {
   var l4 = $("<img>").attr("src", "<%= asset_path 'loop-4.png' %>").css({"position": "absolute", "z-index": "9998", "top": "10px", "left": "15px"});
   // z-index: 9998;
   var radar = $("header");
+  _.each([l1,l2,l3,l4], function(loop) {
+    radar.append(loop);
+    loop.hide();
+  });
 
   $("nav").mouseover(function() {
     console.log("MOUSEVER");
 
-    radar.append(l1);
-    console.log(radar.append(l1).children());
-    l1.toggle(1000);
-    
-    radar.append(l2);
-    l2.toggle(1000);
+    function showLoop2(loop) {
+      loop.show(500, function() {
+        console.log("L3");
+        $(this).hide(500);
+      });
+    }
+
+    function showLoop(loop) {
+      loop.show(500, function() {
+        console.log("L2");
+        $(this).hide(500);
+        setTimeout(showLoop2(l3), 500);
+      });
+    }
+
+    var loops = [l1,l2,l3,l4];
+
+    l1.show(500, function() {
+      console.log("L1");
+      $(this).hide(500);
+      setTimeout(showLoop(l2),500);
+    });
+
+    // setTimeout(showLoop(l3),500);
+
   });
 }
