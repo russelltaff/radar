@@ -1,35 +1,55 @@
 <%= javascript_include_tag "user_profile" %>
 
-<h1>Welcome <%= current_user.name %>!</h1>
-
 <div class="employer">
+
   <div class="column-50">
-    <p></p>
-    <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? %></p>
-    <p><%= "Company Size: " + current_user.company_size unless current_user.company_size.nil? %></p>
+    <p><img src="<%= current_user.photo.url %>" /></p>
+    <p><%= current_user.type %></p>
     <p><%= current_user.apprentice_partner == true ? current_user.name + " is a GA Apprenticeship Partner" : current_user.name +  " is not an apprenticeship partner" %></p>
   </div>
 
   <div class="column-50">
+    <h2><%= current_user.name %></h2>
+    <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? %></p>
     <p><%= "Company Type: " + current_user.company_type unless current_user.company_type.nil? %></p>
-    <p><%= "Contact Us: " + current_user.phone unless current_user.phone.nil? %></p>
-    <p><%= current_user.email %></p>
-    <p><%= "Visit Us Online @: " +  current_user.company_url unless current_user.company_url.nil? %></p>
+    <p><%= "Company Size: " + current_user.company_size unless current_user.company_size.nil? %></p>
+    <p><%= "Website: " +  current_user.company_url unless current_user.company_url.nil? %></p>
   </div>
-  <p><img src="<%= current_user.photo.url %>" /></p>
-  <p>
-    <%="About " + current_user.name + ": " +current_user.summary unless current_user.summary.nil? %>
-  </p>
 
-  <a name="my-posts"></a>
-  <h3>My POSTs:</h3>
-  <div class="post">
-    <% current_user.posts.each do |post| %>
-      <p>Hiring</p>
-      <p>Position: <%= post.position_type %></p>
-      <p>Description: <%= post.description %></p>
-      <p>Date: <%= post.created_at %></p>
-      <p><%= link_to "Make Big", post_path(post.id) %></p>
+  <div id="menu">
+    <ul>
+      <li><span id="aboutButton">About</span></li>
+      <li><span id="contactButton">Contact</span></li>
+      <li><span id="mypostsButton">Our POSTs</span></li>
+    </ul>
+  </div>
+
+  <div id="about">
+    <p class="summary-text"><%= @current_user.summary %></p>
+  </div>
+
+  <div id="contact">
+    <h2><%= current_user.name %></h2>
+    <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? %></p>
+    <p><%= "Company Type: " + current_user.company_type unless current_user.company_type.nil? %></p>
+    <p><%= "Company Size: " + current_user.company_size unless current_user.company_size.nil? %></p>
+    <p><%= "Phone: " + current_user.phone unless current_user.phone.nil? %></p>
+    <p><%= "Email: " +current_user.email %></p>
+    <p><%= "Website: " +  current_user.company_url unless current_user.company_url.nil? %></p>
+  </div>
+
+  <div id="myposts">
+    <a name="my-posts"></a>
+    <h3 class="my_posts">My POSTs:</h3>
+   
+      <% current_user.posts.each do |post| %>
+       <div class="post" >
+        <h4><em>Hiring</em></h4>
+        <p>Position: <span> <%= post.position_type %></span></p>
+        <p>Description: <span><%= post.description %></span></p>
+        <p>Date: <span><%= post.created_at.strftime("%b. %d %Y") %></span></p>
+        <p><%= link_to "Make Big", post_path(post.id) %></p>
+     </div>
     <% end %>
   </div>
 </div>

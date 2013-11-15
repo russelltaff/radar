@@ -126,7 +126,7 @@ nav ul.dropdown ul li a:active {
    background-color: #f03;
 }
 /* Navigation CSS Sprites */
-nav li a.prof:before {
+/*nav li a.prof:before {
    background-image: url(<%= asset_path 'profile.png' %>);
 }
 nav li a.prof:before {
@@ -134,7 +134,7 @@ nav li a.prof:before {
 }
 nav li a.prof:hover {
    background-position: 0px -32px;
-}
+}*/
 /*nav li a.item2 {
    background-position: 0px -143px;
 }
@@ -179,6 +179,9 @@ input[type="submit"]{
 /* Navigation for User Profile Menu */
 div#menu {
    position: relative;
+   margin: 0 0 0 -50px; 
+   width: 500px;
+   height: 30px;
    clear: both;
 }
 div#menu ul {
@@ -231,11 +234,14 @@ div.student img + p {
 }
 div.employer img + p {
    margin-left: 73px;
-
 }
 p.summary-text {
    margin-right: 20px; 
    clear: both;
+}
+div.employer img {
+   width: 300px;
+   height: 200px;
 }
 div.post{
    width: 400px;
