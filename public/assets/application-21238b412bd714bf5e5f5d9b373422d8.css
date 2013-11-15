@@ -1,3 +1,18 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ *= require_radarstyle.css.erb
+ */
+
 @font-face {
     font-family: 'News_706';
     src: url('/assets/News_706_Roman.eot');
@@ -33,7 +48,7 @@ header h1 {
    top: -10px;
    left: 15px;
    text-indent: -9999px;
-   background: url(<%= asset_path 'radar-logo.png' %>) no-repeat;
+   background: url(/assets/radar-logo.png) no-repeat;
    z-index: 9999;
 }
 /* Navigation */
@@ -127,7 +142,7 @@ nav ul.dropdown ul li a:active {
 }
 /* Navigation CSS Sprites */
 /*nav li a.prof:before {
-   background-image: url(<%= asset_path 'profile.png' %>);
+   background-image: url(/assets/profile.png);
 }
 nav li a.prof:before {
    background-position: 0px 0px;
@@ -144,7 +159,7 @@ nav li a:hover.item2 {
 /* Main content <div> in layout */
 
 body.welcome-page{
-   background-image: url('<%= image_path 'backgroundgafinal.jpg' %>');
+   background-image: url('/assets/backgroundgafinal.jpg');
    background-size: 100% auto;
    background-repeat:repeat-y;
 }
@@ -161,11 +176,14 @@ h1, h2, h3, h4 {
    font-family: 'PF_Din_Text', Helvetica, Arial, sans-serif;
    text-transform: uppercase;
 }
+<<<<<<< HEAD
+=======
 h1 {
    
 }
 
 /* Form Styles */
+>>>>>>> master
 div.form {
    margin: 0 auto;
    width: 400px;
@@ -280,7 +298,7 @@ div.login {
    height: 350px;
    margin: 0 auto;
    padding-top: 50px;
-   background: url(<%= asset_path 'wood.png' %>) no-repeat;
+   background: url(/assets/wood.png) no-repeat;
 }
 div.create_form {
    -moz-box-shadow: 4px 4px 10px 4px #888;
@@ -291,7 +309,7 @@ div.create_form {
    min-height: 570px;
    margin: 0 auto;
    padding-top: 30px;
-   background: url(<%= asset_path 'wood.png' %>);
+   background: url(/assets/wood.png);
    line-height: 2em;
 }
 h1.create {
