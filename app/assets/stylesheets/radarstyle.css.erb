@@ -142,6 +142,13 @@ nav li a:hover.item2 {
    background-position: 0px -215px;
 }*/
 /* Main content <div> in layout */
+
+body.welcome-page{
+   background-image: url('<%= image_path 'backgroundgafinal.jpg' %>');
+   background-size: 100% auto;
+   background-repeat:repeat-y;
+}
+
 div#content {
    position: relative;
    margin: 0 auto;
@@ -384,9 +391,10 @@ p.skill-word {
 #tag_cloud{
    width: 200px;
    border: 3px solid black;
-   border-radius: 40px; 
-   padding: 20px;
+   border-radius: 180px; 
+   padding: 30px;
    text-align:center;
+   background-color: #DCDCDC; 
 }
 
 .css1 { 
@@ -412,4 +420,13 @@ p.skill-word {
    font-size: 1.8em; 
    color: blue;
    text-decoration: none; 
+}
+
+#welcome-background{
+   width: 600px;
+   margin: 5em auto;
+   padding: 50px;
+   background-color: #fff;
+   border-radius: 1em;
+   min-height: 300px;
 }

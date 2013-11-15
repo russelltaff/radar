@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= params[:action] == "welcome" ? "welcome-page" : ""  %>">
   <header>
     <a href="/"><h1>GA Radar</h1></a>
     <nav>
@@ -43,6 +43,5 @@
   <div id="content">
     <%= yield %>
   </div>
-
 </body>
 </html>
