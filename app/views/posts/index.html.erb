@@ -9,6 +9,7 @@
     <li><a href="#" data-type-value=".for_hire">Student POSTs</a></li>              
   </ul>
 
+  <hr /><br />
   <p>Search by Position Type:</p>
   <ul id="filter_all_posts" class="filtered" data-option-key="filter">                  
     <li><a href="#" data-option-value="*" class="selected">All Projects</a></li> 
@@ -20,13 +21,25 @@
     <li><a href="#" data-option-value=".product_des">Product Designer</a></li> 
     <li><a href="#" data-option-value=".full_dev">Full-Stack Developer</a></li> 
     <li><a href="#" data-option-value=".back_dev">Back-end Developer</a></li> 
-    <li><a href="#" data-option-value=".front_dev">Front-end Developer</a></li>                  
+    <li><a href="#" data-option-value=".front_dev">Front-end Developer</a></li>
   </ul>
+  <hr /><br />
 
-  <%= render 'search_form' %>
+  <p>Filter by Tag:</p>
+  <%= render 'search_form' %><br /><br />
+
+  <hr /><br />
+
+  <div id="tag_cloud">
+    <h2>Tag Cloud</h2>
+    <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+      <%= link_to tag.name, posts_path, class: css_class %>
+    <% end %>
+  </div> 
+
 </div> 
 
-<section id="all_posts" class="isotope column-75">
+<section id="all_posts" class="isotope">
   <% @posts.each do |post| %> 
   <% type_of_position(post) %>
   <% type_of_post(post) %>
@@ -49,10 +62,3 @@
     </div> 
   <% end %> 
 </section>
-
-<div id="tag_cloud">
-  <h2>Tag Cloud</h2>
-  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-    <%= link_to tag.name, posts_path, class: css_class %>
-  <% end %>
-</div> 
