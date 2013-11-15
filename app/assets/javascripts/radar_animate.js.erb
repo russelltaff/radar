@@ -7,10 +7,10 @@
 window.onload = function() {
   console.log("Radar animate");
 
-  var l1 = $("<img>").attr({src: "<%= asset_path('loop-1.png') %>"}).css({"position": "absolute", "z-index": "9998", "top": "10px", "left": "15px"});
-  var l2 = $("<img>").attr("src", "<%= asset_path 'loop-2.png' %>").css({"position": "absolute", "z-index": "9998", "top": "10px", "left": "15px"});
-  var l3 = $("<img>").attr("src", "<%= asset_path 'loop-3.png' %>").css({"position": "absolute", "z-index": "9998", "top": "10px", "left": "15px"});
-  var l4 = $("<img>").attr("src", "<%= asset_path 'loop-4.png' %>").css({"position": "absolute", "z-index": "9998", "top": "10px", "left": "15px"});
+  var l1 = $("<img>").attr({src: "<%= asset_path('loop-1.png') %>"}).css({"position": "absolute", "z-index": "9998", "top": "5px", "left": "10px"});
+  var l2 = $("<img>").attr("src", "<%= asset_path 'loop-2.png' %>").css({"position": "absolute", "z-index": "9998", "top": "4px", "left": "8px"});
+  var l3 = $("<img>").attr("src", "<%= asset_path 'loop-3.png' %>").css({"position": "absolute", "z-index": "9998", "top": "2px", "left": "4px"});
+  var l4 = $("<img>").attr("src", "<%= asset_path 'loop-4.png' %>").css({"position": "absolute", "z-index": "9998", "top": "0px", "left": "2px"});
   // z-index: 9998;
   var radar = $("header");
   _.each([l1,l2,l3,l4], function(loop) {
@@ -21,30 +21,26 @@ window.onload = function() {
   $("nav").mouseover(function() {
     console.log("MOUSEVER");
 
-    function showLoop2(loop) {
-      loop.show(500, function() {
-        console.log("L3");
-        $(this).hide(500);
-      });
-    }
-
     function showLoop(loop) {
       loop.show(500, function() {
-        console.log("L2");
-        $(this).hide(500);
-        setTimeout(showLoop2(l3), 500);
+        $(this).hide(200);
       });
     }
 
     var loops = [l1,l2,l3,l4];
+    var loopTimeout = function(i, max, interval) {
+      if (i >= max) { return; }
 
-    l1.show(500, function() {
-      console.log("L1");
-      $(this).hide(500);
-      setTimeout(showLoop(l2),500);
-    });
+      showLoop(loops[i]);
 
-    // setTimeout(showLoop(l3),500);
+      i++;
 
+      // "loop"
+      setTimeout(function() {
+        loopTimeout(i, max, interval);
+      }, interval);
+    }
+
+    loopTimeout(0, loops.length, 350);
   });
 }
