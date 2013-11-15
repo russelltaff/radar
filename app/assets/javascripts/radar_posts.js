@@ -30,6 +30,7 @@
 
   // Isotope Script for Sorting Scripts
   $(function(){
+        console.log("radar_post loaded");
         
         var $container = $('#all_posts');
   
@@ -75,5 +76,5 @@
         //  return false;
         // });
     
-      });
+      
 });
