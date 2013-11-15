@@ -1,4 +1,6 @@
 module PostsHelper
+   include ActsAsTaggableOn::TagsHelper
+
 
    def type_of_position(post_obj)
       case post_obj.position_type

@@ -3,7 +3,13 @@ class PostsController < ApplicationController
   before_action :authorized!, except: [:show, :index]
   #TODO create post routes should not be accessible to unauthorized users
 
+  def tag_cloud
+    @tags = Post.tag_counts_on(:skill_tags)
+  end
+
   def index 
+    @tags = Post.tag_counts_on(:skill_tags)
+    
     @posts = Post.all 
     render :index 
   end 
