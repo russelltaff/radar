@@ -17,6 +17,8 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
+  <hr /><br />
+
   <% attributes = ["city", "state", "phone", "summary", "company_url", ] %>
   <% attributes.each do |attr| %>
     <%= f.label attr.to_sym %>
