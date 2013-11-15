@@ -27,5 +27,8 @@ Radar::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.precompile += %w( .svg .eot .woff .ttf)
+
   Paperclip.options[:command_path] = "/usr/local/bin/"
 end
