@@ -32,7 +32,7 @@
   <% type_of_post(post) %>
 
     <div class="post column-30 <%= @type_class %> <%= @job_class %>">
-        <p><span> <%= current_user.name %> </span> IS </p>
+        <p><span> <%= post.user.name %> </span> IS </p>
 
         <p>A <div class="yellow"><span><%= post.position_type %> </span></div></p>
 
