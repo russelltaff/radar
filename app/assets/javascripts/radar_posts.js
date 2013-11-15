@@ -1,31 +1,31 @@
-$(function(){
-  console.log("LOADED!!!"); 
+// $(function(){
+//   console.log("LOADED!!!"); 
   
-  var searchField = $("input#q"); 
+//   var searchField = $("input#q"); 
 
-  $("input[type='submit']").on('click', function(e){
-    e.preventDefault(); 
-    var matchedPosts = []; 
-    // get inputs from search field and fitler for those tags 
-    var searchTag = searchField.val(); 
-    $.each($(".tags"), function(index, tagdiv){
-      console.log(index);
-      console.log(tagdiv);
-      var tagArray = $(tagdiv).data("tags").split(" ");
-      $.each($(tagArray), function(index, tag){
-        if (tag == searchTag){
-          matchedPosts.push(tagdiv.parentNode); 
-        }; 
-      }); 
-    }); 
+//   $("input[type='submit']").on('click', function(e){
+//     e.preventDefault(); 
+//     var matchedPosts = []; 
+//     // get inputs from search field and fitler for those tags 
+//     var searchTag = searchField.val(); 
+//     $.each($(".tags"), function(index, tagdiv){
+//       console.log(index);
+//       console.log(tagdiv);
+//       var tagArray = $(tagdiv).data("tags").split(" ");
+//       $.each($(tagArray), function(index, tag){
+//         if (tag == searchTag){
+//           matchedPosts.push(tagdiv.parentNode); 
+//         }; 
+//       }); 
+//     }); 
 
-    $(".post").remove(); 
+//     $(".post").remove(); 
 
-    $.each($(matchedPosts), function(index, post){
-      $(post).appendTo($("#content")); 
-    }); 
+//     $.each($(matchedPosts), function(index, post){
+//       $(post).appendTo($("#content")); 
+//     }); 
 
-  }); 
+//   }); 
 
 
   // Isotope Script for Sorting Scripts
