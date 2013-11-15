@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <h1>GA Radar</h1>
+    <a href="/"><h1>GA Radar</h1></a>
     <nav>
       <ul class="dropdown"> 
         <% if logged_in? %> 
@@ -41,7 +41,7 @@
   </header>
 
   <div id="content">
-  <%= yield %>
+    <%= yield %>
   </div>
 
 </body>
