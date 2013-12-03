@@ -3,16 +3,16 @@
 
   <p><span class="sans">A</span><span><%= @post.position_type %> </span></p>
 
-  <p><span class="sans"><%= @post.user.type == "Student" ? "WITH EXPERIENCE IN" : "FOR HELP W/" %>:</span><br><span><%= @post.description %></span></p>
+  <p><span class="sans"><%= @post.user.type == "Student" ? "WITH EXPERIENCE IN" : "FOR HELP W/" %>:</span><br /><span class="description"><%= @post.description %></span></p>
 
-  <p><span class="sans">SAY HI!</span><br><span>Email: <%= @post.user.email%><br />
+  <p><span class="sans">SAY HI!</span><br /><span class="description">My email is: <%= @post.user.email%><br />
     <%= link_to @post.user.name + "'s Page", @post.user.type == "Student" ? student_path(@post.user.id) : employer_path(@post.user.id)%></span></p>
 
-  <p><span class="sans">Posted on:</span><span><%= @post.created_at.strftime("%b. %d %Y") %></span> from <span><%= @post.user.city + ", " + @post.user.state unless @post.user.city.nil? || @post.user.city == "" %></span></p>
+  <p><span class="sans">Created on:</span><span><%= @post.created_at.strftime("%b. %d %Y") %></span><br /><span class="sans">Location: </span><span><%= @post.user.city + ", " + @post.user.state unless @post.user.city.nil? || @post.user.city == "" %></span></p>
 
   <p><span class="sans">Tags: </span><%= @post.skill_tag_list %></p> 
 
-  <%= link_to "Delete Post", @post.user.type == "Student" ? student_post_path(@post.user.id, @post.id) : employer_post_path(@post.user.id, @post.id), method: :delete %>
+  <p><%= link_to "Delete Post", @post.user.type == "Student" ? student_post_path(@post.user.id, @post.id) : employer_post_path(@post.user.id, @post.id), method: :delete %></p>
 </div> 
 
 

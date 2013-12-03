@@ -3,14 +3,14 @@
 <%= javascript_include_tag "radar_posts" %>
 
 <div class="column-20">
-  <p>Search by POST Type:</p>
+  <h4>Search by POST Type:</h4>
   <ul id="filter_post_type" class="filtered" data-option-key="filter">                  
     <li><a href="#" data-type-value=".hiring" class="selected">Employee POSTs</a></li> 
     <li><a href="#" data-type-value=".for_hire">Student POSTs</a></li>              
   </ul>
 
   <hr /><br />
-  <p>Search by Position Type:</p>
+  <h4>Search by Position Type:</h4>
   <ul id="filter_all_posts" class="filtered" data-option-key="filter">                  
     <li><a href="#" data-option-value="*" class="selected">All Projects</a></li> 
     <li><a href="#" data-option-value=".product_man">Product Manager</a></li> 
@@ -25,7 +25,7 @@
   </ul>
   <hr /><br />
 
-  <p>Filter by Tag:</p>
+  <h4>Filter by Tag:</h4>
   <%= render 'search_form' %><br /><br />
 
   <hr /><br />
@@ -45,20 +45,19 @@
   <% type_of_post(post) %>
 
     <div class="post column-30 <%= @type_class %> <%= @job_class %>">
-        <p><span> <%= post.user.name %> </span> IS </p>
+        <p><span> <%= post.user.name %> </span><span class="sans">IS A</span>
+        <%= post.position_type %></p>
 
-        <p>A <div><span><%= post.position_type %> </span></div></p>
+        <p><span class="sans"><%= post.user.type == "Student" ? "WITH EXPERIENCE IN" : "FOR HELP W/" %>:<br /></span><span class="description"><%= post.description %></span></p>
 
-        <p> <%= student? ? "WITH EXPERIENCE IN" : "FOR HELP W/" %>: <div><span><%= post.description %></span></div></p>
+        <p><span class="sans">SAY HI!</span><br /><span><%= link_to post.user.name + "'s Page", post.user.type == "Student" ? student_path(post.user.id) : employer_path(post.user.id)%></span></p>
 
-        <p> SAY HI! <div><span><%= current_user.city + ", " + current_user.state unless current_user.city.nil? || current_user.city == "" %></span></div></p>
-
-        <p><span><div>Created on: <%= post.created_at.strftime("%b. %d %Y") %></span></div></p>
+        <p><span class="sans">Created on: </span><span><%= post.created_at.strftime("%b. %d %Y") %></span></p>
         
         <div class="tags" data-tags="<%= post.skill_tag_list.join(" ") %>">
-          <p>Tags:<%= post.skill_tag_list %></p> 
+          <p><span class="sans">Tags: </span><%= post.skill_tag_list %></p> 
         </div>
-      
+       <p class="fullpost"><%= link_to "Full POST", post_path(post.id) %></p>
     </div> 
   <% end %> 
 </section>

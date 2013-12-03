@@ -58,7 +58,7 @@
         <p>Position: <span> <%= post.position_type %></span></p>
         <p>Description: <span><%= post.description %></span></p>
         <p>Date: <span><%= post.created_at.strftime("%b. %d %Y") %></span></p>
-        <p><%= link_to "Make Big", post_path(post.id) %></p>
+        <p class="fullpost"><%= link_to "Full POST", post_path(post.id) %></p>
       </div>
     <% end %>
   </div>
