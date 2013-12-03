@@ -14,8 +14,8 @@ class UsersController < ApplicationController
       # return to signup page
       redirect_to new_session_path
     else
-      render :new
-      # redirect_to new_user_path
+      # render :new
+      redirect_to new_user_path
     end
   end 
 
