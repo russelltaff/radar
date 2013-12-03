@@ -11,8 +11,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     # binding.pry
     if @user.save
-      redirect_to @user.type == "Student" ? student_path(@user) : employer_path(@user)
       # return to signup page
+      redirect_to new_session_path
     else
       render :new
     end
