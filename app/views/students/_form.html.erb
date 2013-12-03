@@ -20,11 +20,14 @@
 
   <hr />
 
-  <% user_inputs = ["city", "state", "phone", "portfolio_url", "github_url"] %>
+  <% user_inputs = ["city", "state", "phone", "portfolio_url"]%>
   <% user_inputs.each do |attr| %>
     <%= f.label attr.to_sym %>
     <%= f.text_field attr.to_sym %><br />
   <% end %>
+
+  <%= f.label :github_handle %>
+  <%= f.text_field :github_url %><br />
 
   <%= f.label :summary %>
   <%= f.text_area :summary, {cols: 50, rows: 10} %><br />

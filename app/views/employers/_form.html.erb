@@ -25,10 +25,8 @@
     <%= f.text_field attr.to_sym %><br />
   <% end %>
 
-  <div class="column-30">
-    <%= f.label :company_type %>
-    <%= f.text_field :company_type %>
-  </div>
+  <%= f.label :company_type %>
+  <%= f.text_field :company_type %><br /><br />
 
   <div class="column-30">
     <%= f.label :photo %>
@@ -40,9 +38,11 @@
     <%= f.select :company_size, ["myself only","2-10","11-50","51-200","201-500","501-1000","1000+"] %>
   </div>
 
-  <%= f.label :apprentice_partner %> 
-  <%= f.check_box :apprentice_partner %> 
-
+  <div class="column-30">
+    <%= f.label :apprentice_partner %> 
+    <%= f.check_box :apprentice_partner %> 
+  </div>
+  
   <%= f.submit logged_in? ? 'Update' : 'Sign Up' %>
 <% end %>
 </div>
