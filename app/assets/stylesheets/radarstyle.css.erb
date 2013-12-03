@@ -149,12 +149,19 @@ nav li a:hover.item2 {
 }*/
 /* Main content <div> in layout */
 
-body.welcome-page{
-   background-image: url('<%= image_path 'backgroundgafinal.jpg' %>');
+.welcome-page{
+   background-image: url(<%= image_path 'backgroundgafinal.jpg' %>);
    background-size: 100% auto;
-   background-repeat:repeat-y;
+   background-repeat: repeat-y;
 }
-
+#welcome-background{
+   width: 600px;
+   margin: 5em auto;
+   padding: 50px;
+   background-color: #fff;
+   border-radius: 1em;
+   min-height: 300px;
+}
 div#content {
    position: relative;
    margin: 70px auto;
@@ -204,29 +211,46 @@ input[type="submit"]{
 /* Navigation for User Profile Menu */
 div#menu {
    position: relative;
-   margin: 0 0 0 -50px; 
-   width: 500px;
-   height: 30px;
+   margin: 0; 
+   width: 600px;
+   height: 20px;
    clear: both;
+   border-top: 1px solid #e2e2e2;
 }
 div#menu ul {
+   position: relative;
    list-style: none;
    float: left;
+   top: -17px;
 }
 div#menu ul li {
    display: inline;
    padding: 0 10px;
 }
 div#about, div#contact, div#myposts {
-   display: none;
-   width: 100%;
-   margin: 0 auto;
    position: relative;
+   display: none;
+   width: 80%;
+   min-height: 300px;
+   background-color: #fff;
+   padding: 20px;
    clear: both;
 }
 span#aboutButton, span#contactButton, span#mypostsButton {
    cursor: pointer;
-   border-radius: 10px;
+   font-family: "PF_Din_Text", Helvetica, Arial, sans-serif;
+   text-transform: uppercase;
+   font-size: 24px;
+   color: #666666;
+   background-color: transparent;
+}
+span#aboutButton:hover, span#contactButton:hover, span#mypostsButton:hover {
+   border-top: 3px solid #222;
+   color: #f03;
+}
+span.active {
+   border-top: 3px solid #222;
+   color: #222 !important;
 }
 div.column-75 {
    width: 75%;
@@ -431,16 +455,12 @@ section.isotope {
        -o-transition-property:      -o-transform, opacity;
           transition-property:         transform, opacity;
 }
-
-
 ul.skills_list {
    list-style-type: none;
 }
-
 h4#tag-header {
    color: darkgoldenrod;
 }
-
 .tag {
    width: 100px;
    height: 30px;
@@ -452,7 +472,6 @@ h4#tag-header {
    border-radius: 100px;
    text-align: center;
 }
-
 p.skill-word {
    width: 30px;
    height: 10px;
@@ -462,7 +481,6 @@ p.skill-word {
    padding: 0px;
    float: left;
 }
-
 .delete-tag-button {
    float: left;
    position: inline;
@@ -475,19 +493,16 @@ p.skill-word {
    text-align: center; 
    font-size: .5em;
 }
-
 .tag-search {
    width: 200px;
    position: relative;
    top: -220px;
    margin: 0 auto;
 }
-
 #submit-post {
    position: relative;
    bottom: -100px;
 }
-
 #tag_cloud{
    width: 200px;
    border: 3px solid black;
@@ -496,39 +511,25 @@ p.skill-word {
    text-align:center;
    background-color: #DCDCDC; 
 }
-
 .css1 { 
    font-size: 1.2em; 
    color: black;
    text-decoration: none; 
 }
-
 .css2 { 
    font-size: 1.4em; 
    text-decoration: none; 
    color: purple;
 }
-
 .css3 { 
    font-size: 1.6em; 
    color: green;
    text-decoration: none; 
-
 }
-
 .css4 { 
    font-size: 1.8em; 
    color: blue;
    text-decoration: none; 
-}
-
-#welcome-background{
-   width: 600px;
-   margin: 5em auto;
-   padding: 50px;
-   background-color: #fff;
-   border-radius: 1em;
-   min-height: 300px;
 }
 /* POST Filter Nav */
 ul#filter_post_type {
