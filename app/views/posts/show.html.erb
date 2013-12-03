@@ -7,7 +7,7 @@
 
   <p> SAY HI!<br><span><%= @post.user.email%></span></p>
 
-  <p>Posted on: <span><%= @post.created_at.strftime("%b. %d %Y") %></span> from <span><%= @post.user.city + ", " + @post.user.state unless @post.user.city.nil? || @post.user.city == "" %></span></p>
+  <p>Posted on: <span><%= post.created_at.strftime("%b. %d %Y") %></span> from <span><%= @post.user.city + ", " + @post.user.state unless @post.user.city.nil? || @post.user.city == "" %></span></p>
 
   <p>Tags: <%= @post.skill_tag_list %></p> 
 

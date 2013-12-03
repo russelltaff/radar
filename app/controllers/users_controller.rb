@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @user = User.new
     render :new
   end 
-
+  
   def create
     #TODO we need to render the profile edit page before we the profile page because of the error being thrown on login
     @user = User.new(user_params)
