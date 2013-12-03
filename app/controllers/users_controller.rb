@@ -7,15 +7,13 @@ class UsersController < ApplicationController
   end 
 
   def create
-    #TODO we need to render the profile edit page before we the profile page because of the error being thrown on login
     @user = User.new(user_params)
-    # binding.pry
+ 
     if @user.save
       # return to signup page
       redirect_to new_session_path
     else
-      # render :new
-      redirect_to new_user_path
+      redirect_to new_session_path
     end
   end 
 
