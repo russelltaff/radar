@@ -3,21 +3,21 @@
 <div class="employer">
 
   <div class="column-30">
-    <p><img src="<%= current_user.photo.url %>" /></p>
-    <p><span class="sans"><%= current_user.type %></span></p>
-    <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? %></p>
+    <p><img src="<%= @employer.photo.url %>" /></p>
+    <p><span class="sans"><%= @employer.type %></span></p>
+    <p><%= @employer.city + ", " + @employer.state unless @employer.city.nil? %></p>
   </div>
 
   <div class="column-70">
-    <h2 class="largetext"><%= current_user.name %></h2>
-    <p><%= "Company Type: " + current_user.company_type unless current_user.company_type.nil? %></p>
-    <p><%= "Company Size: " + current_user.company_size unless current_user.company_size.nil? %></p>
-    <p>Website: <%= link_to current_user.company_url, "http://" + current_user.company_url unless current_user.company_url.nil? %></p>
-    <p><% if current_user.apprentice_partner == true %>
-        <%= current_user.name %>
+    <h2 class="largetext"><%= @employer.name %></h2>
+    <p><%= "Company Type: " + @employer.company_type unless @employer.company_type.nil? %></p>
+    <p><%= "Company Size: " + @employer.company_size unless @employer.company_size.nil? %></p>
+    <p>Website: <%= link_to @employer.company_url, "http://" + @employer.company_url unless @employer.company_url.nil? %></p>
+    <p><% if @employer.apprentice_partner == true %>
+        <%= @employer.name %>
         <span class="sans"> is </span>a GA Apprenticeship Partner</p>
       <% else %>
-        <%= current_user.name %>
+        <%= @employer.name %>
         <span class="sans"> is not </span>a GA apprenticeship partner</p>
       <% end %>
   </div>
@@ -31,20 +31,20 @@
   </div>
 
   <div id="about">
-    <p class="summary-text"><%= @current_user.summary %></p>
+    <p class="summary-text"><%= @employer.summary %></p>
   </div>
 
   <div id="contact">
-    <h2><%= current_user.name %></h2>
+    <h2><%= @employer.name %></h2>
     <div class="column-50">
-      <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? %></p>
-      <p><%= "Company Type: " + current_user.company_type unless current_user.company_type.nil? %></p>
-      <p><%= "Company Size: " + current_user.company_size unless current_user.company_size.nil? %></p>
+      <p><%= @employer.city + ", " + @employer.state unless @employer.city.nil? %></p>
+      <p><%= "Company Type: " + @employer.company_type unless @employer.company_type.nil? %></p>
+      <p><%= "Company Size: " + @employer.company_size unless @employer.company_size.nil? %></p>
     </div>
     <div class="column-50">
-      <p><%= "Phone: " + current_user.phone unless current_user.phone.nil? %></p>
-      <p><%= "Email: " +current_user.email %></p>
-      <p><%= "Website: " +  current_user.company_url unless current_user.company_url.nil? %></p>
+      <p><%= "Phone: " + @employer.phone unless @employer.phone.nil? %></p>
+      <p><%= "Email: " +@employer.email %></p>
+      <p><%= "Website: " +  @employer.company_url unless @employer.company_url.nil? %></p>
     </div>
   </div>
 
@@ -52,7 +52,7 @@
     <a name="my-posts"></a>
     <h3 class="my_posts">My POSTs:</h3>
    
-    <% current_user.posts.each do |post| %>
+    <% @employer.posts.each do |post| %>
       <div class="post-sm" >
         <h4><em>Hiring</em></h4>
         <p>Position: <span> <%= post.position_type %></span></p>
