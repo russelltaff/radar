@@ -14,6 +14,9 @@
 }
 
 /* CSS Styling for Radar */
+html {
+   background-color: #f2f2f2;
+}
 header {
    position: absolute;
    width: 100%;
@@ -21,10 +24,11 @@ header {
    top: 0;
    left: 0;
    right: 0;
-   background-color: #000;
+   background-color: #fff;
    font-family: "PF_Din_Text", Helvetica, Arial, sans-serif;
    font-size: 100%;
    z-index: 9997;
+   box-shadow: 2px 0px 5px #e2e2e2;
 }
 header h1 {
    position: absolute;
@@ -39,7 +43,7 @@ header h1 {
 /* Navigation */
 nav {
    font-family: "News_706", "Times New Roman", Times, serif;
-   color: #fff;
+   color: #222;
    font-size: 1.1em;
 }
 nav ul.dropdown, nav ul.dropdown li, nav ul.dropdown ul {
@@ -67,9 +71,9 @@ nav ul.dropdown ul {
    left: 0;
    border: 1px solid #ccc;
    border-top: 0;
-   -moz-box-shadow: 0 4px 2px -2px #888;
-   -webkit-box-shadow: 0 4px 2px -2px #888;
-   box-shadow: 0 4px 2px -2px #888;
+   -moz-box-shadow: 0 4px 2px -2px #e2e2e2;
+   -webkit-box-shadow: 0 4px 2px -2px #e2e2e2;
+   box-shadow: 0 4px 2px -2px #e2e2e2;
 }
 nav ul.dropdown li {
    display: block;
@@ -90,12 +94,12 @@ nav ul.dropdown ul ul {
 }
 /* Main Nav Links */
 nav ul.dropdown li a:link {
-   color: #fff;
+   color: #f2f2f2;
    padding: 25px 25px 14px 25px;
    text-decoration: none;
 }
 nav ul.dropdown li a:visited {
-   color: #fff;
+   color: #f2f2f2;
 }
 nav ul.dropdown li:hover > a {
    color: #f03;
@@ -109,12 +113,12 @@ nav ul.dropdown li:active > a  {
 nav ul.dropdown ul li a:link {
    display: block;
    background-color: #fff;
-   color: #000;
+   color: #222;
    padding: 15px;
    text-decoration: none;
 }
 nav ul.dropdown ul li a:visited {
-   color: #000;
+   color: #222;
 }
 nav ul.dropdown ul li a:hover {
    color: #fff;
@@ -143,15 +147,14 @@ nav li a:hover.item2 {
 }*/
 /* Main content <div> in layout */
 
-body.welcome-page{
-   background-image: url('<%= image_path 'backgroundgafinal.jpg' %>');
+.welcome-page{
+   background-image: url(<%= image_path 'backgroundgafinal.jpg' %>);
    background-size: 100% auto;
-   background-repeat:repeat-y;
+   background-repeat: repeat-y;
 }
-
 div#content {
    position: relative;
-   margin: 0 auto;
+   margin: 70px auto;
    width: 90%;
    top: 55px;
    padding: 10px;
@@ -299,15 +302,42 @@ div.yellow{
    background-color: yellow;
 }
 div.login {
+   width: 400px;
+   height: 400px;
+   margin: 0 auto;
+   padding: 50px;
+   font-family: "News_706", "Times New Roman", Times, serif;
    -moz-box-shadow: 4px 4px 10px 4px #888;
    -webkit-box-shadow: 4px 10px 4px 4px #888;
    box-shadow: 4px 4px 10px 4px #888;
-   text-align: center;
-   width: 450px;
-   height: 350px;
-   margin: 0 auto;
-   padding-top: 50px;
+   background-color: #fff; 
    background: url(<%= asset_path 'wood.png' %>) no-repeat;
+}
+div.login input {
+   display: block;
+   margin-top: 10px; 
+   width: 100%;
+   height: 30px;
+   line-height: 1.5em;
+}
+div.login input[type="submit"] {
+   display: block;
+   width: 100%;
+   margin: 0;
+   padding: 20px;
+   line-height: 1.5em;
+   color: #fff;
+   text-align: center;
+   font-size: 18px;
+   background: #f03 !important;
+   border: none;
+   border-bottom: 3px solid #c20027;
+}
+div.login input[type="submit"]:hover {
+   background: #c20027 !important;
+   transition-delay: 0s;
+   transition-duration: 0.15s;
+   transition-property: all;
 }
 div.create_form {
    -moz-box-shadow: 4px 4px 10px 4px #888;
@@ -488,7 +518,7 @@ ul#filter_post_type li a:link, ul#filter_post_type li a:visited {
    text-decoration: none;
 }
 ul#filter_post_type li a:hover, ul#filter_post_type li a:active {
-   color: #000;
+   color: #222;
 }
 /* Position Type Filter Nav */
 ul#filter_all_posts {
@@ -504,7 +534,7 @@ ul#filter_all_posts li {
    border-radius: 10px;
 }
 ul#filter_all_posts li a:link, ul#filter_all_posts li a:visited {
-   color: #000;
+   color: #222;
    text-decoration: none;
 }
 ul#filter_all_posts li a:hover, ul#filter_all_posts li a:active {
