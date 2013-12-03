@@ -45,7 +45,7 @@
   <% type_of_post(post) %>
 
     <div class="post column-30 <%= @type_class %> <%= @job_class %>">
-        <p><span> <%= post.user.name %> </span><span class="sans">IS A</span>
+        <p><span> <%= post.user.name %> </span><span class="sans"><%= post.user.type == "Student" ? "IS A" : "IS LOOKING FOR A" %></span>
         <%= post.position_type %></p>
 
         <p><span class="sans"><%= post.user.type == "Student" ? "WITH EXPERIENCE IN" : "FOR HELP W/" %>:<br /></span><span class="description"><%= post.description %></span></p>
