@@ -1,4 +1,4 @@
-<h1>Create A Username:</h1>
+<h2>Create A Username</h2>
 
 <% unless @user.errors.none? %>
   <% @user.errors.full_messages.each do |msg| %>
@@ -8,20 +8,15 @@
 
 <%= form_for @user do |f| %>
    
-   <%= f.label :type %>
-  <%= f.select :type, ["Student","Employer"] %><br />
+  <p>Type: <%= f.select :type, ["Student","Employer"] %></p>
+  
+  <%= f.text_field :name, :placeholder => "Name" %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %><br />
+  <%= f.email_field :email, :placeholder => "Email" %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %><br />
+  <%= f.password_field :password, :placeholder => "Password" %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %><br />
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %><br />
+  <%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %>
 
   <% if logged_in? %> 
 

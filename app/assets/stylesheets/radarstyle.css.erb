@@ -14,6 +14,9 @@
 }
 
 /* CSS Styling for Radar */
+html {
+   background-color: #f2f2f2;
+}
 header {
    position: absolute;
    width: 100%;
@@ -21,15 +24,16 @@ header {
    top: 0;
    left: 0;
    right: 0;
-   background-color: #000;
+   background-color: #fff;
    font-family: "PF_Din_Text", Helvetica, Arial, sans-serif;
    font-size: 100%;
    z-index: 9997;
+   box-shadow: 2px 0px 5px #e2e2e2;
 }
 header h1 {
    position: absolute;
    width: 200px;
-   height: 50px;
+   height: 52px;
    top: -10px;
    left: 15px;
    text-indent: -9999px;
@@ -39,7 +43,7 @@ header h1 {
 /* Navigation */
 nav {
    font-family: "News_706", "Times New Roman", Times, serif;
-   color: #fff;
+   color: #666666;
    font-size: 1.1em;
 }
 nav ul.dropdown, nav ul.dropdown li, nav ul.dropdown ul {
@@ -65,11 +69,11 @@ nav ul.dropdown ul {
    margin: 14px 0 0 0;
    top: 100%;
    left: 0;
-   border: 1px solid #ccc;
+   border: 1px solid #e2e2e2;
    border-top: 0;
-   -moz-box-shadow: 0 4px 2px -2px #888;
-   -webkit-box-shadow: 0 4px 2px -2px #888;
-   box-shadow: 0 4px 2px -2px #888;
+   -moz-box-shadow: 0 4px 2px -2px #e2e2e2;
+   -webkit-box-shadow: 0 4px 2px -2px #e2e2e2;
+   box-shadow: 0 4px 2px -2px #e2e2e2;
 }
 nav ul.dropdown li {
    display: block;
@@ -90,17 +94,18 @@ nav ul.dropdown ul ul {
 }
 /* Main Nav Links */
 nav ul.dropdown li a:link {
-   color: #fff;
+   color: #666666;
    padding: 25px 25px 14px 25px;
    text-decoration: none;
 }
 nav ul.dropdown li a:visited {
-   color: #fff;
+   color: #666666;
 }
 nav ul.dropdown li:hover > a {
    color: #f03;
    padding: 25px 25px 14px 25px;
    background-color: #fff;
+   border-left: 1px solid #e2e2e2;
 }
 nav ul.dropdown li:active > a  {
    color: #f03;
@@ -109,12 +114,13 @@ nav ul.dropdown li:active > a  {
 nav ul.dropdown ul li a:link {
    display: block;
    background-color: #fff;
-   color: #000;
+   color: #222;
+   font-size: 16px;
    padding: 15px;
    text-decoration: none;
 }
 nav ul.dropdown ul li a:visited {
-   color: #000;
+   color: #222;
 }
 nav ul.dropdown ul li a:hover {
    color: #fff;
@@ -151,7 +157,7 @@ body.welcome-page{
 
 div#content {
    position: relative;
-   margin: 0 auto;
+   margin: 70px auto;
    width: 90%;
    top: 55px;
    padding: 10px;
@@ -162,9 +168,17 @@ h1, h2, h3, h4 {
    text-transform: uppercase;
 }
 h1 {
-   
+   font-size: 2em;
 }
-
+h2 {
+   font-size: 1.8em;
+}
+h3 {
+   font-size: 1.5em;
+}
+h4 {
+   font-size: 1.3em;
+}
 /* Form Styles */
 div.form {
    margin: 0 auto;
@@ -299,20 +313,64 @@ div.yellow{
    background-color: yellow;
 }
 div.login {
-   -moz-box-shadow: 4px 4px 10px 4px #888;
-   -webkit-box-shadow: 4px 10px 4px 4px #888;
-   box-shadow: 4px 4px 10px 4px #888;
-   text-align: center;
-   width: 450px;
+   width: 350px;
    height: 350px;
    margin: 0 auto;
-   padding-top: 50px;
-   background: url(<%= asset_path 'wood.png' %>) no-repeat;
+   padding: 50px;
+   background-color: #fff;
+   /*background: url(<%= asset_path 'wood.png' %>) no-repeat;*/
+   -moz-box-shadow: 4px 4px 10px 4px #e2e2e2;
+   -webkit-box-shadow: 4px 10px 4px 4px #e2e2e2;
+   box-shadow: 4px 4px 10px 4px #e2e2e2;
+}
+div.login.large {
+   height: 475px;
+}
+div.login input {
+   margin: 10px 0;
+   width: 100%;
+   height: 40px;
+   padding: 5px;
+   font-family: "News_706", "Times New Roman", Times, serif;
+   font-size: 16px;
+   line-height: 1.5em;
+   background-color: #f2f2f2;
+   outline: none;
+   border: none;
+   color: #222222;
+   -webkit-transition: color 0.15s ease-in-out;
+   -moz-transition: color 0.15s ease-in-out;
+   -o-transition: color 0.15s ease-in-out;
+   transition: color 0.15s ease-in-out; }
+input[type="text"]:focus {
+    background-color: #e2e2e2; 
+ }
+div.login input[type="submit"] {
+   margin: 15px 0;
+   width: 100%;
+   height: 40px;
+   line-height: 1.1em;
+   padding: 10px 20px;
+   font-family: "PF_Din_Text", Helvetica, Arial, sans-serif;
+   text-transform: uppercase;
+   font-size: 22px;
+   color: #fff;
+   background-color: #f03;
+   border: none;
+   border-bottom: 3px solid #c20027;
+}
+div.login input[type="submit"]:hover {
+   background-color: #eb002f;
+   -webkit-transition-delay: 0s;
+   -webkit-transition-duration: 0.2s;
+   -webkit-transition-property: all;
+   -webkit-transition-timing-function: ease-in-out;
+   transition-delay: 0s;
+   transition-duration: 0.2s;
+   transition-property: all;
+   transition-timing-function: ease-in-out;
 }
 div.create_form {
-   -moz-box-shadow: 4px 4px 10px 4px #888;
-   -webkit-box-shadow: 4px 10px 4px 4px #888;
-   box-shadow: 4px 4px 10px 4px #888;
    text-align: center;
    width: 450px;
    min-height: 570px;
@@ -320,6 +378,9 @@ div.create_form {
    padding-top: 30px;
    background: url(<%= asset_path 'wood.png' %>);
    line-height: 2em;
+   -moz-box-shadow: 4px 4px 10px 4px #888;
+   -webkit-box-shadow: 4px 10px 4px 4px #888;
+   box-shadow: 4px 4px 10px 4px #888;
 }
 h1.create {
    text-align: center;
@@ -327,7 +388,7 @@ h1.create {
 h1.edit {
    text-align: center;
 }
-h2.hire{
+h3.hire{
    color: red;
 }
 h3.my_posts{
@@ -488,7 +549,7 @@ ul#filter_post_type li a:link, ul#filter_post_type li a:visited {
    text-decoration: none;
 }
 ul#filter_post_type li a:hover, ul#filter_post_type li a:active {
-   color: #000;
+   color: #222;
 }
 /* Position Type Filter Nav */
 ul#filter_all_posts {
@@ -504,7 +565,7 @@ ul#filter_all_posts li {
    border-radius: 10px;
 }
 ul#filter_all_posts li a:link, ul#filter_all_posts li a:visited {
-   color: #000;
+   color: #222;
    text-decoration: none;
 }
 ul#filter_all_posts li a:hover, ul#filter_all_posts li a:active {
