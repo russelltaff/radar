@@ -36,12 +36,16 @@
 
   <div id="contact">
     <h2><%= current_user.name %></h2>
-    <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? %></p>
-    <p><%= "Company Type: " + current_user.company_type unless current_user.company_type.nil? %></p>
-    <p><%= "Company Size: " + current_user.company_size unless current_user.company_size.nil? %></p>
-    <p><%= "Phone: " + current_user.phone unless current_user.phone.nil? %></p>
-    <p><%= "Email: " +current_user.email %></p>
-    <p><%= "Website: " +  current_user.company_url unless current_user.company_url.nil? %></p>
+    <div class="column-50">
+      <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? %></p>
+      <p><%= "Company Type: " + current_user.company_type unless current_user.company_type.nil? %></p>
+      <p><%= "Company Size: " + current_user.company_size unless current_user.company_size.nil? %></p>
+    </div>
+    <div class="column-50">
+      <p><%= "Phone: " + current_user.phone unless current_user.phone.nil? %></p>
+      <p><%= "Email: " +current_user.email %></p>
+      <p><%= "Website: " +  current_user.company_url unless current_user.company_url.nil? %></p>
+    </div>
   </div>
 
   <div id="myposts">

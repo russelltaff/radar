@@ -150,9 +150,17 @@ nav li a:hover.item2 {
 /* Main content <div> in layout */
 
 .welcome-page{
+   position: absolute;
+   top: -8px;
+   left: -8px;
    background-image: url(<%= image_path 'backgroundgafinal.jpg' %>);
-   background-size: 100% auto;
    background-repeat: repeat-y;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   width: 100%;
+   height: 1000px;
 }
 #welcome-background{
    width: 600px;
@@ -165,7 +173,7 @@ nav li a:hover.item2 {
 div#content {
    position: relative;
    margin: 70px auto;
-   width: 90%;
+   width: 80%;
    top: 55px;
    padding: 10px;
    font-size: 100%;
@@ -221,7 +229,7 @@ div#menu ul {
    position: relative;
    list-style: none;
    float: left;
-   top: -17px;
+   top: -12px;
 }
 div#menu ul li {
    display: inline;
@@ -311,12 +319,14 @@ div.post-big {
    background-color: #fff;
    border-radius: .1em;
    font-size: 1.5em;
+   text-align: justify;
    -moz-box-shadow: 4px 4px 10px 4px #888;
    -webkit-box-shadow: 4px 10px 4px 4px #888;
    box-shadow: 4px 4px 10px 4px #888;
 }
 div.post-sm {
    display: inline-block;
+   vertical-align: top;
    width: 300px;
    height: 350px; 
    margin: 10px;
@@ -327,11 +337,6 @@ div.post-sm {
    -moz-box-shadow: 4px 4px 10px 4px #888;
    -webkit-box-shadow: 4px 10px 4px 4px #888;
    box-shadow: 4px 4px 10px 4px #888;
-}
-div.yellow{
-   padding: .4em;
-   border-radius: 2px;
-   background-color: yellow;
 }
 hr {
    border: none;
@@ -365,7 +370,8 @@ div.login input {
    -webkit-transition: color 0.15s ease-in-out;
    -moz-transition: color 0.15s ease-in-out;
    -o-transition: color 0.15s ease-in-out;
-   transition: color 0.15s ease-in-out; }
+   transition: color 0.15s ease-in-out; 
+}
 input[type="text"]:focus, input[type="email"]:focus, 
 input[type="password"]:focus {
     background-color: #e2e2e2; 
@@ -395,32 +401,6 @@ div.login input[type="submit"]:hover, button#submit-post:hover {
    transition-property: all;
    transition-timing-function: ease-in-out;
 }
-div.login input {
-   display: block;
-   margin-top: 10px; 
-   width: 100%;
-   height: 30px;
-   line-height: 1.5em;
-}
-div.login input[type="submit"] {
-   display: block;
-   width: 100%;
-   margin: 0;
-   padding: 20px;
-   line-height: 1.5em;
-   color: #fff;
-   text-align: center;
-   font-size: 18px;
-   background: #f03 !important;
-   border: none;
-   border-bottom: 3px solid #c20027;
-}
-div.login input[type="submit"]:hover {
-   background: #c20027 !important;
-   transition-delay: 0s;
-   transition-duration: 0.15s;
-   transition-property: all;
-}
 div.create_form {
    width: 450px;
    height: 600px;
@@ -449,19 +429,22 @@ h3.my_posts{
 }
 .largetext {
    font-size: 3em;
-}
+} 
 span.sans {
    font-family: "PF_Din_Text", Helvetica, Arial, sans-serif;
    text-transform: uppercase;
    font-size: 1.1em;
    background-color: transparent;
 }
+div.post-big span.sans {
+   font-size: 2em;
+}
 span{
    min-width: 200px; 
-   padding: .4em;
-   background-color: yellow;
+   padding: 15px 20px 5px 20px;
+   background-color: #ffff66;
    line-height: 2em;
-   /*font-size: 2.5em; */
+   border-radius: 3px;
 }
 /* Isotope Filtering */
 section.isotope {

@@ -34,14 +34,17 @@
   </div>
 
   <div id="contact">
-    <p><%= current_user.name %></p>
-    <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? || current_user.city == "" %></p>
+    <h2><%= current_user.name %></h2>
+    <div class="column-50">
+      <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? || current_user.city == "" %></p>
 
-    <p><%= current_user.email %></p>
-    <p><%= current_user.phone unless current_user.phone.nil? %></p>
-
-    <p>Github: <%= link_to current_user.github_url, "http://github.com/" + current_user.github_url unless current_user.github_url.nil? %></p>
-    <p>Portfolio: <%= link_to current_user.portfolio_url, "http://" + current_user.portfolio_url unless current_user.portfolio_url.nil? %></p>
+      <p><%= current_user.email %></p>
+      <p><%= current_user.phone unless current_user.phone.nil? %></p>
+    </div>
+    <div class="column-50">
+      <p>Github: <%= link_to current_user.github_url, "http://github.com/" + current_user.github_url unless current_user.github_url.nil? %></p>
+      <p>Portfolio: <%= link_to current_user.portfolio_url, "http://" + current_user.portfolio_url unless current_user.portfolio_url.nil? %></p>
+    </div>
   </div>
 
   <div id="myposts">
