@@ -10634,13 +10634,13 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 window.onload = function() {
   console.log("Radar animate");
 
-  var l1 = $("<img>").attr({src: "/assets/loop-1.png"}).css({"position": "absolute", "z-index": "9998", "top": "5px", "left": "10px"});
-  var l2 = $("<img>").attr("src", "/assets/loop-2.png").css({"position": "absolute", "z-index": "9998", "top": "4px", "left": "8px"});
-  var l3 = $("<img>").attr("src", "/assets/loop-3.png").css({"position": "absolute", "z-index": "9998", "top": "2px", "left": "4px"});
-  var l4 = $("<img>").attr("src", "/assets/loop-4.png").css({"position": "absolute", "z-index": "9998", "top": "0px", "left": "2px"});
+  var l1 = $("<img>").attr({src: "/assets/loop-1.png"}).css({"position": "absolute", "z-index": "9998", "top": "11px", "left": "11px"});
+  var l2 = $("<img>").attr("src", "/assets/loop-2.png").css({"position": "absolute", "z-index": "9998", "top": "9px", "left": "9px"});
+  var l3 = $("<img>").attr("src", "/assets/loop-3.png").css({"position": "absolute", "z-index": "9998", "top": "7px", "left": "7px"});
+  // var l4 = $("<img>").attr("src", "/loop-4.png").css({"position": "absolute", "z-index": "9998", "top": "0px", "left": "2px"});
   // z-index: 9998;
   var radar = $("header");
-  _.each([l1,l2,l3,l4], function(loop) {
+  _.each([l1,l2,l3], function(loop) {
     radar.append(loop);
     loop.hide();
   });
@@ -10649,12 +10649,12 @@ window.onload = function() {
     console.log("MOUSEVER");
 
     function showLoop(loop) {
-      loop.show(500, function() {
-        $(this).hide(200);
+      loop.show(400, function() {
+        $(this).hide(800);
       });
     }
 
-    var loops = [l1,l2,l3,l4];
+    var loops = [l1,l2,l3];
     var loopTimeout = function(i, max, interval) {
       if (i >= max) { return; }
 
