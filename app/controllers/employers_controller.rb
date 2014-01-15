@@ -1,5 +1,6 @@
 class EmployersController < ApplicationController  
-  before_action :authenticated!, :set_employer, :authorized!, except: [:new, :create, :search]
+  before_action :authenticated!, :set_employer, except: [:search]
+  before_action :authorized!, except: [:show]
   #TODO employers should be able to look at other employers' profiles
 
   def show 
@@ -12,7 +13,7 @@ class EmployersController < ApplicationController
 
   def update
     if @employer.update_attributes(employer_params)
-      redirect_to employer_path(@employer)
+      redirect_to student? ? student_path(session[:user_id]) : employer_path(session[:user_id])
     else
       render :edit
     end
@@ -33,13 +34,13 @@ class EmployersController < ApplicationController
     params.require(:employer).permit(:email, :name, :type, :password, :password_confirmation, :city, :state, :phone, :summary, :company_url, :apprentice_partner, :photo, :company_type, :company_size)
   end
 
-  def set_employer 
+  def set_employer
     @employer = Employer.find(params[:id])
   end
 
   def authorized!
     unless @employer.id == session[:user_id]
-      redirect_to user_path(session[:user_id])
+      redirect_to student? ? student_path(session[:user_id]) : employer_path(session[:user_id])
     end
   end
  

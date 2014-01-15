@@ -2,21 +2,21 @@
 
 <div class="student">
 
-  <div class="column-50">
-    <p><img src="<%= current_user.photo.url %>" /></p>
-    <p><%= current_user.type %></p>
+  <div class="column-30">
+    <p><img src="<%= @student.photo.url %>" /></p>
+    <p><span class="sans"><%= @student.type %></span></p>
   </div>
 
-  <div class="column-50">
-    <h2><%= current_user.name %></h2>
+  <div class="column-70">
+    <h2 class="largetext"><%= @student.name %></h2>
 
-    <p>Email: <%= current_user.email %></p>
+    <p>Email: <%= @student.email %></p>
    
     <p>Resum&#233;: 
-      <% if current_user.resume_file_name %>
-        <%= link_to current_user.resume_file_name, current_user.resume.url %>
+      <% if @student.resume_file_name %>
+        <%= link_to @student.resume_file_name, @student.resume.url %>
       <% else %>
-        <%= link_to "Add Resume", edit_student_path(current_user) %>
+        <%= link_to "Add Resume", edit_student_path(@student) %>
       <% end %>
     </p>   
   </div>
@@ -30,35 +30,37 @@
   </div>
 
   <div id="about">
-    <p class="summary-text"><%= @current_user.summary %></p>
+    <p class="summary-text"><%= @student.summary %></p>
   </div>
 
   <div id="contact">
-    <p><%= current_user.name %></p>
-    <p><%= current_user.city + ", " + current_user.state unless current_user.city.nil? || current_user.city == "" %></p>
+    <h2><%= @student.name %></h2>
+    <div class="column-50">
+      <p><%= @student.city + ", " + @student.state unless @student.city.nil? || @student.city == "" %></p>
 
-    <p><%= current_user.email %></p>
-    <p><%= current_user.phone unless current_user.phone.nil? %></p>
-
-    <p>Github: <%= link_to "@" + current_user.github_url, "http://github.com/" + current_user.github_url unless current_user.github_url.nil? %></p>
-    <p>Portfolio: <%= link_to current_user.portfolio_url, "http://" + current_user.portfolio_url unless current_user.portfolio_url.nil? %></p>
+      <p><%= @student.email %></p>
+      <p><%= @student.phone unless @student.phone.nil? %></p>
+    </div>
+    <div class="column-50">
+      <p>Github: <%= link_to @student.github_url, "http://github.com/" + @student.github_url unless @student.github_url.nil? %></p>
+      <p>Portfolio: <%= link_to @student.portfolio_url, "http://" + @student.portfolio_url unless @student.portfolio_url.nil? %></p>
+    </div>
   </div>
 
   <div id="myposts">
     <a name="my-posts"></a>
     <h3 class="my_posts">My POSTs:</h3>
    
-      <% current_user.posts.each do |post| %>
+      <% @student.posts.each do |post| %>
        <div class="post-sm" >
-        <h4><em>For Hire</em></h4>
-        <p>Position: <span> <%= post.position_type %></span></p>
-        <p>Description: <span><%= post.description %></span></p>
-        <p>Date: <span><%= post.created_at.strftime("%b. %d %Y") %></span></p>
-        <p><%= link_to "Make Big", post_path(post.id) %></p>
-     </div>
+          <h4><em>For Hire</em></h4>
+          <p>Position: <span> <%= post.position_type %></span></p>
+          <p>Description: <span><%= post.description %></span></p>
+          <p>Date: <span><%= post.created_at.strftime("%b. %d %Y") %></span></p>
+          <p class="fullpost"><%= link_to "Full POST", post_path(post.id) %></p>
+       </div>
     <% end %>
   </div>
- 
 
 </div>
 

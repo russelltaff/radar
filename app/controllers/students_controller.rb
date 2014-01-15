@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController  
-before_action :authenticated!, :set_student, :authorized!, except: [:new, :create, :search]
-#TODO students should be able to look at other students' profiles
+  before_action :authenticated!, :set_student, except: [:search]
+  before_action :authorized!, except: [:show]
+  #TODO students should be able to look at other students' profiles
 
   def show 
     render :show
@@ -32,13 +33,14 @@ before_action :authenticated!, :set_student, :authorized!, except: [:new, :creat
     params.require(:student).permit(:email, :name, :type, :password, :password_confirmation, :city, :state, :phone, :summary, :portfolio_url, :github_url, :resume, :photo)
   end
 
-  def set_student 
+  def set_student
     @student = Student.find(params[:id])
   end
 
   def authorized!
     unless @student.id == session[:user_id]
-      redirect_to user_path(session[:user_id]) 
+      redirect_to student? ? student_path(session[:user_id]) : employer_path(session[:user_id])
+      # user_path(session[:user_id])
     end
   end
 
